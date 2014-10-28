@@ -30,6 +30,8 @@ div.stats {
   width: 200px;
   float: left;
   height: 800px;
+  text-align: center;
+  padding: 15px;
 }
 
 div.leaderboard {
@@ -37,9 +39,20 @@ div.leaderboard {
   width: 200px;
   float: right;
   height: 800px;
+  text-align: center;
+  padding: 15px;
 }
 
 div.user-courses {
   border-top: 1px solid black;
   height: 800px;
+  text-align: center;
+}
+
+div.user-courses > h2 {
+  padding: 15px;
+}
+
+div.user-courses > ul > li {
+  padding: 10px;
 }
