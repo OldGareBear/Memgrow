@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :courses
+  resources :courses do
+    resources :cards
+  end
 
   resources :enrollments, only: [:create, :destroy]
   resource :session, only: [:new, :create, :destroy]
