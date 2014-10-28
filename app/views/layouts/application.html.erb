@@ -12,10 +12,19 @@
 		<span class="logo">
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "125x125" %></a>
 		</span>
+
+    <% if current_user %>
+      <%= button_to "Log out",
+          session_url,
+          method: :delete,
+          class: "log-out" %>
+    <% else %>
 		<ul class="navbar">
 			<li><a href="<%= new_session_url %>">Log In</a></li>
 			<li><a href="<%= new_user_url %>">Sign Up</a></li>
 		</ul>
+    <% end %>
+
 	</div>
 
 <%= yield %>

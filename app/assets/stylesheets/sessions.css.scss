@@ -1,3 +1,21 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form.new-session {
+  margin: 30px auto;
+  width: 200px;
+  height: 300px;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+form.new-session > label {
+  text-align: center;
+}
+
+form.new-session > input {
+  margin: 15px auto;
+  display: block;
+}
