@@ -21,25 +21,25 @@ form.new-user > input {
 }
 
 div.user-nav {
-  border: 1px solid black;
+//  border: 1px solid black;
   height: 125px;
 }
 
 div.stats {
-  border: 1px solid black;
+  border-right: 1px solid black;
   width: 200px;
   float: left;
   height: 800px;
 }
 
 div.leaderboard {
-  border: 1px solid black;
+  border-left: 1px solid black;
   width: 200px;
   float: right;
   height: 800px;
 }
 
 div.user-courses {
-  border: 1px solid black;
+  border-top: 1px solid black;
   height: 800px;
 }
