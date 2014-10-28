@@ -11,7 +11,7 @@ div.show-course-header {
 
 div.course-cards {
   width: 100%;
-  height: 100%;
+  height: 770px;
   padding: 15px;
   text-align: left;
 }
@@ -45,4 +45,67 @@ form.new-course > label {
 form.new-course > input {
   margin: 15px auto;
   display: block;
+}
+
+div.courses-header {
+  border-bottom: 1px solid black;
+  height: 125px;
+}
+
+div.courses-header > h1 {
+  display: block;
+  position: relative;
+  top: 25px;
+}
+
+form.search-bar {
+  position: relative;
+  right:15px;
+  float: right;
+}
+
+div.show-course-header > form.button_to {
+  position: relative;
+  top: -25px;
+}
+
+div.categories {
+  height: 800px;
+  width: 250px;
+  border-right: 1px solid black;
+  text-align: center;
+  padding: 15px;
+  float:left;
+}
+
+div.course-list {
+  float: left;
+  height: 740px;
+  padding: 30px;
+}
+
+ul.course-list {
+  float: left;
+}
+
+ul.course-list {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+div.categories > h3 {
+  padding: 25px;
+}
+
+ul.course-list > li {
+  display: block;
+  float: left;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+ul.category-list > li {
+  padding: 15px;
 }

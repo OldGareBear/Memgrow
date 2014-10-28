@@ -1,0 +1,30 @@
+<div class="courses-header">
+  <h1>Courses</h1>
+  <form class="search-bar">
+    <label for="search-bar"></label>
+    <input type="text" id="search-bar" value="search for courses...">
+    <!-- here we need a submit button that does the right thing -->
+  </form>
+</div>
+
+<div class="categories">
+  <h3>Categories</h3>
+  <ul class="category-list">
+    <!-- here we need to iterate through categories -->
+    <% @categories.each do |category| %>
+    <li><%= category %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="course-list">
+  <h2>All Courses</h2>
+
+  <ul class="course-list">
+    <% @courses.each do |course| %>
+      <li>
+        <a href="<%= course_url(course) %>"><%= course.title %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

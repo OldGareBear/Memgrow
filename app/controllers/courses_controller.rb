@@ -20,6 +20,14 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
+    categories = []
+
+    @courses.each do |course|
+      categories << course.category
+    end
+
+    categories.uniq!
+    @categories = categories
     render :index
   end
 

@@ -1,6 +1,9 @@
 <div class="show-course-header">
   <h1><%= @course.title %></h1>
   <h3><%= @course.category %></h3>
+  <%= button_to "Delete",
+  course_url(@course),
+  method: "delete" %>
 </div>
 <div class="stats">stats</div>
 <div class="course-cards">
