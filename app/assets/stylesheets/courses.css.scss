@@ -9,6 +9,12 @@ div.show-course-header {
   text-align: center;
 }
 
+div.show-course-header > h1 {
+  display: block;
+  position: relative;
+  top: 25px;
+}
+
 div.course-cards {
   width: 100%;
   height: 770px;
@@ -27,6 +33,7 @@ div.new-course-header {
   text-align: left;
   border-bottom: 1px solid black;
   padding: 20px;
+	height: 85px;
 }
 
 form.new-course {

@@ -25,6 +25,12 @@ div.user-nav {
   height: 125px;
 }
 
+div.user-nav > h1 {
+	display: block;
+	position: relative;
+	top: 25px;
+}
+
 div.stats {
   border-right: 1px solid black;
   width: 200px;

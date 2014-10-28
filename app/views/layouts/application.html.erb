@@ -13,7 +13,7 @@
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "125x125" %></a>
 		</span>
 
-    <% if current_user.id %>
+    <% if current_user %>
     <ul class="navbar">
       <li><a href="<%= courses_url %>">Browse</a></li>
       <li><a href="<%= new_course_url %>">Create Course</a></li>
