@@ -11,13 +11,9 @@ class User < ActiveRecord::Base
     user
   end
   
-  def self.generate_session_token!
-    self.session_token = SecureRandom.urlsafe_base64
-  end
-  
   def password=(password)
     @password = password
-    self.password_digest = BCrypt.create(password)
+    self.password_digest = BCrypt::Password.create(password)
   end
   
   def valid_password?(password)
@@ -25,12 +21,14 @@ class User < ActiveRecord::Base
   end
   
   def reset_token!
-    self.class.generate_session_token
+    self.session_token = SecureRandom.urlsafe_base64(16)
+    self.save!
+    self.session_token
   end
   
   private
   
   def ensure_session_token
-    self.session_token ||= self.generate_session_token!
+    self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 end
