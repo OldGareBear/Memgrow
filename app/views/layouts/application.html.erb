@@ -14,10 +14,13 @@
 		</span>
 
     <% if current_user %>
-      <%= button_to "Log out",
+    <ul class="navbar">
+       <li><a href="<%= new_course_url %>">Create Course</a></li>
+      <li><%= button_to "Log out",
           session_url,
           method: :delete,
-          class: "log-out" %>
+          class: "log-out" %></li>
+    </ul>
     <% else %>
 		<ul class="navbar">
 			<li><a href="<%= new_session_url %>">Log In</a></li>
