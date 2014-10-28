@@ -7,14 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
 	<div class="header">
 		<span class="logo">
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "125x125" %></a>
 		</span>
 		<ul class="navbar">
 			<li><a href="<%= new_session_url %>">Log In</a></li>
-			<li><a href="<%= new_users_url %>">Sign Up</a></li>
+			<li><a href="<%= new_user_url %>">Sign Up</a></li>
 		</ul>
 	</div>
 
@@ -25,6 +25,6 @@
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "125x125" %></a>
 		</div>
 	</div>
-	
+
 </body>
 </html>
