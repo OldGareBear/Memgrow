@@ -36,6 +36,10 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+group :test do
+  gem 'guard-rspec'
+end
+
 gem 'bcrypt-ruby', require: 'bcrypt'
 
 
