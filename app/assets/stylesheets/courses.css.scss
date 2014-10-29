@@ -78,7 +78,7 @@ div.show-course-header > form.button_to {
 
 div.categories {
   height: 800px;
-  width: 250px;
+  width: 200px;
   border-right: 1px solid black;
   text-align: center;
   padding: 15px;
@@ -87,12 +87,14 @@ div.categories {
 
 div.course-list {
   float: left;
-  height: 740px;
+  height: 799px;
   padding: 30px;
+  width: 600px;
 }
 
 ul.course-list {
   float: left;
+  width: 799px;
 }
 
 ul.course-list:after {
