@@ -24,6 +24,17 @@
     <% @courses.each do |course| %>
       <li>
         <a href="<%= course_url(course) %>"><%= course.title %></a>
+
+        <% unless current_user.courses.include?(course) %>
+          <form class="new-enrollment" action="<%= enrollments_url %>" method="Post">
+            <%= auth_token %>
+
+            <input type="hidden"
+                   name="enrollment[course_id]"
+                   value="<%= course.id %>">
+            <input type="submit" value="Add to Courses">
+          </form>
+        <% end %>
       </li>
     <% end %>
   </ul>

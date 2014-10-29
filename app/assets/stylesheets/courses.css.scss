@@ -95,7 +95,7 @@ ul.course-list {
   float: left;
 }
 
-ul.course-list {
+ul.course-list:after {
   content:"";
   display:block;
   clear:both;
@@ -108,16 +108,26 @@ div.categories > h3 {
 ul.course-list > li {
   display: block;
   float: left;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 50px;
+  text-align: center;
+  margin: 10PX;
+}
+
+ul.course-list form.new-enrollment {
+  display: block;
+  position: relative;
+  top: -10px;
+  clear: both;
 }
 
 ul.category-list > li {
   padding: 15px;
 }
 
-form.new-enrollment {
+div.show-course-header form.new-enrollment {
   float: right;
   position: relative;
   top: -15px;
