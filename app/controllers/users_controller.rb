@@ -26,6 +26,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    cards_count = 0
+    @user.courses.each do |course|
+      cards_count += course.cards.count
+    end
+
+    @cards_count = cards_count
     render :show
   end
 

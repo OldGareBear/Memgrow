@@ -1,5 +1,10 @@
 <div class="user-nav sub-header">
 	<h1><%= @user.username %></h1>
+  <ul class="user-info">
+    <li><h3>Friends</h3></li>
+    <li><h3><%= @cards_count %> Words</h3></li>
+    <li><h3><%= @user.points %> Points</h3></li>
+  </ul>
 </div>
 
 <div class="stats">
