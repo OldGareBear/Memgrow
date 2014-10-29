@@ -21,6 +21,5 @@
 
 <div class="stats">stats</div>
 <div class="course-cards">
-  <h2>Cards:</h2>
-<!-- here is where I will insert the course's cardsIndex-->
+    <%= render partial: "cards/index", locals: { cards: @cards } %>
 </div>

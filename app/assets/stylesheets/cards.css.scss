@@ -20,3 +20,20 @@ a.finish-cards {
 	text-align: center;
 	margin: 15px auto;
 }
+
+div.cards-index {
+  float:left;
+}
+
+div.cards-index > h2 {
+  padding: 10px;
+}
+
+ul.card-attrs {
+  padding: 10px;
+}
+
+ul.card-attrs > li {
+  padding: 10px;
+  float: left;
+}

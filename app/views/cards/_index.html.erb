@@ -1,0 +1,12 @@
+<div class="cards-index">
+  <h2>Cards:</h2>
+  <% cards.each do |card| %>
+    <ul class="card-attrs">
+      <li><%= card.character %></li>
+      <li>|</li>
+      <li><%= card.pinyin %></li>
+      <li>|</li>
+      <li><%= card.english %></li>
+    </ul>
+  <% end %>
+</div>

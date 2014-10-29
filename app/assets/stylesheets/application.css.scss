@@ -36,15 +36,17 @@ body {
 div.header {
 	width: 100%;
 	height: 125px;
-	border-bottom: 1px solid black;
-	background-image: image_url('Colored-Textures/5.jpg');
+//  border-bottom: 1px solid black;
+//  background-image: image_url('Colored-Textures/5.jpg');
+  background-color: #B9E396;
 }
 
 div.footer {
 	width: 100%;
 	height: 125px;
 //  border-top: 1px solid black;
-	background-image: image_url('Colored-Textures/5.jpg');;
+//  background-image: image_url('Colored-Textures/5.jpg');;
+  background-color: #B9E396;
   clear:both;
 }
 
@@ -64,6 +66,10 @@ ul.navbar > li {
   display: block;
   float: left;
   padding: 10px;
+}
+
+div.container {
+  min-height: 500px;
 }
 
 form.button_to {

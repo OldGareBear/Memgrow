@@ -34,6 +34,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @cards = @course.cards
     render :show
   end
 
