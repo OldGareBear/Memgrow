@@ -1,0 +1,19 @@
+<div class="new-card">
+	<form class="new-card" action="<%= course_cards_url(@course) %>" method="Post">
+		<%= auth_token %>
+	
+		<label for="card_character">Chinese Character</label>
+		<input type="text" name="card[character]">
+	
+		<label for="card_pinyin">Pinyin (phonetic)</label>
+		<input type="text" name="card[pinyin]">
+	
+		<label for="card_english">English</label>
+		<input type="text" name="card[english]">
+	
+		<input type="submit" value="Create Card!">
+	</form>
+		
+		<a class="finish-cards" 
+		  href="<%= course_url(@course) %>">Finish Cards for <%= @course.title %></a>
+</div>

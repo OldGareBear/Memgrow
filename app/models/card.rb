@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  validates :card_id
+  validates :course_id, presence: true
   
   belongs_to :course
 end

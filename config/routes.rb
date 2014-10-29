@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace "api" do
     resources :users
-    resources :courses
+    resources :courses do
+      resources :cards
+    end
   end
 
   resources :users
