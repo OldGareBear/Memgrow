@@ -8,6 +8,24 @@ class User < ActiveRecord::Base
   has_many :user_card_histories, dependent: :destroy
   has_many :cards, through: :user_card_histories
 
+  has_many(
+    :friendships,
+    class_name: "Friendship",
+    foreign_key: :requester_id,
+    primary_key: :id,
+    inverse_of: :requester
+  )
+
+  has_many(
+    :friendships,
+    class_name: "Friendship",
+    foreign_key: :requestee_id,
+    primary_key: :id,
+    inverse_of: :requestee
+  )
+
+  has_many :friends, through: :friendships
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)
