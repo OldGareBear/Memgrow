@@ -12,8 +12,8 @@ class EnrollmentsController < ApplicationController
 
       redirect_to course_url(@enrollment.course_id)
     else # should never fire, really
-      flash.now[:errors] = @enrollment.errors.full_messages
-      render 'courses#show'
+      flash[:errors] = @enrollment.errors.full_messages
+      redirect_to course_url(@enrollment.course_id)
     end
   end
 
@@ -37,9 +37,9 @@ class EnrollmentsController < ApplicationController
       if user_card_history.save
         # add flash alert to say that everythang was aight
       else
-        flash.now["errors"] =
+        flash["errors"] =
           "Sorry, something went wrong while adding that course."
-          render 'courses#show'
+          redirect_to course_url(course)
       end
     end
   end
