@@ -16,12 +16,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # def index
-  #   @course = Course.find(params[:course_id])
-  #   @cards = @course.cards
-  #   render :index
-  # end
-
   def show
     @card = Card.find(params[:id])
     render :show
