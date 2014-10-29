@@ -39,4 +39,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # no need to prefix every call to FG methods with FactoryGirl namespace
+  config.include FactoryGirl::Syntax::Methods
 end

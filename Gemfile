@@ -34,10 +34,13 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'guard-rspec'
+  gem 'shoulda-matchers'
+  gem 'faker'
 end
 
 gem 'bcrypt-ruby', require: 'bcrypt'
