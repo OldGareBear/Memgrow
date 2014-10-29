@@ -1,13 +1,22 @@
 <div class="card-container">
-  <form class="card-quiz">
+  <form class="card-quiz"
+        action="<%= user_card_history_url(
+        # this needs to find the user_card_history row where the user_id is the
+        # current_user's id and the card_id is @card's id
+        UserCardHistory.find_by_user_id_and_card_id(current_user.id, @card.id)
+        ) %>"
+        method="Post">
+
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="Patch">
 
     <h1><%= @card.character %></h1>
 
-    <label for="card_pinyin">Pinyin</label>
-    <input type="text" id="card_pinyin">
+    <label for="answer_pinyin">Pinyin</label>
+    <input type="text" id="answer_pinyin" name="answer[pinyin]">
 
-    <label for="card_english">English</label>
-    <input type="text" id="card_english">
+    <label for="answer_english">English</label>
+    <input type="text" id="answer_english" name="answer[english]">
 
     <input type="submit" value="Answer">
   </form>

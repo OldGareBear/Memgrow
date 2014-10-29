@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :enrollments, only: [:create, :destroy]
+
   resource :session, only: [:new, :create, :destroy]
+
+  resources :user_card_histories, only: [:create, :update, :destroy]
 end

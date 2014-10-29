@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :enrollments
   has_many :courses, through: :enrollments
+  has_many :user_card_histories, dependent: :destroy
+  has_many :cards, through: :user_card_histories
 
   attr_reader :password
 
