@@ -1,4 +1,4 @@
-class Frienship < ActiveRecord::Base
+class Friendship < ActiveRecord::Base
   validates :requester_id, :requestee_id, presence: true
 
   belongs_to(
@@ -16,4 +16,6 @@ class Frienship < ActiveRecord::Base
     primary_key: :id,
     inverse_of: :subs
   )
+  
+  
 end

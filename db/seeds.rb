@@ -6,12 +6,12 @@
 #   cities = City.create([ name: 'Chicago' ,  name: 'Copenhagen' ])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!( email: "kate@kate.com", password: "password" )
-User.create!( email: "gary@gary.com", password: "password" )
-User.create!( email: "colin@colin.colin", password: "password" )
-User.create!( email: "dave@dave.com", password: "password" )
-User.create!( email: "steve@steve.com", password: "password" )
-User.create!( email: "dom@dom.com", password: "password" )
+User.create!( email: "kate@kate.com", password: "password", username: "Kate")
+User.create!( email: "gary@gary.com", password: "password", username: "Gary")
+User.create!( email: "colin@colin.colin", password: "password", username: "Colin")
+User.create!( email: "dave@dave.com", password: "password", username: "Dave")
+User.create!( email: "steve@steve.com", password: "password", username: "Steve")
+User.create!( email: "dom@dom.com", password: "password", username: "Dom")
 
 
 Course.create!( title: "Fruits and Veggies",

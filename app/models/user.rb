@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :cards, through: :user_card_histories
 
   has_many(
-    :friendships,
+    :sought_friendships,
     class_name: "Friendship",
     foreign_key: :requester_id,
     primary_key: :id,
@@ -17,14 +17,15 @@ class User < ActiveRecord::Base
   )
 
   has_many(
-    :friendships,
+    :accepted_friendships,
     class_name: "Friendship",
     foreign_key: :requestee_id,
     primary_key: :id,
     inverse_of: :requestee
   )
 
-  has_many :friends, through: :friendships
+  has_many :sought_friends, through: :friendships
+  has_many :accepted_friends, through: :accepted_friendships
 
   attr_reader :password
 
