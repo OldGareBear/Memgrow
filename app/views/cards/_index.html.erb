@@ -1,12 +1,17 @@
 <div class="cards-index">
   <h2>Cards:</h2>
+  <table>
+    <tr>
+      <th>Character</th>
+      <th>Pinyin</th>
+      <th>English</th>
+    </tr>
   <% cards.each do |card| %>
-    <ul class="card-attrs">
-      <li><%= card.character %></li>
-      <li>|</li>
-      <li><%= card.pinyin %></li>
-      <li>|</li>
-      <li><%= card.english %></li>
-    </ul>
+    <tr class="card-attrs">
+      <td><%= card.character %></td>
+      <td><%= card.pinyin %></td>
+      <td><%= card.english %></td>
+    </tr>
   <% end %>
+</table>
 </div>

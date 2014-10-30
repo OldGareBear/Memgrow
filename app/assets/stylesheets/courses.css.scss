@@ -134,3 +134,41 @@ div.show-course-header form.new-enrollment {
   position: relative;
   top: -15px;
 }
+
+div.comments {
+  border-right: 1px solid black;
+  width: 300px;
+  float: left;
+  height: 800px;
+  text-align: center;
+  padding: 15px;
+}
+
+div.comments > h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+  position: relative;
+  left: 15px;
+  top: 15px;
+}
+
+th,td {
+    padding: 15px;
+}
+
+tr:nth-child(1) {
+  background-color: #15a1ec;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: beige;
+}

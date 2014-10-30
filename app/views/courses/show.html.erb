@@ -19,7 +19,12 @@
   <% end %>
 </div>
 
-<div class="stats">stats</div>
+<div class="comments">
+  <h2>Student Thoughts:</h2>
+  <ul class=comments>
+<%# this is where course comments will go %>
+  </ul>
+</div>
 <div class="course-cards">
     <%= render partial: "cards/index", locals: { cards: @cards } %>
 </div>
