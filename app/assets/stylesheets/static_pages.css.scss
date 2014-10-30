@@ -2,11 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.sign-up {
-	margin: 30px auto;
-  height: 50px;
-  width: 75px;
-  border: 1px solid black;
-  border-radius: 5px;
+//div.sign-up {
+//  margin: 30px auto;
+//  height: 50px;
+//  width: 75px;
+//  border: 1px solid black;
+//  border-radius: 5px;
+//  text-align: center;
+//}
+
+div.sub-header {
+  height: 250px;
   text-align: center;
+}
+
+div.sub-header > h1 {
+  padding-top: 30px;
+}
+
+div.sub-header > a {
+  display: block;
+  margin: 75px auto;
+  height: 25px;
+  width: 180px;
+  text-align: center;
+//  border: 1px solid black;
+  background-color: green;
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 20px;
+//  font-weight: bold;
+  color: white;
 }
