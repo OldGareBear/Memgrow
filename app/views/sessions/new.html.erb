@@ -1,5 +1,10 @@
 <form class="new-session" action="<%= session_url %>" method="Post">
 	<%= auth_token %>
+
+  <a class="facebook-login" href="/auth/facebook">LOGIN WITH THE FACEBOOKS</a>
+
+  <p>----------------or----------------</p>
+
 	<label for="user_email">Email</label>
 	<input type="text"
 				 name="user[email]"

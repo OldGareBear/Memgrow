@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   resources :friendships, only: [:create, :destroy]
 
   resources :comments, except: [:index, :new]
+
+  get '/auth/facebook/callback', to: 'oauth_callbacks#facebook'
 end

@@ -114,3 +114,27 @@ ul.user-courses > li > h3 > a {
 ul.leaders > li {
   padding: 15px;
 }
+
+a.facebook-login {
+  padding-top:20px;
+  margin:0;
+  border:0;
+  height:50px;
+  width:200px;
+  background-color: navy;
+  border-radius: 30px;
+  color: white;
+  margin: 0 auto;
+}
+
+form.new-user {
+  text-align:center;
+}
+
+form.new-user > p {
+//  display:block;
+  text-align:center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-weight: bold;
+}
