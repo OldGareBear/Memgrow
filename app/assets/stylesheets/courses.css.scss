@@ -179,3 +179,13 @@ ul.comments-index > li {
   border: 1px solid #15a1ec;
   border-radius: 5px;
 }
+
+p.author-date-info {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+p.author-date-info > a {
+  display: inline;
+  font-weight: bold;
+}

@@ -1,9 +1,12 @@
 <ul class="comments-index">
 <% comments.each do |comment| %>
-  <li>
+  <li class="comment">
     <p><%= comment.content %></p>
-    <p>Posted by <%= User.find(comment.author_id).username %> @
-      <%=comment.created_at %></p>
+    <p class="author-date-info">Posted by
+      <a href="<%= user_url(comment.author_id) %>">
+        <%= User.find(comment.author_id).username %>
+      </a> @ <%=comment.created_at %>
+    </p>
   </li>
 <% end %>
 </ul>
