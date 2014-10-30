@@ -1,0 +1,9 @@
+<div class="friends-index sub-header">
+  <h1><%= @user.username %>'s Friends</h1>
+</div>
+
+<ul class="friends-list">
+  <% @user.friends.each do |friend| %>
+  <li><a href="<%= user_url(friend) %>"><%= friend.username %></a></li>
+  <% end %>
+</ul>

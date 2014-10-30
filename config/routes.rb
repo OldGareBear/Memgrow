@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users do
+    resources :friendships, only: [:index]
+  end
+
   resources :courses do
     resources :cards
   end

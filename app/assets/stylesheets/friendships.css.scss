@@ -1,3 +1,20 @@
 // Place all the styles related to the friendships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul.friends-list {
+  min-height: 700px;
+}
+
+ul.friends-list > li {
+  padding: 25px;
+}
+
+div.friends-index {
+  height: 125px;
+}
+
+div.friends-index > h1 {
+	display: block;
+	position: relative;
+	top: 25px;
+}

@@ -1,7 +1,8 @@
 <div class="user-nav sub-header">
 	<h1><%= @user.username %></h1>
   <ul class="user-info">
-    <li><h3><%= @user.friends.count %> Friends</h3></li>
+    <li><h3><%= @user.friends.count %>
+      <a href="<%= user_friendships_url(@user) %>">Friends</a></h3></li>
     <li><h3><%= @cards_count %> Words</h3></li>
     <li><h3><%= @user.points %> Points</h3></li>
 
