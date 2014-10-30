@@ -31,6 +31,16 @@
 
 <div class="leaderboard">
   <h3>Leaderboard</h3>
+
+  <ul class="leaders">
+  <% i = 1 %>
+  <% @leaders.each do |leader| %>
+    <li><%= i %>. <strong><%= leader.username %></strong>
+      (<%= leader.points %>)</li>
+    <% i += 1 %>
+  <% end %>
+  </ul>
+
 </div>
 
 <div class="user-courses">

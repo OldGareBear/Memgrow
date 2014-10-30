@@ -29,14 +29,19 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
+    # find the number of words the user is studying
     cards_count = 0
     @user.courses.each do |course|
       cards_count += course.cards.count
     end
-
     @cards_count = cards_count
 
+    # find the stats for the user
     @cards_studied, @study_errors = calc_stats(@user)
+
+    # generate the leaderboard
+    @leaders = @user.friends.sort_by(&:points)[0, 10]
+
     render :show
   end
 

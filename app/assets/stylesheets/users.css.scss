@@ -29,6 +29,7 @@ div.user-nav > h1 {
 	display: block;
 	position: relative;
 	top: 25px;
+  left: -300px;
 }
 
 div.stats {
@@ -57,6 +58,7 @@ div.user-courses {
 
 div.user-courses > h2 {
   padding: 15px;
+  text-decoration: underline;
 }
 
 div.user-courses > ul > li {
@@ -83,6 +85,16 @@ div.stats > h2 {
   padding-bottom: 10px;
 }
 
+div.stats > h3 {
+  text-decoration: underline;
+  padding-bottom: 15px;
+}
+
+div.leaderboard > h3 {
+  text-decoration: underline;
+  padding-bottom: 15px;
+}
+
 div.stats > p {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -95,4 +107,8 @@ ul.user-info > li > h3 > a {
 
 ul.user-courses > li > h3 > a {
   display: inline;
+}
+
+ul.leaders > li {
+  padding: 15px;
 }
