@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   resources :user_card_histories, only: [:create, :update, :destroy]
 
   resources :friendships, only: [:create, :destroy]
+
+  resources :comments, except: [:index, :new]
 end

@@ -21,9 +21,8 @@
 
 <div class="comments">
   <h2>Student Thoughts:</h2>
-  <ul class=comments>
-<%# this is where course comments will go %>
-  </ul>
+  <%= render partial: 'comments/index', locals: { comments: @comments } %>
+  <%= render partial: 'comments/new' , locals: { course: @course } %>
 </div>
 <div class="course-cards">
     <%= render partial: "cards/index", locals: { cards: @cards } %>

@@ -1,0 +1,10 @@
+<form class="new-comment" action="<%= comments_url %>" method="Post">
+  <%= auth_token %>
+  <input type="hidden" name="comment[course_id]" value="<%= course.id %>">
+
+  <label for="comment-content">Comment</label>
+  <textarea id="comment-content"
+            name="comment[content]"></textarea>
+
+  <input type="submit">
+</form>

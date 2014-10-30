@@ -37,6 +37,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @cards = @course.cards
+    @comments = Comment.where(course_id: @course.id)
     render :show
   end
 

@@ -137,7 +137,7 @@ div.show-course-header form.new-enrollment {
 
 div.comments {
   border-right: 1px solid black;
-  width: 300px;
+  width: 400px;
   float: left;
   height: 800px;
   text-align: center;
@@ -171,4 +171,11 @@ tr:nth-child(1) {
 
 tr:nth-child(even) {
   background-color: beige;
+}
+
+ul.comments-index > li {
+  margin: 10px;
+  padding:5px;
+  border: 1px solid #15a1ec;
+  border-radius: 5px;
 }

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :courses, through: :enrollments
   has_many :user_card_histories, dependent: :destroy
   has_many :cards, through: :user_card_histories
+  has_many :comments
 
   has_many(
     :sought_friendships,
@@ -47,7 +48,7 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-  
+
   def friends
     # for now, friendship is automatic; need to make requestees confirm”
     requested_friends + friends_requesting
