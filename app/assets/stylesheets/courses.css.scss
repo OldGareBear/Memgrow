@@ -78,7 +78,7 @@ div.show-course-header > form.button_to {
 }
 
 div.categories {
-  height: 800px;
+  height: 700px;
   width: 200px;
   border-right: 1px solid black;
   text-align: center;
@@ -89,13 +89,21 @@ div.categories {
 div.course-list {
   float: left;
   height: 799px;
-  padding: 30px;
-  width: 600px;
+//  padding: 30px;
+  width: 735px;
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 ul.course-list {
   float: left;
-  width: 799px;
+  width: 735px;
+}
+
+ul.course-list:after{
+ content:"";
+ display: block;
+ clear: both;
 }
 
 ul.course-list:after {
