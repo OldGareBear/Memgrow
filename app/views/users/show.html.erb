@@ -37,7 +37,7 @@
   <ul class="user-courses">
     <% @user.courses.each do |course| %>
     <li>
-      <%= course.title %>
+      <h3><%= course.title %> (<%= course.cards.count %> Cards)</h3>
       <a href="<%= course_card_url(course.id, course.cards.first.id) %>">Study</a>
     </li>
     <% end %>

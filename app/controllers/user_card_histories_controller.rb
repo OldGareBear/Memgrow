@@ -2,7 +2,7 @@ class UserCardHistoriesController < ApplicationController
   # def create
   # end
 
-  def update
+  def update # refactor this ish baby!
     @history = UserCardHistory.find(params[:id])
 
     pinyin_answer = params[:answer][:pinyin]
@@ -27,7 +27,17 @@ class UserCardHistoriesController < ApplicationController
     )
     @history.save!
 
-    redirect_to user_url(current_user)
+    # logic for redirecting to the right card (or maybe course if all cards
+    # have been studied)
+    course_cards = card.course.cards
+    current_index = course_cards.index(card)
+    next_card = course_cards[current_index + 1]
+
+    if next_card
+      redirect_to course_card_url(card.course, next_card) # show next card
+    else
+      redirect_to user_url(current_user)
+    end
   end
 
   def destroy
