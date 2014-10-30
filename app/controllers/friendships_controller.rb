@@ -1,4 +1,6 @@
 class FriendshipsController < ApplicationController
+  before_filter :require_sign_in!
+
   def create
     requestee = current_user
     requester = User.find(params[:id])
@@ -6,7 +8,7 @@ class FriendshipsController < ApplicationController
 
     friendship.save
 
-    redirect_to user_url(requestee)
+    redirect_to user_url(params[:id])
   end
 
   def destroy

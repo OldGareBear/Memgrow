@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_filter :require_sign_in!
+
   def create
     @course = Course.new(course_params)
     @course.author_id = current_user.id

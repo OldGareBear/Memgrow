@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_sign_in!, except: [:new]
+
   def create
     @user = User.new(user_params)
 
