@@ -6,7 +6,6 @@ class Friendship < ActiveRecord::Base
     class_name: "User",
     foreign_key: :requester_id,
     primary_key: :id,
-    inverse_of: :subs
   )
 
   belongs_to(
@@ -14,7 +13,6 @@ class Friendship < ActiveRecord::Base
     class_name: "User",
     foreign_key: :requestee_id,
     primary_key: :id,
-    inverse_of: :subs
   )
   
   

@@ -4,6 +4,8 @@
     <li><h3>Friends</h3></li>
     <li><h3><%= @cards_count %> Words</h3></li>
     <li><h3><%= @user.points %> Points</h3></li>
+		
+		<% unless current_user.friends.include?(@user) || current_user == @user %>
     <li>
       <form class="create-friend" action="<%= friendships_url %>" method="Post">
         <%= auth_token %>
@@ -11,6 +13,7 @@
         <input type="submit" value="Add Friend">
       </form>
     </li>
+		<% end %>
   </ul>
 </div>
 

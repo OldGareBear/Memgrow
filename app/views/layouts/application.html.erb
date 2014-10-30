@@ -15,6 +15,7 @@
 
     <% if current_user %>
     <ul class="navbar">
+			<li>Friend Requests</li>
       <li><a href="<%= courses_url %>">Browse</a></li>
       <li><a href="<%= new_course_url %>">Create Course</a></li>
       <li><%= button_to "Log out",

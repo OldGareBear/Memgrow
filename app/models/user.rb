@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
     class_name: "Friendship",
     foreign_key: :requester_id,
     primary_key: :id,
-    inverse_of: :requester
   )
 
   has_many(
@@ -21,11 +20,10 @@ class User < ActiveRecord::Base
     class_name: "Friendship",
     foreign_key: :requestee_id,
     primary_key: :id,
-    inverse_of: :requestee
   )
 
-  has_many :sought_friends, through: :friendships
-  has_many :accepted_friends, through: :accepted_friendships
+  has_many :requested_friends, through: :sought_friendships, source: :requestee
+  has_many :friends_requesting, through: :accepted_friendships, source: :requester
 
   attr_reader :password
 
@@ -48,6 +46,11 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+  
+  def friends
+    # for now, friendship is automatic; need to make requestees confirm”
+    requested_friends + friends_requesting
   end
 
   private
