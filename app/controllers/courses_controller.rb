@@ -60,6 +60,18 @@ class CoursesController < ApplicationController
     redirect_to courses_url
   end
 
+  def calc_stats(course)
+    correct = 0
+    incorrect = 0
+
+    course.each do |card|
+      correct += card.times_right
+      incorrect += card.times_wrong
+    end
+
+    [correct, incorrect]
+  end
+
   private
 
   def course_params

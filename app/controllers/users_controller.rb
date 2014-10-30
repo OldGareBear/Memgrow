@@ -33,6 +33,8 @@ class UsersController < ApplicationController
     end
 
     @cards_count = cards_count
+
+    @cards_studied, @study_errors = calc_stats(@user)
     render :show
   end
 
@@ -60,5 +62,17 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def calc_stats(user)
+    correct = 0
+    incorrect = 0
+
+    user.user_card_histories.each do |card|
+      correct += card.times_right
+      incorrect += card.times_wrong
+    end
+
+    [incorrect + correct, incorrect]
   end
 end

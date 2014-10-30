@@ -13,16 +13,17 @@ class UserCardHistoriesController < ApplicationController
 
     if card.pinyin == pinyin_answer && card.english == english_answer
       times_right = @history.times_right + 1
+      user.points += 1
+      user.save!
+      last_studied = Time.now
     else
       times_wrong = @history.times_wrong + 1
     end
 
-    last_studied = Time.now
-
     @history.update(
       times_right: times_right || @history.times_right,
       times_wrong: times_wrong || @history.times_wrong,
-      last_studied: last_studied
+      last_studied: last_studied || @history.last_studied
     )
     @history.save!
 

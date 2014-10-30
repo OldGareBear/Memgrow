@@ -1,10 +1,10 @@
 <div class="user-nav sub-header">
 	<h1><%= @user.username %></h1>
   <ul class="user-info">
-    <li><h3>Friends</h3></li>
+    <li><h3><%= @user.friends.count %> Friends</h3></li>
     <li><h3><%= @cards_count %> Words</h3></li>
     <li><h3><%= @user.points %> Points</h3></li>
-		
+
 		<% unless current_user.friends.include?(@user) || current_user == @user %>
     <li>
       <form class="create-friend" action="<%= friendships_url %>" method="Post">
@@ -19,6 +19,13 @@
 
 <div class="stats">
   <h3>Stats</h3>
+  <% if current_user.friends.include?(@user) || current_user == @user %>
+  <%= render partial: "stats", locals: { user: @user,
+                                         cards_studied: @cards_studied,
+                                         study_errors: @study_errors } %>
+  <% else %>
+  <%= render "blocked" %>
+  <% end %>
 </div>
 
 <div class="leaderboard">
