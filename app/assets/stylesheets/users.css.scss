@@ -4,7 +4,7 @@
 
 div.user-show {
   width: 100%;
-  min-width: 700px;
+  min-width: 900px;
 }
 
 form.new-user {
@@ -26,7 +26,8 @@ form.new-user > input {
 }
 
 div.user-nav {
-  height: 125px;
+  height: 200px;
+  min-width: 1000px;
 }
 
 div.user-nav > h1 {
@@ -64,9 +65,8 @@ div.user-courses {
   float: left;
 }
 
-div.user-courses > h2 {
+div.user-courses > h1 {
   padding: 15px;
-  text-decoration: underline;
 }
 
 div.user-courses > ul > li {
@@ -79,8 +79,9 @@ div.user-courses > ul > li > a {
 
 ul.user-info {
   float: right;
-  margin-right: 25px;
-  width: 450px;
+//  margin-right: 25px;
+  width: 700px;
+  min-width: 500px;
 }
 
 ul.user-info > li {
@@ -88,20 +89,14 @@ ul.user-info > li {
   padding: 15px;
 }
 
-div.stats > h2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+div.stats > h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
-div.stats > h3 {
-  text-decoration: underline;
-  padding-bottom: 15px;
+div.leaderboard > h1 {
   padding-top: 40px;
-}
-
-div.leaderboard > h3 {
-  text-decoration: underline;
-  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 div.stats > p {
@@ -119,7 +114,23 @@ ul.user-courses > li > h3 > a {
 }
 
 ul.leaders > li {
-  padding: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+ul.leaders > li:nth-child(1) {
+  padding: 10px;
+  border: 2px solid gold;
+}
+
+ul.leaders > li:nth-child(2) {
+  padding: 10px;
+  border: 2px solid silver;
+}
+
+ul.leaders > li:nth-child(3) {
+  padding: 10px;
+  border: 2px solid orange;
 }
 
 a.facebook-login {

@@ -2,9 +2,12 @@
 <div class="user-nav sub-header">
 	<h1><%= @user.username %></h1>
   <ul class="user-info">
+    <li><%= image_tag "friends.png", size: "60x60" %></li>
     <li><h3><%= @user.friends.count %>
       <a href="<%= user_friendships_url(@user) %>">Friends</a></h3></li>
+    <li><%= image_tag "baby_panda.png", size: "60x60" %></li>
     <li><h3><%= @cards_count %> Words</h3></li>
+    <li><%= image_tag "star.png", size: "60x60" %></li>
     <li><h3><%= @user.points %> Points</h3></li>
 
 		<% unless current_user.friends.include?(@user) || current_user == @user %>
@@ -20,7 +23,8 @@
 </div>
 
 <div class="stats">
-  <h3>Stats</h3>
+
+  <h1><%= image_tag "stats.png", size: "40x40" %>  Stats</h1>
   <% if current_user.friends.include?(@user) || current_user == @user %>
   <%= render partial: "stats", locals: { user: @user,
                                          cards_studied: @cards_studied,
@@ -31,7 +35,8 @@
 </div>
 
 <div class="user-courses">
-  <h2><%= @user.username %>'s Courses</h2>
+
+  <h1><%= image_tag "course.png", size: "40x40" %> <%= @user.username %>'s Courses</h1>
   <ul class="user-courses">
     <% @user.courses.each do |course| %>
     <li>
@@ -45,8 +50,7 @@
 </div>
 
 <div class="leaderboard">
-  <h3>Leaderboard</h3>
-
+  <h1><%= image_tag "trophy.png", size: "40x40" %> Leaders</h1>
   <ul class="leaders">
   <% i = 1 %>
   <% @leaders.each do |leader| %>
