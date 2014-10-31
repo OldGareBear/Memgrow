@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializejson
-//= require underscore
-//= require backbone
-//= require marked
+// require underscore
+// require backbone
+// require marked
 // require_tree ./models
 // require_tree ./collections
 // We need templates to required before the views, because JST needs
