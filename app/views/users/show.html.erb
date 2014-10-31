@@ -1,3 +1,4 @@
+<div class="user-show">
 <div class="user-nav sub-header">
 	<h1><%= @user.username %></h1>
   <ul class="user-info">
@@ -29,6 +30,20 @@
   <% end %>
 </div>
 
+<div class="user-courses">
+  <h2><%= @user.username %>'s Courses</h2>
+  <ul class="user-courses">
+    <% @user.courses.each do |course| %>
+    <li>
+      <h3><a href="<%= course_url(course) %>"><%= course.title %></a>
+        (<%= course.cards.count %> Cards)
+      </h3>
+      <a href="<%= course_card_url(course.id, course.cards.first.id) %>">Study</a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
 <div class="leaderboard">
   <h3>Leaderboard</h3>
 
@@ -43,16 +58,4 @@
 
 </div>
 
-<div class="user-courses">
-  <h2><%= @user.username %>'s Courses</h2>
-  <ul class="user-courses">
-    <% @user.courses.each do |course| %>
-    <li>
-      <h3><a href="<%= course_url(course) %>"><%= course.title %></a>
-        (<%= course.cards.count %> Cards)
-      </h3>
-      <a href="<%= course_card_url(course.id, course.cards.first.id) %>">Study</a>
-    </li>
-    <% end %>
-  </ul>
 </div>

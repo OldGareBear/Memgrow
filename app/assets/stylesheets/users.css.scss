@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.user-show {
+  width: 100%;
+  min-width: 700px;
+}
+
 form.new-user {
   margin: 30px auto;
   width: 200px;
@@ -21,7 +26,6 @@ form.new-user > input {
 }
 
 div.user-nav {
-//  border: 1px solid black;
   height: 125px;
 }
 
@@ -34,16 +38,17 @@ div.user-nav > h1 {
 
 div.stats {
   border-right: 1px solid black;
-  width: 200px;
+  min-width: 200px;
   float: left;
   height: 800px;
   text-align: center;
   padding: 15px;
+  width: 22%;
 }
 
 div.leaderboard {
   border-left: 1px solid black;
-  width: 200px;
+  width: 22%;
   float: right;
   height: 800px;
   text-align: center;
@@ -51,10 +56,12 @@ div.leaderboard {
 }
 
 div.user-courses {
-//  border-top: 1px solid black;
+  width: 44%;
   height: 800px;
   text-align: center;
   padding-top: 20px;
+  margin:0;
+  float: left;
 }
 
 div.user-courses > h2 {

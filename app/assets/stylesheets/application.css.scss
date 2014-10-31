@@ -30,7 +30,6 @@ html {
 body {
   font-family: sans-serif;
   height: 100%;
-  width: 1000px;
 }
 
 div.header {
@@ -58,25 +57,41 @@ span.logo {
 }
 
 ul.navbar {
+  min-width: 600px;
   display: block;
-	float: right;
+  left: 400px;
+  position: absolute;
 }
 
 ul.navbar > li {
   display: block;
   float: left;
-  padding: 10px;
+  padding: 5px;
+  margin: 5px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
 }
 
 div.container {
   min-height: 700px;
 }
 
+form.button_to > div > input {
+  color: white;
+}
+
 form.button_to {
   display: block;
   width: 50px;
+  height: 8px;
   float: right;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+ul.navbar > li > a {
+  color: white;
 }
 
 a {
