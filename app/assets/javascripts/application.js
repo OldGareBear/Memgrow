@@ -12,16 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.serializeJSON
+//= require jquery.serializejson
 //= require underscore
 //= require backbone
 //= require marked
-//= require todo
-//= require_tree ./models
-//= require_tree ./collections
+// require_tree ./models
+// require_tree ./collections
 // We need templates to required before the views, because JST needs
 // to be defined when we define the view prototype's `template`
 // property.
-//= require_tree ../templates
-//= require_tree ./views
-//= require_tree ./routers
+// require_tree ../templates
+// require_tree ./views
+// require_tree ./routers

@@ -70,6 +70,8 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    figaro (1.0.0)
+      thor (~> 0.14)
     formatador (0.2.5)
     guard (2.7.0)
       formatador (>= 0.2.4)
@@ -229,6 +231,7 @@ DEPENDENCIES
   ejs
   factory_girl_rails
   faker
+  figaro
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
