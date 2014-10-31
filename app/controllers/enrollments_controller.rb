@@ -10,7 +10,7 @@ class EnrollmentsController < ApplicationController
       course = Course.find(params[:enrollment][:course_id])
       create_user_card_history(course)
 
-      redirect_to course_url(@enrollment.course_id)
+      redirect_to courses_url
     else # should never fire, really
       flash[:errors] = @enrollment.errors.full_messages
       redirect_to course_url(@enrollment.course_id)
