@@ -4,6 +4,16 @@
 
 <ul class="friends-list">
   <% @user.friends.each do |friend| %>
-  <li><a href="<%= user_url(friend) %>"><%= friend.username %></a></li>
+  <li>
+		<% friendship = 
+      Friendship.find_by_requester_id_and_requestee_id(@user.id, friend.id) ||
+      Friendship.find_by_requester_id_and_requestee_id(friend.id, @user.id) %>
+		<a href="<%= user_url(friend) %>"><%= friend.username %></a>
+		<form method="Post" action="<%= friendship_url(friendship.id) %>">
+			<%= auth_token %>
+			<input type="hidden" name="_method" value="Delete">
+			<input type="submit" value="Unfriend">
+		</form>
+	</li>
   <% end %>
 </ul>
