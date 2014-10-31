@@ -30,5 +30,7 @@ module Memgrow
 
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    
+    config.assets.paths << "app/assets/templates"
   end
 end

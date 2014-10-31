@@ -12,6 +12,10 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @friend = User.find(params[:friend_id]) # send up from the form
+    
+    @friendship = User.find_by_requester_id_and_requested_id() #
   end
 
   def index
