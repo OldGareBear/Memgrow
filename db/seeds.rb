@@ -6,13 +6,76 @@
 #   cities = City.create([ name: 'Chicago' ,  name: 'Copenhagen' ])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!( email: "kate@kate.com", password: "password", username: "Kate")
-User.create!( email: "gary@gary.com", password: "password", username: "Gary")
-User.create!( email: "colin@colin.colin", password: "password", username: "Colin")
-User.create!( email: "dave@dave.com", password: "password", username: "Dave")
-User.create!( email: "steve@steve.com", password: "password", username: "Steve")
-User.create!( email: "dom@dom.com", password: "password", username: "Dom")
+User.create!( email: "kate@kate.com",
+              password: "password",
+              username: "Kate",
+              points: 100_000)
+User.create!( email: "gary@gary.com",
+              password: "password",
+              username: "Gary",
+              points: 1000)
+User.create!( email: "colin@colin.colin",
+              password: "password",
+              username: "Colin",
+              points: 995)
+User.create!( email: "dave@dave.com",
+              password: "password",
+              username: "Dave",
+              points: 437)
+User.create!( email: "steve@steve.com",
+              password: "password",
+              username: "Steve",
+              points: 762)
+User.create!( email: "dom@dom.com",
+              password: "password",
+              username: "Dom",
+              points: 11)
 
+Friendship.create!( requester_id: 1,
+                    requestee_id: 2,
+                    status: "pending")
+Friendship.create!( requester_id: 2,
+                    requestee_id: 3,
+                    status: "pending")
+Friendship.create!( requester_id: 3,
+                    requestee_id: 4,
+                    status: "pending")
+Friendship.create!( requester_id: 4,
+                    requestee_id: 5,
+                    status: "pending")
+Friendship.create!( requester_id: 5,
+                    requestee_id: 6,
+                    status: "pending")
+Friendship.create!( requester_id: 4,
+                    requestee_id: 2,
+                    status: "pending")
+Friendship.create!( requester_id: 3,
+                    requestee_id: 5,
+                    status: "pending")
+Friendship.create!( requester_id: 4,
+                    requestee_id: 6,
+                    status: "pending")
+Friendship.create!( requester_id: 1,
+                    requestee_id: 3,
+                    status: "pending")
+Friendship.create!( requester_id: 4,
+                    requestee_id: 1,
+                    status: "pending")
+Friendship.create!( requester_id: 5,
+                    requestee_id: 2,
+                    status: "pending")
+Friendship.create!( requester_id: 6,
+                    requestee_id: 3,
+                    status: "pending")
+Friendship.create!( requester_id: 2,
+                    requestee_id: 6,
+                    status: "pending")
+Friendship.create!( requester_id: 1,
+                    requestee_id: 5,
+                    status: "pending")
+Friendship.create!( requester_id: 1,
+                    requestee_id: 6,
+                    status: "pending")
 
 Course.create!( title: "Fruits and Veggies",
   category: "Food",
@@ -77,3 +140,22 @@ Card.create!( course_id: "4",
   character: "椅子",
   pinyin: "yizi",
   english: "chair" )
+
+Enrollment.create!(user_id: 1, course_id: 1)
+Enrollment.create!(user_id: 1, course_id: 2)
+Enrollment.create!(user_id: 1, course_id: 3)
+Enrollment.create!(user_id: 2, course_id: 4)
+Enrollment.create!(user_id: 2, course_id: 1)
+Enrollment.create!(user_id: 2, course_id: 2)
+Enrollment.create!(user_id: 3, course_id: 3)
+Enrollment.create!(user_id: 3, course_id: 4)
+Enrollment.create!(user_id: 3, course_id: 1)
+Enrollment.create!(user_id: 4, course_id: 2)
+Enrollment.create!(user_id: 4, course_id: 3)
+Enrollment.create!(user_id: 4, course_id: 4)
+Enrollment.create!(user_id: 5, course_id: 1)
+Enrollment.create!(user_id: 5, course_id: 2)
+Enrollment.create!(user_id: 5, course_id: 3)
+Enrollment.create!(user_id: 6, course_id: 4)
+Enrollment.create!(user_id: 6, course_id: 1)
+Enrollment.create!(user_id: 6, course_id: 2)

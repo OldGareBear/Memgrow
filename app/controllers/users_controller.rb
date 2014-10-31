@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @cards_studied, @study_errors = calc_stats(@user)
 
     # generate the leaderboard
-    @leaders = @user.friends.sort_by(&:points)[0, 10]
+    @leaders = @user.friends.sort_by(&:points).reverse[0, 10]
 
     render :show
   end
