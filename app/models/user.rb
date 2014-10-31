@@ -34,6 +34,20 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.find_or_create_by_fb_auth_hash(auth)
+    omniauth_id = auth['uid'] + auth['provider']
+    user = User.find_by_omniauth_id(omniauth_id)
+    return user if user
+
+    fake_name = auth["info"].name
+    fake_email = fake_name + "@"
+    user = User.create!(omniauth_id: omniauth_id,
+                        email: fake_email,
+                        password: omniauth_id,
+                        username: fake_name)
+    return user
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
