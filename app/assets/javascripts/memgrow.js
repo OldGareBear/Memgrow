@@ -4,14 +4,8 @@ window.Memgrow = {
   Views: {},
   Routers: {},
   initialize: function() {
-		alert("I am gay!");
-    new Memgrow.Routers.Router({
-      $rootEl: $("div.user-show-content")
-    });
+		alert("Hello from Backbone!");
+    new Memgrow.Routers.Router();
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Memgrow.initialize();
-});
