@@ -1,16 +1,15 @@
-Memgrow.Routers.Router = Back.Router.extend({
+Memgrow.Routers.Router = Backbone.Router.extend({
   initialize: function() {
     this.$rootEl = $('.content')
   },
 	
 	routes: {
-		"users/:id": "userShow"
+		"": "userShow"
 	},
 	
-	userShow: function(id) {
+	userShow: function() {
 		view = new Memgrow.Views.UserShow({
-			this.collection: Memgrow.Collections.users,
-			this.model: Memgrow.Collections.users.get(id)
+			model: Memgrow.Models.user
 		})
 		
 		this.$rootEl.html(view.render().$el)
