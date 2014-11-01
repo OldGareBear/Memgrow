@@ -9,7 +9,7 @@ Memgrow.Routers.Router = Back.Router.extend({
 	
 	userShow: function(id) {
 		view = new Memgrow.Views.UserShow({
-			this.collection: Memgrow.Collections.users;
+			this.collection: Memgrow.Collections.users,
 			this.model: Memgrow.Collections.users.get(id)
 		})
 		

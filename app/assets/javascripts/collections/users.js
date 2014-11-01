@@ -10,7 +10,7 @@ Memgrow.Collections.Users = Backbone.Collection.extend({
 		if (user) {
 			user.fetch();
 		} else {
-			user = new Memgrow.Models.User( id: id )
+			user = new Memgrow.Models.User({ id: id })
 			user.fetch({
 				success: function() {
 					users.add(user);
@@ -22,4 +22,4 @@ Memgrow.Collections.Users = Backbone.Collection.extend({
 	}
 });
 
-Memgrow.Collections.users = Backbone.Collection.Users();
+Memgrow.Collections.users = Memgrow.Collections.Users();

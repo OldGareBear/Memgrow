@@ -1,4 +1,4 @@
-Memgrow.Model.User = Backbone.Model.extend({
+Memgrow.Models.User = Backbone.Model.extend({
 	urlRoot: "/api/users",
 	
 	parse: function(jsonResp) {
