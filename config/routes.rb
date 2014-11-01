@@ -22,9 +22,10 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'oauth_callbacks#facebook'
   
   
-  namespace :api, :defaults => { :format => :json } do
+  namespace :api, defaults: { format: :json } do
     
-    resources :courses do
+    resources :users, except: [:new, :edit]
+    resources :courses, except: [:new, :edit] do
       resources :cards, except: [:new, :edit]
     end
     resources :enrollments, only: [:create, :destroy]
