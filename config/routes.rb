@@ -23,16 +23,13 @@ Rails.application.routes.draw do
   
   
   namespace :api, :defaults => { :format => :json } do
-    resources :users do
-      resources :friendships, only: [:index]
-    end
+    
     resources :courses do
       resources :cards, except: [:new, :edit]
     end
     resources :enrollments, only: [:create, :destroy]
-    resource :session, only: [:create, :destroy]
     resources :user_card_histories, only: [:create, :update, :destroy]
-    resources :friendships, only: [:create, :destroy]
-    resources :comments, except: [:index, :new, :edit]
+    resources :friendships, only: [:create, :destroy, :index]
+    resources :comments, except: [:new, :edit]
   end
 end
