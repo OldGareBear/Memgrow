@@ -3,7 +3,7 @@ Memgrow.Model.User = Backbone.Model.extend({
 	
 	parse: function(jsonResp) {
 		if (jsonResp.courses) {
-			this.courses().set(jsonResp.courses;
+			this.courses().set(jsonResp.courses, {parse: true});
 			delete jsonResp.courses;
 		}
 		
@@ -12,7 +12,8 @@ Memgrow.Model.User = Backbone.Model.extend({
 	
 	courses: function() {
 		if (!this._courses) {
-			this._courses = new Memgrow. Collections.UserCourses([], {
+			// will have to build new collection for UserCourses
+			this._courses = new Memgrow.Collections.UserCourses([], {
 				user: this
 			});
 		}
