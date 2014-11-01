@@ -4,6 +4,7 @@ window.Memgrow = {
   Views: {},
   Routers: {},
   initialize: function() {
+		alert("hello from backbone!")
     new PostApp.Routers.Router({
       $rootEl: $("#content")
     });
