@@ -9,7 +9,6 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	
 	dashboardShow: function() {
 		Memgrow.Models.user.fetch();
-		
 		view = new Memgrow.Views.DashboardShow({ 
 			model: Memgrow.Models.user 
 		});

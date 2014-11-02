@@ -6,6 +6,10 @@ Memgrow.Models.User = Backbone.Model.extend({
 			this.courses().set(jsonResp.courses, { parse: true });
 			delete jsonResp.courses;
 		}
+		if (json.Resp.user_card_histories) {
+			this.user_card_histories().set(jsonResp.user_card_histories,);
+			delete jsonResp.user_card_histories;
+		}
 
 		return jsonResp;
 	},
@@ -17,11 +21,15 @@ Memgrow.Models.User = Backbone.Model.extend({
 			});
 		}
 		return this._courses
-	}// ,
-//
-// 	userCardHistories: function() {
-//
-// 	}
+	},
+
+	userCardHistories: function() {
+		this.user_card_histories = new Memgrow.Collections.UserCardHistories([], {
+			user: this
+		});
+	}
+	return this.user_card_histories
+	}
 });
 
-Memgrow.Models.user = new Memgrow.Models.User
+Memgrow.Models.user = new Memgrow.Models.User();
