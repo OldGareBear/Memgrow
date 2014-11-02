@@ -28,8 +28,9 @@ Rails.application.routes.draw do
     
     resources :users, except: [:new, :edit]
     resources :courses, except: [:new, :edit] do
-      resources :cards, except: [:new, :edit]
+      resources :cards, only: [:index]
     end
+    resources :cards, except: [:new, :edit, :index]
     resources :enrollments, only: [:create, :destroy]
     resources :user_card_histories, only: [:create, :update, :destroy]
     resources :friendships, only: [:create, :destroy, :index]

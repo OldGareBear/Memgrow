@@ -1,5 +1,5 @@
 Memgrow.Models.User = Backbone.Model.extend({
-	urlRoot: "/api/users",
+	url: "/api/dashboard",
 	
 	parse: function(jsonResp) {
 		if (jsonResp.courses) {
@@ -12,13 +12,16 @@ Memgrow.Models.User = Backbone.Model.extend({
 
 	courses: function() {
 		if (!this._courses) {
-			// will have to build new collection for UserCourses
 			this._courses = new Memgrow.Collections.UserCourses([], {
 				user: this
 			});
 		}
 		return this._courses
-	}
+	}// ,
+//
+// 	userCardHistories: function() {
+//
+// 	}
 });
 
-// Memgrow.Models.user = new Memgrow.Models.User
+Memgrow.Models.user = new Memgrow.Models.User

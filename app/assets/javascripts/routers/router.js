@@ -4,12 +4,15 @@ Memgrow.Routers.Router = Backbone.Router.extend({
   },
 	
 	routes: {
-		"": "userShow"
+		"": "dashboardShow"
 	},
 	
-	userShow: function(id) {
-		user = Memgrow.Collections.users.getOrFetch(id);
-		view = new Memgrow.Views.UserShow({ model: user });
+	dashboardShow: function() {
+		Memgrow.Models.user.fetch();
+		
+		view = new Memgrow.Views.DashboardShow({ 
+			model: Memgrow.Models.user 
+		});
 		
 		this.$rootEl.html(view.render().$el); // replace with swap view
 	}

@@ -4,7 +4,7 @@ Memgrow.Collections.UserCourses = Backbone.Collection.extend({
   },
 	
 	url: function() {
-		return this.user.url() + "/courses"
+		return this.user.url() + "/courses";
 	},
 	
 	model: Memgrow.Models.Course
