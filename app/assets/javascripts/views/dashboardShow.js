@@ -1,9 +1,10 @@
 Memgrow.Views.DashboardShow = Backbone.View.extend({
+	template: JST['dashboard/show'],
 	
-	template: JST["dashboard/show"],
+	className: 'user-show',
 	
 	render: function() {
-		console.log(this.model.get("username"))
+		console.log(this.model)
 		content = this.template({ 
 			current_user: this.model 
 		});

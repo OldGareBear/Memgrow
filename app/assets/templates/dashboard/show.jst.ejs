@@ -1,1 +1,43 @@
-<%= current_user.escape("username") %>
+<div class="user-nav sub-header">
+	<h1><%= current_user.escape("username") %></h1>
+  <ul class="user-info">
+    <li>friends.png image</li>
+    <li><h3><%= current_user.friends.count %>
+      <a href="#">Friends</a></h3></li>
+    <li>baby_panda.png image</li>
+    <li><h3><%= @cards_count %> Words</h3></li>
+    <li>star.png image</li>
+    <li><h3><%= current_user.escape("points") %> Points</h3></li>
+  </ul>
+</div>
+
+<div class="stats">
+
+  <h1>stats.png image Stats</h1>
+
+  <div>Render user stats here</div>
+
+</div>
+
+<div class="user-courses">
+
+  <h1>course.png image <%= current_user.escape("username") %>'s Courses</h1>
+  <ul class="user-courses">
+    <% current_user.courses.each(function(course) { %>
+    <li>
+      <h3><a href="#"><%= course.escape("title") %></a>
+        (<%= course.cards.length %> Cards)
+      </h3>
+      <a href="#">Study</a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+
+<div class="leaderboard">
+  <h1>trophy.png image Leaders</h1>
+  <ol class="leaders">
+  	<li>render leaders here</li>
+  </ol>
+
+</div>

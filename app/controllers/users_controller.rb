@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
-  before_filter :require_sign_in!, except: [:new]
+  before_filter :require_sign_in!, except: [:new, :create]
 
   def create
     @user = User.new(user_params)
 
     at_index = @user.email.index("@")
     @user.username = @user.email[0, at_index]
+    @user.points = 0
 
     if @user.save!
       sign_in(@user)
       redirect_to dashboard_url
     else
-      fail
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
