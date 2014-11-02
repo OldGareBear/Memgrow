@@ -35,6 +35,14 @@
     <% end %>
 
 	</div>
+	
+	<% if flash[:errors] %>
+	  <ul class="error-messages">
+	    <% flash[:errors].each do |error| %>
+	      <li><%= error %></li>
+	    <% end %>
+	  </ul>
+	<% end %>
 
 <%= yield %>
 

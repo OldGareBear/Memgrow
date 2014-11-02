@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
     if @user.save!
       sign_in(@user)
-      redirect_to user_url(@user)
+      redirect_to dashboard_url
     else
+      fail
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end

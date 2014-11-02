@@ -7,11 +7,10 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		"": "userShow"
 	},
 	
-	userShow: function() {
-		view = new Memgrow.Views.UserShow({
-			model: Memgrow.Models.user
-		})
+	userShow: function(id) {
+		user = Memgrow.Collections.users.getOrFetch(id);
+		view = new Memgrow.Views.UserShow({ model: user });
 		
-		this.$rootEl.html(view.render().$el)
+		this.$rootEl.html(view.render().$el); // replace with swap view
 	}
 });

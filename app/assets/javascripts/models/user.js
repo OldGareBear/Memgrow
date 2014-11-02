@@ -21,4 +21,4 @@ Memgrow.Models.User = Backbone.Model.extend({
 	}
 });
 
-Memgrow.Models.user = Memgrow.Models.User
+// Memgrow.Models.user = new Memgrow.Models.User

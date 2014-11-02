@@ -21,8 +21,10 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback', to: 'oauth_callbacks#facebook'
   
+  get 'dashboard' => 'static_pages#dashboard', as: "dashboard"
   
   namespace :api, defaults: { format: :json } do
+    get 'dashboard' => 'static_pages#dashboard', as: "dashboard"
     
     resources :users, except: [:new, :edit]
     resources :courses, except: [:new, :edit] do

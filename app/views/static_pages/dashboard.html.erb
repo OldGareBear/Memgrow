@@ -1,48 +1,37 @@
 <div class="user-show">
 <div class="user-nav sub-header">
-	<h1><%= @user.username %></h1>
+	<h1><%= current_user.username %></h1>
   <ul class="user-info">
     <li><%= image_tag "friends.png", size: "60x60" %></li>
-    <li><h3><%= @user.friends.count %>
-      <a href="<%= user_friendships_url(@user) %>">Friends</a></h3></li>
+    <li><h3><%= current_user.friends.count %>
+      <a href="<%= user_friendships_url(current_user) %>">Friends</a></h3></li>
     <li><%= image_tag "baby_panda.png", size: "60x60" %></li>
     <li><h3><%= @cards_count %> Words</h3></li>
     <li><%= image_tag "star.png", size: "60x60" %></li>
-    <li><h3><%= @user.points %> Points</h3></li>
-
-		<% unless current_user.friends.include?(@user) || current_user == @user %>
-    <li>
-      <form class="create-friend" action="<%= friendships_url %>" method="Post">
-        <%= auth_token %>
-				<input type="hidden" name="id", value="<%= @user.id %>">
-        <input type="submit" value="Add Friend">
-      </form>
-    </li>
-		<% end %>
+    <li><h3><%= current_user.points %> Points</h3></li>
   </ul>
 </div>
 
 <div class="stats">
 
   <h1><%= image_tag "stats.png", size: "40x40" %>  Stats</h1>
-  <% if current_user.friends.include?(@user) || current_user == @user %>
-  <%= render partial: "stats", locals: { user: @user,
+
+  <%= render partial: "users/stats", locals: { user: current_user,
                                          cards_studied: @cards_studied,
                                          study_errors: @study_errors } %>
-  <% else %>
-  <%= render "blocked" %>
-  <% end %>
+
 </div>
 
 <div class="user-courses">
 
-  <h1><%= image_tag "course.png", size: "40x40" %> <%= @user.username %>'s Courses</h1>
+  <h1><%= image_tag "course.png", size: "40x40" %> <%= current_user.username %>'s Courses</h1>
   <ul class="user-courses">
-    <% @user.courses.each do |course| %>
+    <% current_user.courses.each do |course| %>
     <li>
       <h3><a href="<%= course_url(course) %>"><%= course.title %></a>
         (<%= course.cards.count %> Cards)
       </h3>
+      <a href="<%= course_card_url(course.id, course.cards.first.id) %>">Study</a>
     </li>
     <% end %>
   </ul>
