@@ -23,7 +23,7 @@
           method: :delete,
           class: "log-out" %></li>
       <li>
-        <a href="<%= user_url(current_user) %>"><%=current_user.username %></a>
+        <a href="<%= dashboard_url %>"><%=current_user.username %></a>
       </li>
     </ul>
     <% else %>
@@ -35,7 +35,7 @@
     <% end %>
 
 	</div>
-	
+
 	<% if flash[:errors] %>
 	  <ul class="error-messages">
 	    <% flash[:errors].each do |error| %>

@@ -3,18 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 ul.friends-list {
   min-height: 700px;
+  display: block;
 }
 
 ul.friends-list > li {
   padding: 25px;
 }
 
-div.friends-index {
+div.friends-list {
   height: 125px;
 }
 
-div.friends-index > h1 {
-	display: block;
-	position: relative;
-	top: 25px;
+div.friends-list > h1 {
+  position: relative;
+  left: 25px;
+  top: 25px;
 }

@@ -7,6 +7,16 @@ Memgrow.Models.User = Backbone.Model.extend({
       delete jsonResp.courses;
 		}
 
+    if (jsonResp.friends) {
+      this.friends().set(jsonResp.friends, { parse: true });
+      delete jsonResp.friends;
+    }
+
+    if (jsonResp.leaders) {
+      this.leaders().set(jsonResp.leaders, { parse: true });
+      delete jsonResp.leaders;
+    }
+
 		return jsonResp;
 	},
 
@@ -15,7 +25,21 @@ Memgrow.Models.User = Backbone.Model.extend({
 			this._courses = new Memgrow.Collections.UserCourses([], {});
 		}
 		return this._courses
-	}
+	},
+
+  friends: function() {
+    if (!this._friends) {
+      this._friends = new Memgrow.Collections.Friends([], {});
+    }
+    return this._friends;
+  },
+
+  leaders: function() {
+    if (!this._leaders) {
+      this._leaders = new Memgrow.Collections.Leaders([], {});
+    }
+    return this._leaders;
+  }
 });
 
 Memgrow.Models.user = new Memgrow.Models.User;

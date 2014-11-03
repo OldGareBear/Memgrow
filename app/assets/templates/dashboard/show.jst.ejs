@@ -2,10 +2,10 @@
   <h1><%= current_user.escape("username") %></h1>
   <ul class="user-info">
     <li><img src="friends.png"></li>
-    <li><h3><%= current_user.escape("friends").length %>
-      <a href="#">Friends</a></h3></li>
-    <li><img src="baby-panda.png"> image</li>
-    <li><h3>Words</h3></li>
+    <li><h3><%= friends.length %>
+      <a href="#/friends"> Friends</a></h3></li>
+    <li><img src="baby-panda.png"></li>
+    <li><h3><%= current_user.escape("cards_count") %> Words</h3></li>
     <li><img src="star.png"></li>
     <li><h3><%= current_user.escape("points") %> Points</h3></li>
   </ul>
@@ -15,7 +15,14 @@
 
   <h1><img src="/stats.png"> Stats</h1>
 
-  <div>Render user stats here</div>
+  <h3>Cards Studied:</h3>
+  <p><%= current_user.get("cards_studied") %></p>
+
+  <h3>Errors:</h3>
+  <p><%= current_user.get("study_errors") %></p>
+
+  <h3>Accuracy:</h3>
+  <p><%= ((current_user.get("cards_studied") - current_user.get("study_errors")) / current_user.get("cards_studied") * 100)  || 0 %>%</p>
 
 </div>
 
@@ -23,14 +30,22 @@
 
   <h1><img src="course.png"> <%= current_user.escape("username") %>'s Courses</h1>
   <ul class="user-courses">
-
+    <% courses.each(function(course) { %>
+      <li>
+        <h3>
+          <a href=""><%= course.get("title") %></a>
+        </h3> <button class="study">Study</button>
+      </li>
+    <% }) %>
   </ul>
 </div>
 
 <div class="leaderboard">
   <h1><img src="trophy.png"> Leaders</h1>
   <ol class="leaders">
-    <li>render leaders here</li>
+    <% leaders.each(function(leader) { %>
+    <li><%= leader.escape("username") %> (<%= leader.escape("points") %>)</li>
+    <% }) %>
   </ol>
 
 </div>

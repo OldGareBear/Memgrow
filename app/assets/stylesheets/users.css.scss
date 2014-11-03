@@ -113,22 +113,22 @@ ul.user-courses > li > h3 > a {
   display: inline;
 }
 
-ul.leaders > li {
+ol.leaders > li {
   padding: 10px;
   margin-bottom: 5px;
 }
 
-ul.leaders > li:nth-child(1) {
+ol.leaders > li:nth-child(1) {
   padding: 10px;
   border: 2px solid gold;
 }
 
-ul.leaders > li:nth-child(2) {
+ol.leaders > li:nth-child(2) {
   padding: 10px;
   border: 2px solid silver;
 }
 
-ul.leaders > li:nth-child(3) {
+ol.leaders > li:nth-child(3) {
   padding: 10px;
   border: 2px solid orange;
 }
@@ -155,4 +155,14 @@ form.new-user > p {
   margin-bottom: 15px;
   margin-top: 30px;
   font-weight: bold;
+}
+
+button.study {
+  display: block;
+  padding: 5px 10px;
+  margin: 5px auto;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }

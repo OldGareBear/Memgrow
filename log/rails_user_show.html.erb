@@ -1,0 +1,53 @@
+<!-- <div class="user-show">
+<div class="user-nav sub-header">
+	<h1><%= current_user.username %></h1>
+  <ul class="user-info">
+    <li><%= image_tag "friends.png", size: "60x60" %></li>
+    <li><h3><%= current_user.friends.count %>
+      <a href="<%= user_friendships_url(current_user) %>">Friends</a></h3></li>
+    <li><%= image_tag "baby_panda.png", size: "60x60" %></li>
+    <li><h3><%= @cards_count %> Words</h3></li>
+    <li><%= image_tag "star.png", size: "60x60" %></li>
+    <li><h3><%= current_user.points %> Points</h3></li>
+  </ul>
+</div>
+
+<div class="stats">
+
+  <h1><%= image_tag "stats.png", size: "40x40" %>  Stats</h1>
+
+  <%= render partial: "users/stats", locals: { user: current_user,
+                                         cards_studied: @cards_studied,
+                                         study_errors: @study_errors } %>
+
+</div>
+
+<div class="user-courses">
+
+  <h1><%= image_tag "course.png", size: "40x40" %> <%= current_user.username %>'s Courses</h1>
+  <ul class="user-courses">
+    <% current_user.courses.each do |course| %>
+    <li>
+      <h3><a href="<%= course_url(course) %>"><%= course.title %></a>
+        (<%= course.cards.count %> Cards)
+      </h3>
+      <a href="<%= course_card_url(course.id, course.cards.first.id) %>">Study</a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="leaderboard">
+  <h1><%= image_tag "trophy.png", size: "40x40" %> Leaders</h1>
+  <ul class="leaders">
+  <% i = 1 %>
+  <% @leaders.each do |leader| %>
+    <li><%= i %>. <strong><%= leader.username %></strong>
+      (<%= leader.points %>)</li>
+    <% i += 1 %>
+  <% end %>
+  </ul>
+
+</div>
+
+</div> -->

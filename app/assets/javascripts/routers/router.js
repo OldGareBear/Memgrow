@@ -4,19 +4,49 @@ Memgrow.Routers.Router = Backbone.Router.extend({
   },
 
 	routes: {
-		"": "dashboardShow"
+		"": "dashboardShow",
+    "friends": "friendsIndex",
+    "study/:id": "studySession"
 	},
 
 	dashboardShow: function() {
 		Memgrow.Models.user.fetch();
     var user = Memgrow.Models.user;
+
     var courses = user.courses();
-    courses.fetch();
-		view = new Memgrow.Views.DashboardShow({
+    var friends = user.friends();
+    var leaders = user.leaders();
+
+		var view = new Memgrow.Views.DashboardShow({
 			model: user,
-      collection: user.courses
+      courses: courses,
+      friends: friends,
+      leaders: leaders
 		});
 
-		this.$rootEl.html(view.render().$el); // replace with swap view
-	}
+		this.swapView(view);
+	},
+
+  friendsIndex: function(){
+    Memgrow.Models.user.fetch();
+
+    var friends = Memgrow.Models.user.friends();
+    friends.fetch()
+
+    var view = new Memgrow.Views.FriendsIndex({
+      collection: friends
+    });
+
+    this.swapView(view);
+  },
+
+  studySession: function(id) {
+
+  },
+
+  swapView: function(view) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
+  }
 });

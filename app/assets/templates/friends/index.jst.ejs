@@ -1,0 +1,16 @@
+<div class="friends-list sub-header">
+  <h1>Your Friends</h1>
+</div>
+
+<ul class="friends-list">
+  <% friends.each(function(friend) { %>
+  <li>
+		<a href="#"><%= friend.escape("username") %></a>
+
+		<form method="Post" action="#">
+			<input type="submit" value="Unfriend">
+		</form>
+
+	</li>
+  <% }) %>
+</ul>
