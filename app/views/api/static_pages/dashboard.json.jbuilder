@@ -2,6 +2,7 @@ json.username current_user.username
 json.points current_user.points
 
 json.courses current_user.courses do |course|
+  json.id course.id
   json.title course.title
   json.category course.category
   json.author_id course.author_id

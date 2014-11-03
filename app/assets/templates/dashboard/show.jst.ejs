@@ -22,7 +22,8 @@
   <p><%= current_user.get("study_errors") %></p>
 
   <h3>Accuracy:</h3>
-  <p><%= ((current_user.get("cards_studied") - current_user.get("study_errors")) / current_user.get("cards_studied") * 100)  || 0 %>%</p>
+  <p><%= ((current_user.get("cards_studied") - current_user.get("study_errors")) /
+    current_user.get("cards_studied") * 100)  || 0 %>%</p>
 
 </div>
 
@@ -34,7 +35,8 @@
       <li>
         <h3>
           <a href=""><%= course.get("title") %></a>
-        </h3> <button class="study">Study</button>
+          | <%= course.get("category") %>
+        </h3> <a class="study" href="<%= "#/courses/" + course.escape("id") %>">Study</a>
       </li>
     <% }) %>
   </ul>
