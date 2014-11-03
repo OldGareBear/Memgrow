@@ -1,10 +1,10 @@
 Memgrow.Models.User = Backbone.Model.extend({
 	url: "/api/dashboard",
-	
+
 	parse: function(jsonResp) {
 		if (jsonResp.courses) {
 			this.courses().set(jsonResp.courses, { parse: true });
-			delete jsonResp.courses;
+      delete jsonResp.courses;
 		}
 
 		return jsonResp;
@@ -12,9 +12,7 @@ Memgrow.Models.User = Backbone.Model.extend({
 
 	courses: function() {
 		if (!this._courses) {
-			this._courses = new Memgrow.Collections.UserCourses([], {
-				user: this
-			});
+			this._courses = new Memgrow.Collections.UserCourses([], {});
 		}
 		return this._courses
 	}
