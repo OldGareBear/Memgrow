@@ -50,13 +50,10 @@ Memgrow.Models.User = Backbone.Model.extend({
   },
 
 	userCardHistories: function() {
-		if (!this._user_card_histories) {
-			this._user_card_histories = new Memgrow.Collections.UserCardHistories(
-				[],
-				{}
-			);
+		if (!this._userCardHistories) {
+			this._userCardHistories = new Memgrow.Collections.UserCardHistories([], {});
 		}
-		return this._user_card_histories;
+		return this._userCardHistories;
 	}
 });
 
