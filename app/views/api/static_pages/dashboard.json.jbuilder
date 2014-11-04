@@ -2,6 +2,13 @@ json.id current_user.id
 json.username current_user.username
 json.points current_user.points
 
+json.friends_pic image_path("friends.png")
+json.words_pic image_path("baby_panda.png")
+json.points_pic image_path("star.png")
+json.stats_pic image_path("stats.png")
+json.courses_pic image_path("course.png")
+json.leaders_pic image_path("trophy.png")
+
 json.courses current_user.courses do |course|
   json.id course.id
   json.title course.title

@@ -1,24 +1,34 @@
 <div class="user-nav sub-header">
-	
+
 	<form>
 		<input type="filepicker">
 	</form>
-	
+
   <h1><%= current_user.escape("username") %></h1>
   <ul class="user-info">
-    <li><img src="friends.png"></li>
+    <li>
+			<img src="<%= current_user.get("friends_pic") %>"
+				height="60" width="60">
+		</li>
     <li><h3><%= friends.length %>
       <a href="#/friends"> Friends</a></h3></li>
-    <li><img src="baby-panda.png"></li>
+    <li>
+			<img src="<%= current_user.get("words_pic") %>"
+				height="60" width="60">
+		</li>
     <li><h3><%= current_user.escape("cards_count") %> Words</h3></li>
-    <li><img src="star.png"></li>
+    <li>
+			<img src="<%= current_user.get("points_pic") %>"
+				height="60" width="60">
+		</li>
     <li><h3><%= current_user.escape("points") %> Points</h3></li>
   </ul>
 </div>
 
 <div class="stats">
 
-  <h1><img src="/stats.png"> Stats</h1>
+  <h1><img src="<%= current_user.get("stats_pic") %>" height="60" width="60">
+		Stats</h1>
 
   <h3>Cards Studied:</h3>
   <p><%= current_user.get("cards_studied") %></p>
@@ -34,7 +44,8 @@
 
 <div class="user-courses">
 
-  <h1><img src="course.png"> <%= current_user.escape("username") %>'s Courses</h1>
+  <h1><img src="<%= current_user.get("courses_pic") %>" height="60" width="60">
+		<%= current_user.escape("username") %>'s Courses</h1>
   <ul class="user-courses">
     <% courses.each(function(course) { %>
       <li>
@@ -48,7 +59,8 @@
 </div>
 
 <div class="leaderboard">
-  <h1><img src="trophy.png"> Leaders</h1>
+  <h1><img src="<%= current_user.get("leaders_pic") %>" height="60" width="60">
+		Leaders</h1>
   <ol class="leaders">
     <% leaders.each(function(leader) { %>
     <li><%= leader.escape("username") %> (<%= leader.escape("points") %>)</li>

@@ -19,9 +19,9 @@ module Memgrow
 
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
-    
+
     config.assets.paths << "app/assets/templates"
-    
-    config.filepicker_rails.api_key = "???"
+
+    config.filepicker_rails.api_key = ""
   end
 end
