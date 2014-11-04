@@ -90,6 +90,8 @@ GEM
     ffi (1.9.6)
     figaro (1.0.0)
       thor (~> 0.14)
+    filepicker-rails (1.2.0)
+      rails (>= 3.2)
     formatador (0.2.5)
     guard (2.7.0)
       formatador (>= 0.2.4)
@@ -253,6 +255,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  filepicker-rails
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
