@@ -1,7 +1,8 @@
 Memgrow.Views.StudySesh = Backbone.View.extend({
   initialize: function(options) {	
-		this.current_card = 0;	
+		this.current_card = 0;
     this.cards = options.cards;
+		this.course_length = this.cards.length;
     this.current_user = options.current_user;
 		
 		this.listenTo(this.model, "sync", this.render);
@@ -11,7 +12,7 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   template: JST['cards/showCard'],
 
   render: function() {
-		// console.log(this.cards);
+		console.log(this.current_card);
 // 		console.log(this.cards.length);
 		var card = this.cards.models[this.current_card];
 		
@@ -34,6 +35,10 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 		event.preventDefault();
 		this.current_card += 1;
 		
-		this.render();
+		if (this.current_card > this.course_length) {
+			Backbone.history.navigate("#", { trigger: true });
+		} else {
+			this.render();
+		}
 	}
 });
