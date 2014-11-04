@@ -56,9 +56,11 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     console.log("card_id:" + current_card.escape("id"));
 
     var history = this.histories.findWhere({
-      user_id: this.current_user.escape("id"),
-      card_id: current_card.escape("id")
+      card_id: parseInt(current_card.escape("id")) 
     });
+
+    console.log(this.histories)
+    console.log(history);
 
     // find out whether the user was correct or not
     if (pinyin_answer === current_card.get("pinyin") &&
