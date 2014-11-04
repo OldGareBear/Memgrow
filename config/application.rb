@@ -21,7 +21,5 @@ module Memgrow
     end
 
     config.assets.paths << "app/assets/templates"
-
-    config.filepicker_rails.api_key = ""
   end
 end

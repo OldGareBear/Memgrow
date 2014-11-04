@@ -11,7 +11,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	className: 'user-show',
 
 	render: function() {
-    // console.log(this.model)
+
 		content = this.template({
 			current_user: this.model,
       courses: this.courses,
@@ -20,6 +20,12 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 		});
 
 		this.$el.html(content);
+
+    var $filePickerInput = this.$("input[type=filepicker]");
+
+    // debugger
+    filepicker.constructWidget($filePickerInput[0]);
+
 		return this;
 	}
 

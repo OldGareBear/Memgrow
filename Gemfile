@@ -52,6 +52,3 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'omniauth-facebook'
 gem 'figaro'
-
-gem 'filepicker-rails'
-

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031194028) do
+ActiveRecord::Schema.define(version: 20141104203232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20141031194028) do
     t.datetime "updated_at"
     t.integer  "points",          default: 0
     t.string   "omniauth_id"
+    t.string   "filepicker_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
