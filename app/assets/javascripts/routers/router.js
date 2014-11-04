@@ -6,7 +6,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "dashboardShow",
     "friends": "friendsIndex",
-    "courses/:id": "studySession"
+    "study/:id": "studySesh"
 	},
 
 	dashboardShow: function() {
@@ -40,9 +40,25 @@ Memgrow.Routers.Router = Backbone.Router.extend({
     this.swapView(view);
   },
 
-  studySession: function(id) {
-    var courses = Memgrow.Models.user.courses();
-    var course = courses.getOrFetch(id)
+  studySesh: function(id) {
+    var user = Memgrow.Models.user;
+    user.fetch();
+    var courses = user.courses();
+    var course = courses.getOrFetch(id);
+    var cards = course.cards();
+    cards.fetch();
+
+    // console.log(course)
+
+    var view = new
+     Memgrow.Views.StudySesh({
+       current_user: user,
+       model: course,
+       collection: courses,
+       cards: cards
+    });
+
+    this.swapView(view);
   },
 
   swapView: function(view) {
