@@ -19,5 +19,5 @@ json.cards_studied @cards_studied
 
 json.study_errors @study_errors
 
-json.user_card_histories current_user.user_card_histories, :user_id, :card_id,
+json.user_card_histories current_user.user_card_histories, :id, :user_id, :card_id,
   :last_studied, :times_right, :times_wrong

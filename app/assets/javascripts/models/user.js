@@ -17,6 +17,14 @@ Memgrow.Models.User = Backbone.Model.extend({
       delete jsonResp.leaders;
     }
 
+		if (jsonResp.user_card_histories) {
+			this.userCardHistories().set(
+				jsonResp.user_card_histories,
+				{ parse: true }
+			);
+			delete jsonResp.user_card_histories;
+		}
+
 		return jsonResp;
 	},
 
@@ -39,7 +47,17 @@ Memgrow.Models.User = Backbone.Model.extend({
       this._leaders = new Memgrow.Collections.Leaders([], {});
     }
     return this._leaders;
-  }
+  },
+
+	userCardHistories: function() {
+		if (!this._user_card_histories) {
+			this._user_card_histories = new Memgrow.Collections.UserCardHistories(
+				[],
+				{}
+			);
+		}
+		return this._user_card_histories;
+	}
 });
 
 Memgrow.Models.user = new Memgrow.Models.User;

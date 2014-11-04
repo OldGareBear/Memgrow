@@ -5,7 +5,7 @@
 <ul class="friends-list">
   <% friends.each(function(friend) { %>
   <li>
-		<a href="#"><%= friend.escape("username") %></a>
+		<a href="/users/<%= friend.get("id") %>"><%= friend.escape("username") %></a>
 
 		<form method="Post" action="#">
 			<input type="submit" value="Unfriend">
