@@ -11,8 +11,8 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   template: JST['cards/showCard'],
 
   render: function() {
-		console.log(this.cards);
-		console.log(this.cards.length);
+		// console.log(this.cards);
+// 		console.log(this.cards.length);
 		var card = this.cards.models[this.current_card];
 		
     var content = this.template({
@@ -26,10 +26,11 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   },
 
 	events: {
-		"click button submit": "nextCard"
+		"submit": "nextCard"
 	},
 
 	nextCard: function(event) {
+		console.log("next card");
 		event.preventDefault();
 		this.current_card += 1;
 		
