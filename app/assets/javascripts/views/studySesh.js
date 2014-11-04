@@ -56,7 +56,7 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     console.log("card_id:" + current_card.escape("id"));
 
     var history = this.histories.findWhere({
-      card_id: parseInt(current_card.escape("id")) 
+      card_id: parseInt(current_card.escape("id"))
     });
 
     console.log(this.histories)
@@ -72,13 +72,13 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 
       // update the user card history for the current user and current card
       history.set({
-        times_right: history.get("times_right" + 1),
+        times_right: history.get("times_right") + 1,
         last_studied: new Date()
       });
 
     } else {
       // update the user card history for the current user and current card
-       history.set({ times_wrong: history.get("times_wrong" + 1) });
+       history.set({ times_wrong: history.get("times_wrong") + 1 });
     }
 
     history.save({});
