@@ -15,7 +15,6 @@ class Api::StaticPagesController < ApplicationController
 
   def search
     @results = User.search_by_username_and_email(search_params["query"])
-    puts search_params["query"]
 
     render :search
   end

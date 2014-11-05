@@ -1,0 +1,16 @@
+<div class="card-container">
+  <form class="card-quiz" action="#">
+
+    <input type="hidden" name="_method" value="Patch">
+
+    <h1><%= card.escape("character") %></h1>
+
+    <label for="answer_pinyin">Pinyin</label>
+    <input type="text" id="answer_pinyin" name="answer[pinyin]">
+
+    <label for="answer_english">English</label>
+    <input type="text" id="answer_english" name="answer[english]">
+
+    <input type="submit" value="Answer">
+  </form>
+</div>

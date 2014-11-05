@@ -37,12 +37,37 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     event.preventDefault();
     var form = $(event.target).serializeJSON();
     var query = form["search"]["query"];
+    var that = this;
 
     $.ajax({
       type: "GET",
       url: "api/search",
-      data: { query: query }
-    })
+      data: { query: query },
+      success: function(results) {
+        console.log("ajax request response:", results)
+        that.renderSearchResults(results);
+      }
+    });
+  },
+
+  renderSearchResults: function(results) {
+    var view = new Memgrow.Views.UserSearchResults({
+      results: results
+    });
+    console.log("rendering search results:", results);
+
+    $('.content').html(view.render().$el);
   }
 
 });
+
+
+
+
+
+
+
+
+
+
+// scroll past

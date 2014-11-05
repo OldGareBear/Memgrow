@@ -44,12 +44,12 @@ div.stats {
   float: left;
   height: 800px;
   text-align: center;
-  padding: 15px;
-  width: 22%;
+  // padding: 1%;
+  width: 24%;
 }
 
 div.user-courses {
-  width: 44%;
+  width: 48%;
   height: 800px;
   text-align: center;
   padding-top: 20px;
@@ -60,11 +60,11 @@ div.user-courses {
 div.leaderboard {
   border-left: 10px solid beige;
   border-bottom: 10px solid beige;
-  width: 22%;
+  width: 24%;
   float: right;
   height: 800px;
   text-align: center;
-  padding: 15px;
+  // padding: 1%;
 }
 
 div.user-courses > h1 {
@@ -156,7 +156,6 @@ form.new-user {
 }
 
 form.new-user > p {
-//  display:block;
   text-align:center;
   margin-bottom: 15px;
   margin-top: 30px;
@@ -178,9 +177,7 @@ a.study {
 
 form.find-friends {
   display: block;
-  // position:relative;
-  // left: 590px;
-  // top: 75px;
+
 }
 
 form.find-friends > input[type=text] {
@@ -197,6 +194,5 @@ form.find-friends > input[type=submit] {
   box-shadow: 0;
   cursor: pointer;
   border-radius: 5px;
-  // margin-left: 10px;
   font-size: 14px;
 }
