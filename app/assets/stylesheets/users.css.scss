@@ -73,9 +73,9 @@ div.user-courses > ul > li {
   padding: 10px;
 }
 
-div.user-courses > ul > li > a {
-  color: #15a1ec;
-}
+// div.user-courses > ul > li > a {
+//   color: #15a1ec;
+// }
 
 ul.user-info {
   float: right;
@@ -106,7 +106,7 @@ div.stats > p {
 
 ul.user-info > li > h3 > a {
   display: inline;
-  color: #15a1ec;
+  color: green;
 }
 
 ul.user-courses > li > h3 > a {
@@ -160,11 +160,12 @@ form.new-user > p {
 a.study {
   text-decoration: none;
 	font-weight: bold;
+  color: white;
   width: 50px;
   display: block;
   padding: 5px 10px;
   margin: 5px auto;
-  background: #ccc;
+  background: #15a1ec;
   border-radius: 5px;
   cursor: pointer;
 }
