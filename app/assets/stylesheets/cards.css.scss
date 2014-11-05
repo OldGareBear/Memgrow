@@ -1,7 +1,7 @@
 // Place all the styles related to the cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-div.new-card {
+div.container {
 	min-height: 500px;
 }
 
@@ -18,7 +18,10 @@ a.finish-cards {
 	border-radius: 5px;
 	cursor: pointer;
 	text-align: center;
-	margin: 15px auto;
+	margin: 30px;
+	background: #ccc;
+	color: #15a1ec;
+	font-weight: bold;
 }
 
 div.cards-index {
