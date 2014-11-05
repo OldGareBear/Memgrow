@@ -26,14 +26,14 @@ form.new-user > input {
 }
 
 div.user-nav {
-  height: 185px;
+  padding-top: 25px;
+  height: 150px;
   min-width: 1000px;
 }
 
 div.user-nav > h1 {
 	display: block;
-	position: relative;
-	top: 30px;
+	float:left;
   margin-left: 25px;
 }
 
