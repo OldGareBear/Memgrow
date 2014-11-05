@@ -32,8 +32,6 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 		
 		var courses = this.collection
 		
-		console.log(this.collection);
-		
     newCourse.save({}, {
       success: function () {
         courses.add(newCourse);
