@@ -12,7 +12,7 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 	},
 	
 	events: {
-		"submit: addCard"
+		"submit": "addCard"
 	},
 	
 	addCard: function(event) {
@@ -31,7 +31,7 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 		
 		newCard.save({}, {
 			success: function() {
-				
+				console.log("card saved")
 			}
 		});
 	}
