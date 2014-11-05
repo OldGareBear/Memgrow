@@ -11,7 +11,7 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     this.listenTo(this.histories, "sync", this.render);
   },
 
-  template: JST['cards/showCard'],
+  template: JST['cards/show'],
 
   render: function() {
 

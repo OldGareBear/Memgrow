@@ -20,12 +20,12 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: appacademy
+  username: postgres
 
 development:
   <<: *default
   database: memgrow_development
-  username: appacademy
+  username: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,7 +60,7 @@ development:
 test:
   <<: *default
   database: memgrow_test
-  username: appacademy
+  username: postgres
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: memgrow_production
-  username: appacademy
+  username: postgres
   password: <%= ENV['MEMGROW_DATABASE_PASSWORD'] %>
