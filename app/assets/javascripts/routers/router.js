@@ -79,7 +79,9 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		var courses = user.courses().models;
 		var course = courses[courses.length - 1];
 		
-		var view = new Memgro.Views.CardsNew({
+		console.log(course); //should always be the most recently created course model
+		
+		var view = new Memgrow.Views.CardsNew({
 			model: course
 		});
 		

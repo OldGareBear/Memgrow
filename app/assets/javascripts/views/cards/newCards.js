@@ -1,5 +1,5 @@
-Memgrow.Views.NewCard = Backbone.View.extend({
-	template: 'cards/new',
+Memgrow.Views.CardsNew = Backbone.View.extend({
+	template: JST['cards/new'],
 	
 	render: function() {
 		var content = this.template({
