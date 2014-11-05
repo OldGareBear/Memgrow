@@ -1,8 +1,7 @@
 Memgrow.Views.CourseNew = Backbone.View.extend({
 	intitialize: function() {
-		this.current_template = JST['courses/new']
 		this.listenTo(this.model, "sync", this.render);
-		console.log(this.model);
+		this.listentTo(this.collection, "sync", this.render); // probably not necessary
 	},
 	
 	template: JST['courses/new'],
@@ -16,7 +15,7 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 	},
 	
 	events: {
-		"click submit": "submitCourse",
+		"submit": "submitCourse",
 	},
 	
 	submitCourse: function(event) {
@@ -31,12 +30,14 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 			author_id: this.model.get("id")
 		});
 		
-		console.log(newCourse);
+		var courses = this.collection
+		
+		console.log(this.collection);
 		
     newCourse.save({}, {
       success: function () {
-        App.Collections.userCourses.add(newCourse);
-        Backbone.history.navigate("#", { trigger: true });
+        courses.add(newCourse);
+        Backbone.history.navigate("#/cards/new", { trigger: true });
       }
     });
 	}
