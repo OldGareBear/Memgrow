@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     at_index = @user.email.index("@")
     @user.username = @user.email[0, at_index]
     @user.points = 0
+    @user.filepicker_url =
+      "http://summaryofmysoul.files.wordpress.com/2014/03/yinyang.jpg"
 
     if @user.save!
       sign_in(@user)
