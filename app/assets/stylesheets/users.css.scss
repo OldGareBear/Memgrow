@@ -26,7 +26,7 @@ form.new-user > input {
 }
 
 div.user-nav {
-  height: 175px;
+  height: 185px;
   min-width: 1000px;
 }
 
@@ -38,33 +38,30 @@ div.user-nav > h1 {
 }
 
 div.stats {
+  padding:0;
   border-right: 10px solid beige;
-  border-bottom: 10px solid beige;
   min-width: 200px;
   float: left;
   height: 800px;
   text-align: center;
-  // padding: 1%;
   width: 24%;
 }
 
 div.user-courses {
+  padding:0;
   width: 48%;
   height: 800px;
   text-align: center;
-  padding-top: 20px;
-  margin:0;
   float: left;
 }
 
 div.leaderboard {
+  padding:0;
   border-left: 10px solid beige;
-  border-bottom: 10px solid beige;
   width: 24%;
   float: right;
   height: 800px;
   text-align: center;
-  // padding: 1%;
 }
 
 div.user-courses > h1 {
