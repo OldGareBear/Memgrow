@@ -21,9 +21,9 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 
 		this.$el.html(content);
 
-    // var $filePickerInput = this.$("input[type=filepicker]");
-    //
-    // filepicker.constructWidget($filePickerInput[0]);
+    var $filePickerInput = this.$("input[type=filepicker]");
+
+    filepicker.constructWidget($filePickerInput[0]);
 
 		return this;
 	},

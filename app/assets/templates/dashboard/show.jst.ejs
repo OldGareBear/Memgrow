@@ -1,10 +1,17 @@
 <div class="user-nav sub-header">
 
-	<!-- <form>
-		<input type="filepicker" name="user[filepicker_url]">
-	</form> -->
+	<ul class="pic-name">
+		<li><div class="pic-placeholder"><div></li>
+		<li><form class="add-pic">
+      <input
+        type="filepicker"
+        name="user[filepicker_url]"
+        data-fp-mimetype="image/*"
+        data-fp-services="COMPUTER"></li>
 
-  <h1><%= current_user.escape("username") %></h1>
+  	<li><h1><%= current_user.escape("username") %></h1></li>
+	</ul>
+
   <ul class="user-info">
     <li>
 			<img src="<%= current_user.get("friends_pic") %>"

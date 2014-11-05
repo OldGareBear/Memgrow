@@ -35,6 +35,7 @@ div.user-nav > h1 {
 	display: block;
 	float:left;
   margin-left: 25px;
+  width: 200px;
 }
 
 div.stats {
@@ -192,4 +193,41 @@ form.find-friends > input[type=submit] {
   cursor: pointer;
   border-radius: 5px;
   font-size: 14px;
+}
+
+form.add-pic {
+  display: block;
+  width: 100px;
+}
+
+form.add-pic > button {
+  height: 25px;
+  width: 50px;
+  background: beige;
+  color: black;
+  cursor: pointer;
+}
+
+ul.pic-name {
+  // position:relative;
+  float: left;
+  // top: 10px;
+  // left: 30px;
+  margin: auto 25px;
+}
+
+ul.pic-name > li {
+  float:left;
+}
+
+ul.pic-name:after {
+  display: block;
+  content: "";
+  clear:both;
+}
+
+div.pic-placeholder {
+  width: 125px;
+  height: 125px;
+  background: black;
 }
