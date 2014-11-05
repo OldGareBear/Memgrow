@@ -10,8 +10,12 @@
 			<img src="<%= current_user.get("friends_pic") %>"
 				height="60" width="60">
 		</li>
-    <li><h3><%= friends.length %>
-      <a href="#/friends"> Friends</a></h3></li>
+    <li><h3><%= friends.length %><a href="#/friends"> Friends</a></h3>
+			<form class="find-friends">
+				<input type="text" placeholder="find friends...">
+				<input type="submit" value="找">
+			</form>
+		</li>
     <li>
 			<img src="<%= current_user.get("words_pic") %>"
 				height="60" width="60">
@@ -23,11 +27,6 @@
 		</li>
     <li><h3><%= current_user.escape("points") %> Points</h3></li>
   </ul>
-
-	<form class="find-friends">
-		<input type="text" placeholder="find friends...">
-		<input type="submit" value="找">
-	</form>
 </div>
 
 <div class="stats">

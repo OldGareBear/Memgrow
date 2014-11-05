@@ -38,22 +38,14 @@ div.user-nav > h1 {
 }
 
 div.stats {
-  border-right: 1px solid black;
+  border-right: 10px solid beige;
+  border-bottom: 10px solid beige;
   min-width: 200px;
   float: left;
   height: 800px;
   text-align: center;
   padding: 15px;
   width: 22%;
-}
-
-div.leaderboard {
-  border-left: 1px solid black;
-  width: 22%;
-  float: right;
-  height: 800px;
-  text-align: center;
-  padding: 15px;
 }
 
 div.user-courses {
@@ -63,6 +55,16 @@ div.user-courses {
   padding-top: 20px;
   margin:0;
   float: left;
+}
+
+div.leaderboard {
+  border-left: 10px solid beige;
+  border-bottom: 10px solid beige;
+  width: 22%;
+  float: right;
+  height: 800px;
+  text-align: center;
+  padding: 15px;
 }
 
 div.user-courses > h1 {
@@ -106,6 +108,7 @@ div.stats > p {
 
 ul.user-info > li > h3 > a {
   display: inline;
+  padding: 5px;
   color: green;
 }
 
@@ -172,14 +175,14 @@ a.study {
 
 form.find-friends {
   display: block;
-  position:relative;
-  left: 640px;
-  top: 75px;
+  // position:relative;
+  // left: 590px;
+  // top: 75px;
 }
 
 form.find-friends > input[type=text] {
   height: 25px;
-  width: 175px;
+  width: 100px;
 }
 
 form.find-friends > input[type=submit] {
