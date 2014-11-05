@@ -79,7 +79,11 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		var courses = user.courses().models;
 		var course = courses[courses.length - 1];
 		
-		console.log(course);
+		var view = new Memgro.Views.CardsNew({
+			model: course
+		});
+		
+		this.swapView(view);
 	},
 
   swapView: function(view) {
