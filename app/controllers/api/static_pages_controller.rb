@@ -13,7 +13,14 @@ class Api::StaticPagesController < ApplicationController
     render :dashboard
   end
 
-  private
+  def search
+    @results = User.search_by_username_and_email(search_params["query"])
+    puts search_params["query"]
+
+    render :search
+  end
+
+  protected
 
   def calc_stats(user)
     correct = 0
@@ -25,5 +32,9 @@ class Api::StaticPagesController < ApplicationController
     end
 
     [incorrect + correct, incorrect]
+  end
+
+  def search_params
+    params.permit(:query)
   end
 end

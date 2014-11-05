@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_by_username_and_email, against: [:username, :email]
+
   validates :email, :password_digest, :session_token, presence: true
 
   after_initialize :ensure_session_token

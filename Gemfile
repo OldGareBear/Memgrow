@@ -54,4 +54,6 @@ gem 'omniauth-facebook'
 gem 'figaro'
 
 gem 'pg_search'
+gem 'kaminari'
+
 gem 'filepicker-rails'

@@ -27,6 +27,22 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     filepicker.constructWidget($filePickerInput[0]);
 
 		return this;
-	}
+	},
+
+  events: {
+    "submit": "findFriends"
+  },
+
+  findFriends: function(event) {
+    event.preventDefault();
+    var form = $(event.target).serializeJSON();
+    var query = form["search"]["query"];
+
+    $.ajax({
+      type: "GET",
+      url: "api/search",
+      data: { query: query }
+    })
+  }
 
 });

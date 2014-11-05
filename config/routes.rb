@@ -20,12 +20,13 @@ Rails.application.routes.draw do
   resources :comments, except: [:index, :new]
 
   get '/auth/facebook/callback', to: 'oauth_callbacks#facebook'
-  
+
   get 'dashboard' => 'static_pages#dashboard', as: "dashboard"
-  
+
   namespace :api, defaults: { format: :json } do
     get 'dashboard' => 'static_pages#dashboard', as: "dashboard"
-    
+    get '/search' => 'static_pages#search', as: :search
+
     resources :users, except: [:new, :edit]
     resources :courses, except: [:new, :edit] do
       resources :cards, only: [:index]

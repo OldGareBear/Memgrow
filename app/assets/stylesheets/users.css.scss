@@ -106,9 +106,12 @@ div.stats > p {
   padding-bottom: 10px;
 }
 
+ul.user-info > li > h3 {
+  display: inline;
+}
+
 ul.user-info > li > h3 > a {
   display: inline;
-  padding: 5px;
   color: green;
 }
 
