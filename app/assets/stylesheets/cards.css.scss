@@ -60,8 +60,9 @@ div.card-container {
 
 form.card-quiz {
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 5px;
+	background: beige;
   width: 200px;
   padding: 10px;
   margin: 50px auto;
@@ -77,4 +78,19 @@ form.card-quiz > input {
   clear: both;
   text-align: center;
   margin: 10px auto;
+}
+
+form.card-quiz > input[type=submit] {
+	background: green;
+	color: white;
+	border: 0;
+	box-shadow: 0;
+	cursor: pointer;
+	border-radius: 5px;
+	// margin-left: 10px;
+	font-size: 14px;
+}
+
+form.card-quiz > label {
+	font-weight: bold;
 }
