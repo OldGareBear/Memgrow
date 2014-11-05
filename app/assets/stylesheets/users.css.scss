@@ -169,3 +169,28 @@ a.study {
   border-radius: 5px;
   cursor: pointer;
 }
+
+form.find-friends {
+  display: block;
+  position:relative;
+  left: 640px;
+  top: 75px;
+}
+
+form.find-friends > input[type=text] {
+  height: 25px;
+  width: 175px;
+}
+
+form.find-friends > input[type=submit] {
+  height: 25px;
+  width: 25px;
+  background: green;
+  color: white;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  // margin-left: 10px;
+  font-size: 14px;
+}
