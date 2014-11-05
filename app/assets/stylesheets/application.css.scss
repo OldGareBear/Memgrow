@@ -35,6 +35,7 @@ body {
 div.header {
 	width: 100%;
 	height: 125px;
+  min-width: 800px;
   background-color: #15a1ec;
 }
 
@@ -55,8 +56,7 @@ span.logo {
 ul.navbar {
   min-width: 600px;
   display: block;
-  left: 400px;
-  position: absolute;
+  float:right;
 }
 
 ul.navbar > li {
@@ -64,9 +64,11 @@ ul.navbar > li {
   float: left;
   padding: 5px;
   margin: 5px;
-  background-color: green;
-  color: white;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 div.container {
@@ -74,7 +76,8 @@ div.container {
 }
 
 form.button_to > div > input {
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 
 form.button_to {
@@ -87,7 +90,7 @@ form.button_to {
 }
 
 ul.navbar > li > a {
-  color: white;
+  color: black;
 }
 
 a {

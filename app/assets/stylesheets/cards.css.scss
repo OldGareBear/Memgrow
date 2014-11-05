@@ -7,21 +7,34 @@ div.container {
 
 form.new-card {
 	padding: 15px;
-	border: 1px solid black;
+	border-bottom: 1px solid #ccc;
+	background: beige;
+	font-weight: bold;
+}
+
+form.new-card > input[type=submit] {
+	background: green;
+	color: white;
+	border: 0;
+	box-shadow: 0;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-left: 10px;
+	font-size: 14px;
 }
 
 a.finish-cards {
 	display: block;
 	width: 200px;
 	padding: 5px;
-	border: 1px solid black;
 	border-radius: 5px;
 	cursor: pointer;
 	text-align: center;
 	margin: 30px;
-	background: #ccc;
-	color: #15a1ec;
+	background: #15a1ec;
+	color: white;
 	font-weight: bold;
+	letter-spacing: 1px;
 }
 
 div.cards-index {
