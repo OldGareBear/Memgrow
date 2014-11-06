@@ -15,21 +15,8 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		Memgrow.Models.user.fetch();
     var user = Memgrow.Models.user;
 
-    // var courses = user.courses();
-    // var friends = user.friends();
-    //
-    // var leaders = friends.clone();
-    //
-    // leaders.add(user);
-    // leaders.sortBy(function(friend) { return 0 - friend.points; });
-    // leaders = leaders.slice(0, 10);
-
-
 		var view = new Memgrow.Views.DashboardShow({
 			model: user,
-      // courses: courses,
-      // friends: friends,
-      // leaders: leaders
 		});
 
 		this.swapView(view);
@@ -38,11 +25,12 @@ Memgrow.Routers.Router = Backbone.Router.extend({
   friendsIndex: function(){
     Memgrow.Models.user.fetch();
 
-    var friends = Memgrow.Models.user.friends();
-    friends.fetch()
+    // var friends = Memgrow.Models.user.friends();
+    // friends.fetch()
 
     var view = new Memgrow.Views.FriendsIndex({
-      collection: friends
+      // collection: friends
+      model: Memgrow.Models.user
     });
 
     this.swapView(view);

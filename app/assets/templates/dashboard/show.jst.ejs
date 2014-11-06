@@ -19,7 +19,7 @@
 	</ul>
 
   <ul class="user-info">
-    <li>
+    <li class="icon">
 			<img src="<%= current_user.get("friends_pic") %>"
 				height="60" width="60">
 		</li>
@@ -30,12 +30,12 @@
 				<input type="submit" value="找">
 			</form>
 		</li>
-    <li>
+    <li class="icon">
 			<img src="<%= current_user.get("words_pic") %>"
 				height="60" width="60">
 		</li>
     <li><h3><%= current_user.escape("cards_count") %> Words</h3></li>
-    <li>
+    <li class="icon">
 			<img src="<%= current_user.get("points_pic") %>"
 				height="60" width="60">
 		</li>

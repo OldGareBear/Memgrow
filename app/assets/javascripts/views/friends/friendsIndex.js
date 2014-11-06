@@ -1,6 +1,6 @@
 Memgrow.Views.FriendsIndex = Backbone.View.extend({
   initialize: function() {
-    this.listenTo(this.collection, "sync remove", this.render)
+    this.listenTo(this.model, "sync remove", this.render)
   },
 
   template: JST["friends/index"],
@@ -8,8 +8,10 @@ Memgrow.Views.FriendsIndex = Backbone.View.extend({
   className: "friends-index",
 
   render: function() {
+    var friends = this.model.friends();
+
     var content = this.template({
-      friends: this.collection
+      friends: friends
     });
 
     this.$el.html(content);

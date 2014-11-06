@@ -1,9 +1,19 @@
-<h1>User Search Results</h2>
+<div class="friends-list sub-header">
+  <h1>User Search Results</h1>
+</div>
 
-<ul>
-<% users.forEach(function(user) { %>
+<ul class="friends-list">
+  <% users.forEach(function(user) { %>
   <li>
-    <a href="/users/<%= user.id %>"><%= user.username %></a>
+
+    <a href="/users/<%= user.id %>">
+      <%= user.username %>
+    </a>
+
+    <a href="/users/<%= user.id %>">
+      <img src="<%= user.filepicker_url %>">
+    </a>
+
   </li>
-<% }) %>
+  <% }) %>
 </ul>
