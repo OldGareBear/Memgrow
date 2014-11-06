@@ -5,12 +5,13 @@
 #
 #   cities = City.create([ name: 'Chicago' ,  name: 'Copenhagen' ])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
 
 User.create!( email: "kate@kate.com",
               password: "password",
               username: "Kate",
               points: 100_000,
-              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
+              filepicker_url: "https://www.filepicker.io/api/file/Di7mO5QQwO1kd7bg1N9U")
 User.create!( email: "gary@gary.com",
               password: "password",
               username: "Gary",
@@ -20,17 +21,17 @@ User.create!( email: "colin@colin.colin",
               password: "password",
               username: "Colin",
               points: 995,
-              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
+              filepicker_url: "https://www.filepicker.io/api/file/ywbypgQxSMa0wrK3XR97")
 User.create!( email: "dave@dave.com",
               password: "password",
               username: "Dave",
               points: 437,
-              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
+              filepicker_url: "https://www.filepicker.io/api/file/8K351T2ETGGQALCIxOUh")
 User.create!( email: "steve@steve.com",
               password: "password",
               username: "Steve",
               points: 762,
-              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
+              filepicker_url: "https://www.filepicker.io/api/file/RuChkLYuR0qR5kDJFm8D")
 User.create!( email: "dom@dom.com",
               password: "password",
               username: "Dom",
@@ -395,3 +396,28 @@ UserCardHistory.create!(user_id: 1,
                                   times_right: 0,
                                   times_wrong: 0,
                                   last_studied: Time.now)
+
+
+100.times do
+  url = ["https://www.filepicker.io/api/file/Di7mO5QQwO1kd7bg1N9U",
+         "https://www.filepicker.io/api/file/RuChkLYuR0qR5kDJFm8D",
+         "https://www.filepicker.io/api/file/8K351T2ETGGQALCIxOUh",
+         "https://www.filepicker.io/api/file/ywbypgQxSMa0wrK3XR97",
+         "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX"].sample
+
+  User.create!( email: Faker::Internet.email,
+                password: "password",
+                username: Faker::Name.name,
+                points: 1000,
+                filepicker_url: url)
+end
+
+
+
+
+
+
+
+
+
+# scroll past

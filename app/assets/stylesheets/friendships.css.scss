@@ -39,9 +39,12 @@ ul.friends-list > li input[type=submit] {
   font-size: 14px;
 }
 
-ul.friends-list > li > img {
+ul.friends-list > li img {
   display: block;
   margin: 0 auto;
+  width: 125px;
+  height: 125px;
+  border-radius: 5px;
 }
 
 div.friends-list {

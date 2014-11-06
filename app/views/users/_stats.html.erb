@@ -5,4 +5,8 @@
 <p><%= study_errors %></p>
 
 <h3>Accuracy:</h3>
-<p><%= ((cards_studied.to_f - study_errors) / cards_studied * 100).round(2)  || 0%>%</p>
+<% if ((cards_studied.to_f - study_errors) / cards_studied * 100).round(2).nan? %>
+<p>0%</p>
+<% else %>
+<p><%= ((cards_studied.to_f - study_errors) / cards_studied * 100).round(2) %>%</p>
+<% end %>

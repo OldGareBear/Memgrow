@@ -55,8 +55,16 @@
   <p><%= current_user.get("study_errors") %></p>
 
   <h3>Accuracy:</h3>
-  <p><%= ((current_user.get("cards_studied") - current_user.get("study_errors")) /
-    current_user.get("cards_studied") * 100)  || 0 %>%</p>
+
+	<% var percentage = Math.round(((current_user.get("cards_studied") -
+		current_user.get("study_errors")) /
+		current_user.get("cards_studied") * 100)) %>
+
+	<% if (isNaN(percentage)) { %>
+  <p><%= 0 %>%</p>
+	<% } else { %>
+	<p><%= percentage %>%</p>
+	<% } %>
 
 </div>
 
