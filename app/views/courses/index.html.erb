@@ -1,17 +1,11 @@
 <div class="content">
 <div class="courses-header sub-header">
   <h1>Courses</h1>
-  <form class="search-bar">
-    <label for="search-bar"></label>
-    <input type="text" id="search-bar" placeholder="search for courses...">
-    <input type="submit" value="search">
-  </form>
 </div>
 
 <div class="categories">
   <h3>Categories</h3>
   <ul class="category-list">
-    <!-- here we need to iterate through categories -->
     <% @categories.each do |category| %>
     <li><%= category %></li>
     <% end %>
@@ -24,17 +18,19 @@
   <ul class="course-list">
     <% @courses.each do |course| %>
       <li>
-        <a href="<%= course_url(course) %>"><%= course.title %></a>
-
+        <a href="<%= course_url(course) %>">
+          <img src="<%= course.filepicker_url %>">
+        </a>
+        <h4><%= course.title %></h4>
         <% unless current_user.courses.include?(course) %>
-          <form class="new-enrollment" action="<%= enrollments_url %>" method="Post">
-            <%= auth_token %>
+        <form class="new-enrollment" action="<%= enrollments_url %>" method="Post">
+          <%= auth_token %>
 
-            <input type="hidden"
-                   name="enrollment[course_id]"
-                   value="<%= course.id %>">
-            <input type="submit" value="Add to Courses">
-          </form>
+          <input type="hidden"
+                 name="enrollment[course_id]"
+                 value="<%= course.id %>">
+          <input type="submit" value="Add to Courses">
+        </form>
         <% end %>
       </li>
     <% end %>

@@ -85,16 +85,20 @@ Friendship.create!( requester_id: 1,
 
 Course.create!( title: "Fruits and Veggies",
   category: "Food",
-  author_id: 1 )
+  author_id: 1,
+  filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
 Course.create!( title: "Meats",
   category: "Food",
-  author_id: 2 )
+  author_id: 2,
+  filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
 Course.create!( title: "Taking Taxies",
   category: "Transportation",
-  author_id: 1 )
+  author_id: 1,
+  filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
 Course.create!( title: "Furniture",
   category: "Around the House",
-  author_id: 3 )
+  author_id: 3,
+  filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
 
 
 Card.create!( course_id: "1",
