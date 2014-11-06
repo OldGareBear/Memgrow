@@ -54,7 +54,21 @@ Memgrow.Models.User = Backbone.Model.extend({
 			this._userCardHistories = new Memgrow.Collections.UserCardHistories([], {});
 		}
 		return this._userCardHistories;
+	},
+
+	saveUser: function(event) {
+		console.log(event.fpfile);
+		this.save({ filepicker_url: event.fpfile["url"] });
 	}
 });
 
 Memgrow.Models.user = new Memgrow.Models.User;
+
+
+
+
+
+
+
+
+// scroll past

@@ -19,6 +19,14 @@ class Api::StaticPagesController < ApplicationController
     render :search
   end
 
+  def update
+    if current_user.update(user_params)
+      render :json => current_user
+    else
+      render :json => current_user.errors, status: :unprocessable_entity
+    end
+  end
+
   protected
 
   def calc_stats(user)
@@ -35,5 +43,9 @@ class Api::StaticPagesController < ApplicationController
 
   def search_params
     params.permit(:query)
+  end
+
+  def user_params
+    params.permit(:username, :filepicker_url, :email)
   end
 end

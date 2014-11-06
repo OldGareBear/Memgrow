@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get 'dashboard' => 'static_pages#dashboard', as: "dashboard"
+    put 'dashboard' => 'static_pages#update', as: "update_dashboard"
     get '/search' => 'static_pages#search', as: :search
 
     resources :users, except: [:new, :edit]
