@@ -1,5 +1,6 @@
 json.username @user.username
 json.points @user.points
+json.filepicker_url @user.filepicker_url
 
 json.courses @user.courses do |course|
   json.title course.title

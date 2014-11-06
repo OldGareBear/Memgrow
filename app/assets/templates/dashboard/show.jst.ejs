@@ -1,7 +1,10 @@
 <div class="user-nav sub-header">
 
 	<ul class="pic-name">
-		<li><div class="pic-placeholder"><div></li>
+		<li>
+			<img class="profile-pic"
+					 src="<%= current_user.escape("filepicker_url") %>">
+		</li>
 		<li><form class="add-pic">
       <input
         type="filepicker"

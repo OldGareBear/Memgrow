@@ -9,27 +9,33 @@
 User.create!( email: "kate@kate.com",
               password: "password",
               username: "Kate",
-              points: 100_000)
+              points: 100_000,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 User.create!( email: "gary@gary.com",
               password: "password",
               username: "Gary",
-              points: 1000)
+              points: 1000,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 User.create!( email: "colin@colin.colin",
               password: "password",
               username: "Colin",
-              points: 995)
+              points: 995,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 User.create!( email: "dave@dave.com",
               password: "password",
               username: "Dave",
-              points: 437)
+              points: 437,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 User.create!( email: "steve@steve.com",
               password: "password",
               username: "Steve",
-              points: 762)
+              points: 762,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 User.create!( email: "dom@dom.com",
               password: "password",
               username: "Dom",
-              points: 11)
+              points: 11,
+              filepicker_url: "https://www.filepicker.io/api/file/QA0ELA1TUux2KkIQyXWX")
 
 Friendship.create!( requester_id: 1,
                     requestee_id: 2,

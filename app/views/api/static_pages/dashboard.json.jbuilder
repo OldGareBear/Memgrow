@@ -1,6 +1,7 @@
 json.id current_user.id
 json.username current_user.username
 json.points current_user.points
+json.filepicker_url current_user.filepicker_url
 
 json.friends_pic image_path("friends.png")
 json.words_pic image_path("baby_panda.png")
