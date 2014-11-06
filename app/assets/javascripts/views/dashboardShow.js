@@ -1,9 +1,8 @@
 Memgrow.Views.DashboardShow = Backbone.View.extend({
   initialize: function(options) {
     this.listenTo(this.model, "sync", this.render);
-    this.courses = options.courses;
-    this.friends = options.friends;
-    this.leaders = options.leaders;
+    this.courses = this.model.courses();
+    this.friends = this.model.friends();
   },
 
 	template: JST['dashboard/show'],
@@ -12,11 +11,15 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 
 	render: function() {
 
-		content = this.template({
+    var leaders = this.generateLeaders();
+
+    console.log(leaders);
+
+		var content = this.template({
 			current_user: this.model,
       courses: this.courses,
       friends: this.friends,
-      leaders: this.leaders
+      leaders: leaders
 		});
 
     this.$el.html(content);
@@ -30,6 +33,14 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 
   events: {
     "submit": "findFriends"
+  },
+
+  generateLeaders: function() {
+    var leaders = this.friends.clone();
+    leaders.add(this.model);
+    leaders.sortBy(function(friend) { return -friend.get("points"); });
+    leaders = leaders.slice(0, 10);
+    return leaders;
   },
 
   findFriends: function(event) {

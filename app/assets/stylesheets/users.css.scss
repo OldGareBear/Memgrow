@@ -205,6 +205,9 @@ ul.pic-name:after {
 img.profile-pic {
   width: 125px;
   height: 125px;
+  border-radius: 5px;
+  margin-right: 4px;
+  box-shadow: 3px 3px 3px #888888;
 }
 
 form.find-friends {

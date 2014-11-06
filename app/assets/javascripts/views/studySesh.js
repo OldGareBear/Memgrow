@@ -59,14 +59,15 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
       card_id: parseInt(current_card.escape("id"))
     });
 
-    console.log(this.histories)
-    console.log(history);
+    // console.log(this.histories)
+    // console.log(history);
 
     // find out whether the user was correct or not
     if (pinyin_answer === current_card.get("pinyin") &&
         english_answer === current_card.get("english")) {
 
       // increment the user's points for a correct answer
+      console.log(this.current_user.get("points") + 1);
       this.current_user.set({ points: this.current_user.get("points") + 1 });
       this.current_user.save({});
 

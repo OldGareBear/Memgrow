@@ -15,15 +15,21 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		Memgrow.Models.user.fetch();
     var user = Memgrow.Models.user;
 
-    var courses = user.courses();
-    var friends = user.friends();
-    var leaders = user.leaders();
+    // var courses = user.courses();
+    // var friends = user.friends();
+    //
+    // var leaders = friends.clone();
+    //
+    // leaders.add(user);
+    // leaders.sortBy(function(friend) { return 0 - friend.points; });
+    // leaders = leaders.slice(0, 10);
+
 
 		var view = new Memgrow.Views.DashboardShow({
 			model: user,
-      courses: courses,
-      friends: friends,
-      leaders: leaders
+      // courses: courses,
+      // friends: friends,
+      // leaders: leaders
 		});
 
 		this.swapView(view);
@@ -48,7 +54,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
     var courses = user.courses();
     var course = courses.getOrFetch(id);
     var cards = course.cards();
-    
+
     var view = new
      Memgrow.Views.StudySesh({
        current_user: user,
@@ -59,32 +65,32 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 
     this.swapView(view);
   },
-	
+
 	coursesNew: function() {
     var user = Memgrow.Models.user;
     user.fetch();
 		var courses = user.courses();
-		
-		var view = new Memgrow.Views.CourseNew({ 
+
+		var view = new Memgrow.Views.CourseNew({
 			model: user,
 			collection: courses
 		});
-		
+
 		this.swapView(view);
 	},
-	
+
 	cardsNew: function() {
 		var user = Memgrow.Models.user;
 		user.fetch();
 		var courses = user.courses().models;
 		var course = courses[courses.length - 1];
-		
+
 		console.log(course); //should always be the most recently created course model
-		
+
 		var view = new Memgrow.Views.CardsNew({
 			model: course
 		});
-		
+
 		this.swapView(view);
 	},
 

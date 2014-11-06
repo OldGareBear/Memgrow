@@ -1,6 +1,6 @@
 json.id current_user.id
 json.username current_user.username
-json.points current_user.points
+json.points (@cards_studied - @study_errors)
 json.filepicker_url current_user.filepicker_url
 
 json.friends_pic image_path("friends.png")
@@ -20,7 +20,7 @@ end
 
 json.cards_count @cards_count
 
-json.leaders @leaders, :id, :username, :points, :email
+# json.leaders @leaders, :id, :username, :points, :email
 
 json.friends current_user.friends, :id, :username, :points, :email, :filepicker_url
 

@@ -80,7 +80,7 @@
   <h1><img src="<%= current_user.get("leaders_pic") %>" height="60" width="60">
 		Leaders</h1>
   <ol class="leaders">
-    <% leaders.each(function(leader) { %>
+    <% leaders.forEach(function(leader) { %>
     <li><%= leader.escape("username") %> (<%= leader.escape("points") %>)</li>
     <% }) %>
   </ol>
