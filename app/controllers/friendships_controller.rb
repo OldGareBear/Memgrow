@@ -13,8 +13,14 @@ class FriendshipsController < ApplicationController
 
   def destroy
     friendship = Friendship.find(params[:id])
+    former_friend_id = friendship.requester_id
+    # requester-requestt relationship can go either way
+    if former_friend_id == current_user.id
+      former_friend_id = friendship.requestee_id
+    end
+
     friendship.destroy
-    redirect_to user_friendships_url(current_user)         
+    redirect_to user_url(former_friend_id)
   end
 
   def index

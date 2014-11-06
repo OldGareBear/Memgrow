@@ -53,3 +53,18 @@ div.friends-list > h1 {
   left: 25px;
   top: 25px;
 }
+
+form.create-delete-friend > input {
+  margin: 15px auto;
+  display: block;
+  position: relative;
+  left: 45px;
+  background: green;
+  color: white;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+}

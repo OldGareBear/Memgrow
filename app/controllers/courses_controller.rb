@@ -6,11 +6,7 @@ class CoursesController < ApplicationController
     @course.author_id = current_user.id
 
     if @course.save
-      # redirect_to course_url(@course)
       redirect_to new_course_card_url(@course)
-      # ultimately, this should actually redirect to a form where you can
-      # create cards that are ensted under the course; wait until the card
-      # model and controller have been created
     else
       flash.now[:errors] = @course.errors.full_messages
     end

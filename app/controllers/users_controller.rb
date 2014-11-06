@@ -49,6 +49,23 @@ class UsersController < ApplicationController
                 .sort_by(&:points)
                 .reverse[0, 10]
 
+    unless @user == current_user
+      @friendship =
+        Friendship.find_by_requester_id_and_requestee_id(
+          current_user.id,
+          params[:id]
+        )
+      # must account for fact that the requester-requestee relationship can go
+      # either way
+      unless @friendship
+        @friendship =
+          Friendship.find_by_requester_id_and_requestee_id(
+            params[:id],
+            current_user.id
+          )
+      end
+    end
+
     render :show
   end
 

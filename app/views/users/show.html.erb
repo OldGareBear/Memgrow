@@ -20,9 +20,20 @@
     <li><%= image_tag "star.png", size: "60x60" %></li>
     <li><h3><%= @user.points %> Points</h3></li>
 
-		<% unless current_user.friends.include?(@user) || current_user == @user %>
-    <li>
-      <form class="create-friend" action="<%= friendships_url %>" method="Post">
+		<% if current_user.friends.include?(@user) || current_user == @user %>
+		<li>
+			<form class="create-delete-friend"
+				method="Post"
+				action="<%= friendship_url(@friendship) %>">
+
+				<%= auth_token %>
+				<input type="hidden" name="_method" value="Delete">
+				<input type="submit" value="Unfriend">
+			</form>
+		</li>
+		<% else %>
+		<li>
+      <form class="create-delete-friend" action="<%= friendships_url %>" method="Post">
         <%= auth_token %>
 				<input type="hidden" name="id", value="<%= @user.id %>">
         <input type="submit" value="Add Friend">
