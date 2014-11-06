@@ -1,18 +1,12 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 div.show-course-header {
   margin: 0 auto;
   text-align: left;
-//  border-bottom: 1px solid black;
   padding: 20px;
   text-align: center;
-}
-
-div.show-course-header > h1 {
-  //display: block;
-//  position: relative;
-//  top: 25px;
 }
 
 div.course-cards {
@@ -21,13 +15,6 @@ div.course-cards {
   padding: 15px;
   text-align: left;
 }
-
-div.course-cards > h2 {
-//  display: block;
-//  position: relative;
-//  left: 15px;
-}
-
 div.new-course-header {
   margin: 0 auto;
   text-align: left;
@@ -170,8 +157,9 @@ ul.course-list form.new-enrollment {
 ul.course-list form.new-enrollment > input[type=submit] {
   margin: 15px auto;
   display: block;
-  background: green;
+  background: #15a1ec;
   color: white;
+  font-weight: bold;
   border: 0;
   box-shadow: 0;
   cursor: pointer;

@@ -73,15 +73,13 @@ div.user-courses > ul > li {
   padding: 10px;
 }
 
-// div.user-courses > ul > li > a {
-//   color: #15a1ec;
-// }
 
 ul.user-info {
   float: right;
-//  margin-right: 25px;
   width: 700px;
   min-width: 500px;
+  position: relative;
+  margin: auto 0;
 }
 
 ul.user-info > li {
@@ -175,12 +173,12 @@ a.study {
 
 form.add-pic {
   display: block;
-  width: 100px;
+  width: 50px;
 }
 
 form.add-pic > button {
   height: 25px;
-  width: 50px;
+  width: 25px;
   background: beige;
   color: green;
   cursor: pointer;

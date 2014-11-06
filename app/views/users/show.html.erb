@@ -1,8 +1,16 @@
 <div class="user-show">
 
 <div class="user-nav sub-header">
-	<h1><%= @user.username %></h1>
-	
+
+	<ul class="pic-name">
+				<li>
+					<img class="profile-pic"
+							src="<%= @user.filepicker_url %>">
+				</li>
+
+				<li><h1><%= @user.username %></h1></li>
+			</ul>
+
   <ul class="user-info">
     <li><%= image_tag "friends.png", size: "60x60" %></li>
     <li><h3><%= @user.friends.count %>
@@ -42,7 +50,9 @@
   <ul class="user-courses">
     <% @user.courses.each do |course| %>
     <li>
-      <h3><a href="<%= course_url(course) %>"><%= course.title %></a>
+      <h3><a
+				href="<%= course_url(course) %>">
+				<%= course.title %> | <%= course.category %></a>
         (<%= course.cards.count %> Cards)
       </h3>
     </li>
@@ -53,12 +63,11 @@
 <div class="leaderboard">
   <h1><%= image_tag "trophy.png", size: "40x40" %> Leaders</h1>
   <ul class="leaders">
-  <% i = 1 %>
-  <% @leaders.each do |leader| %>
-    <li><%= i %>. <strong><%= leader.username %></strong>
-      (<%= leader.points %>)</li>
-    <% i += 1 %>
-  <% end %>
+  <ol class="leaders">
+			<% @leaders.each do |leader| %>
+			<li><%= leader.username %> (<%= leader.points %>)</li>
+			<% end %>
+		</ol>
   </ul>
 
 </div>
