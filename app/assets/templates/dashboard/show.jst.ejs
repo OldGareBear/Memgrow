@@ -89,7 +89,10 @@
 		Leaders</h1>
   <ol class="leaders">
     <% leaders.forEach(function(leader) { %>
-    <li><%= leader.escape("username") %> (<%= leader.escape("points") %>)</li>
+    <li>
+			<a href="users/<%= leader.get("id") %>"><%= leader.escape("username") %></a>
+			(<%= leader.escape("points") %>)
+		</li>
     <% }) %>
   </ol>
 

@@ -76,7 +76,10 @@
   <ul class="leaders">
   <ol class="leaders">
 			<% @leaders.each do |leader| %>
-			<li><%= leader.username %> (<%= leader.points %>)</li>
+			<li>
+				<a href="<%= user_url(leader) %>"><%= leader.username %></a>
+				(<%= leader.points %>)
+			</li>
 			<% end %>
 		</ol>
   </ul>

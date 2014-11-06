@@ -189,6 +189,10 @@ a.study {
   cursor: pointer;
 }
 
+a.study:hover {
+  box-shadow: 3px 3px 3px black;
+}
+
 form.add-pic {
   display: block;
   width: 50px;
