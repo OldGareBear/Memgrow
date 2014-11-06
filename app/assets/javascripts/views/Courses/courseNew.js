@@ -3,35 +3,39 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 		this.listenTo(this.model, "sync", this.render);
 		this.listentTo(this.collection, "sync", this.render); // probably not necessary
 	},
-	
+
 	template: JST['courses/new'],
-	
+
 	render: function() {
 		var content = this.template({});
-		
+
 		this.$el.html(content);
-		
+
+		var $filePickerInput = this.$("input[type=filepicker]");
+
+		filepicker.constructWidget($filePickerInput[0]);
+
 		return this;
 	},
-	
+
 	events: {
 		"submit": "submitCourse",
 	},
-	
+
 	submitCourse: function(event) {
 		console.log("submitting...")
 		event.preventDefault();
 		var params = $(event.target).serializeJSON();
 		var title = params["course"]["title"];
 		var category = params["course"]["category"];
-		var newCourse = new Memgrow.Models.Course({ 
+		var newCourse = new Memgrow.Models.Course({
 			title: title,
 			category: category,
 			author_id: this.model.get("id")
 		});
-		
+
 		var courses = this.collection
-		
+
     newCourse.save({}, {
       success: function () {
         courses.add(newCourse);

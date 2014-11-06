@@ -57,6 +57,18 @@ form.new-course > input {
   display: block;
 }
 
+form.new-course > button[type=button] {
+  color: green;
+  font-weight: bold;
+  background: beige;
+  cursor: pointer;
+  background: white;
+  height: 20px;
+  width: 125px;
+  border: 1px solid #ccc;
+  margin: 15px auto;
+}
+
 form.new-course > input[type=submit] {
   margin: 15px auto;
   display: block;
