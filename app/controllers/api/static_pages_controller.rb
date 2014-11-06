@@ -8,7 +8,11 @@ class Api::StaticPagesController < ApplicationController
 
     @cards_studied, @study_errors = calc_stats(current_user)
 
-    @leaders = current_user.friends.sort_by(&:points).reverse[0, 10]
+    @leaders = current_user
+                 .friends
+                 .push(current_user)
+                 .sort_by(&:points)
+                 .reverse[0, 10]
 
     render :dashboard
   end
