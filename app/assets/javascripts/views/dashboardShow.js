@@ -10,10 +10,10 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	className: 'user-show',
 
 	render: function() {
-
+    console.log("friends", this.friends)
     var leaders = this.generateLeaders();
 
-    console.log(leaders);
+    // console.log(leaders);
 
 		var content = this.template({
 			current_user: this.model,
@@ -38,8 +38,9 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
   generateLeaders: function() {
     var leaders = this.friends.clone();
     leaders.add(this.model);
-    leaders.sortBy(function(friend) { return -friend.get("points"); });
+    leaders = leaders.sortBy(function(leader) { return -leader.get("points"); });
     leaders = leaders.slice(0, 10);
+    console.log("leaders", leaders);
     return leaders;
   },
 
