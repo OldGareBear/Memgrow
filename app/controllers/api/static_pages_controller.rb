@@ -50,6 +50,6 @@ class Api::StaticPagesController < ApplicationController
   end
 
   def user_params
-    params.permit(:username, :filepicker_url, :email)
+    params.permit(:username, :filepicker_url, :email, :points)
   end
 end

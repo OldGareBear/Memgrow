@@ -49,27 +49,29 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     var params = $(event.target).serializeJSON();
     var pinyin_answer = params["answer"]["pinyin"];
     var english_answer = params["answer"]["english"];
-    console.log(english_answer);
-    var current_card = this.cards.models[card_index];
 
-    console.log("user_id:" + this.current_user.escape("id"));
-    console.log("card_id:" + current_card.escape("id"));
+    var current_card = this.cards.models[card_index];
 
     var history = this.histories.findWhere({
       card_id: parseInt(current_card.escape("id"))
     });
-
-    // console.log(this.histories)
-    // console.log(history);
 
     // find out whether the user was correct or not
     if (pinyin_answer === current_card.get("pinyin") &&
         english_answer === current_card.get("english")) {
 
       // increment the user's points for a correct answer
-      console.log(this.current_user.get("points") + 1);
-      this.current_user.set({ points: this.current_user.get("points") + 1 });
-      this.current_user.save({});
+      var new_points = this.current_user.get("points") + 1
+      console.log(new_points);
+
+      this.current_user.set({ points: new_points });
+
+      var that = this
+      this.current_user.save({}, {
+        success: function() {
+          console.log(that.current_user)
+        }
+      });
 
       // update the user card history for the current user and current card
       history.set({

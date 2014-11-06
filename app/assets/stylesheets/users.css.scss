@@ -12,8 +12,10 @@ form.new-user {
   width: 200px;
   height: 300px;
   padding: 50px;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  background: beige;
+  font-weight: bold;
 }
 
 form.new-user > label {
@@ -23,6 +25,18 @@ form.new-user > label {
 form.new-user > input {
   margin: 15px auto;
   display: block;
+}
+
+form.new-user > input[type=submit] {
+  margin: 25px auto;
+  display: block;
+  background: green;
+  color: white;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 div.user-nav {

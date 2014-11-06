@@ -94,6 +94,7 @@ ul.navbar > li > a {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -114,6 +115,6 @@ input.log-out {
   font-family: sans-serif;
 }
 
-a {
-  color: black;
+form.new-session > a.facebook-login {
+  width: 300px;
 }
