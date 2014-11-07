@@ -40,48 +40,57 @@ User.create!( email: "dom@dom.com",
 
 Friendship.create!( requester_id: 1,
                     requestee_id: 2,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 2,
                     requestee_id: 3,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 3,
                     requestee_id: 4,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 4,
                     requestee_id: 5,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 5,
                     requestee_id: 6,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 4,
                     requestee_id: 2,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 3,
                     requestee_id: 5,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 4,
                     requestee_id: 6,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 1,
                     requestee_id: 3,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 4,
                     requestee_id: 1,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 5,
                     requestee_id: 2,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 6,
                     requestee_id: 3,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 2,
                     requestee_id: 6,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 1,
                     requestee_id: 5,
-                    status: "pending")
+                    status: "accepted")
 Friendship.create!( requester_id: 1,
                     requestee_id: 6,
+                    status: "accepted")
+Friendship.create!( requester_id: 50,
+                    requestee_id: 4,
+                    status: "pending")
+Friendship.create!( requester_id: 51,
+                    requestee_id: 4,
+                    status: "pending")
+Friendship.create!( requester_id: 52,
+                    requestee_id: 4,
                     status: "pending")
 
 Course.create!( title: "Fruits and Veggies",

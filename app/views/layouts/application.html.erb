@@ -21,7 +21,12 @@
 
     <% if current_user %>
     <ul class="navbar">
-			<li class="nav-button">Notifications</li>
+			<li class="nav-button">
+				Notifications 
+				<p class="notifications">
+					<%= current_user.friends_awaiting_acceptance.count %>
+				</p>
+			</li>
       <li class="nav-button"><a href="<%= courses_url %>">Browse</a></li>
       <li class="nav-button"><a href="#/courses/new">Create Course</a></li>
       <li class="nav-button"><%= button_to "Log out",

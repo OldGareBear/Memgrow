@@ -22,6 +22,8 @@ json.cards_count @cards_count
 
 # json.leaders @leaders, :id, :username, :points, :email
 
+json.friend_requests current_user.friends_awaiting_acceptance, :id, :username, :points, :email, :filepicker_url
+
 json.friends current_user.friends, :id, :username, :points, :email, :filepicker_url
 
 json.cards_studied @cards_studied
