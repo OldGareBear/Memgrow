@@ -164,6 +164,10 @@ div.dropdown > ul > li {
   text-align: center;
 }
 
+div.dropdown > ul > li.hidden {
+  display: none;
+}
+
 div.dropdown > ul > li:nth-child(1) {
   margin: 0;
 }
@@ -182,7 +186,6 @@ button.accept-friend-request {
   border:1px solid #00CF00;
   margin-top: 5px;
   margin-right: 5px;
-  // margin-left: 20px;
 }
 
 button.decline-friend-request {
@@ -194,10 +197,6 @@ button.decline-friend-request {
   font-size: 14px;
   border:1px solid #FF4747;
   margin-top: 5px;
-}
-
-span.buttons {
-  margin: auto;
 }
 
 

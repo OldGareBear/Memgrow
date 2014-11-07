@@ -30,12 +30,20 @@ Memgrow.Routers.Router = Backbone.Router.extend({
       var requester_id = $(event.currentTarget).data("id");
       var status = "accepted";
       router.handleFriendRequest(requester_id, status);
+
+      var notification = $(event.currentTarget).parent();
+
+      notification.addClass("hidden");
     });
 
     $("button.decline-friend-request").on("click", function(event) {
       var requester_id = $(event.currentTarget).data("id");
       var status = "declined";
       router.handleFriendRequest(requester_id, status);
+
+      var notification = $(event.currentTarget).parent();
+
+      notification.addClass("hidden");
     });
   },
 
@@ -43,10 +51,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
     console.log("friend request being handled...")
     var user = Memgrow.Models.user;
     var friendRequests = user.friendRequests();
-    console.log(friendRequests);
-    console.log("requester_id", requester_id);
     var friendRequest = friendRequests.findWhere({ requester_id: requester_id });
-    console.log(friendRequest);
 
     $.ajax({
       type: "PUT",

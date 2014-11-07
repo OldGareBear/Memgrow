@@ -31,7 +31,6 @@
             <% current_user.friends_awaiting_acceptance.each do |requester| %>
               <li>
                 <%= requester.username %> wants to be your friend!
-                <div class="buttons">
                   <button class="accept-friend-request"
                           data-id="<%= requester.id %>">
                     Accept
@@ -40,7 +39,6 @@
                           data-id="<%= requester.id %>">
                     Decline
                   </button>
-                </div>
               </li>
             <% end %>
           </ul>
