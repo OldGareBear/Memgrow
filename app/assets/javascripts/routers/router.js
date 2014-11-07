@@ -53,12 +53,16 @@ Memgrow.Routers.Router = Backbone.Router.extend({
     var friendRequests = user.friendRequests();
     var friendRequest = friendRequests.findWhere({ requester_id: requester_id });
 
+    var num_courses = $("p.notifications").text() - 1;
+
     $.ajax({
       type: "PUT",
       url: "/api/friendships/" + friendRequest.get("id"),
       data: { status: status },
       success: function(results) {
         console.log("friend request has been responded to");
+
+        $("p.notifications").text(num_courses);
       }
     });
   },

@@ -2,6 +2,10 @@
 <form class="new-user" action="<%= users_url %>" method="Post">
 	<%= auth_token %>
 
+	<a class="facebook-login" href="/auth/facebook">Facebook Login</a>
+
+	<p>----------------or----------------</p>
+
 	<label for="user_email">Email</label>
 	<input type="text"
 				 name="user[email]"
