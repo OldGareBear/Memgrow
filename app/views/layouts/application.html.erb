@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
 	<%= javascript_include_tag "application" %>
  <script type="text/javascript"
-    src="//api.filepicker.io/v1/filepicker.js"></script> 
+    src="//api.filepicker.io/v1/filepicker.js"></script>
 
   <script>filepicker.setKey("ACAfiCjL6TjGMn7p7COUcz");</script>
 </head>
@@ -21,8 +21,8 @@
 
     <% if current_user %>
     <ul class="navbar">
-			<li class="nav-button">
-				Notifications 
+			<li class="nav-button" id="notifications">
+				Notifications
 				<p class="notifications">
 					<%= current_user.friends_awaiting_acceptance.count %>
 				</p>

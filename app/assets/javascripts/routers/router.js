@@ -1,6 +1,7 @@
 Memgrow.Routers.Router = Backbone.Router.extend({
   initialize: function() {
-    this.$rootEl = $('.content')
+    this.$rootEl = $('.content');
+    this.bindNotificationEvents();
   },
 
 	routes: {
@@ -10,6 +11,10 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		"courses/new": "coursesNew",
 		"cards/new": "cardsNew"
 	},
+
+  bindNotificationEvents: function() {
+    var notificationsLi = $("li#notifications")
+  },
 
 	dashboardShow: function() {
 		Memgrow.Models.user.fetch();

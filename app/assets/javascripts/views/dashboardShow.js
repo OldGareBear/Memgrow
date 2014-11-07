@@ -12,14 +12,14 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 
 	render: function() {
     var leaders = this.generateLeaders();
-		
+
     console.log(leaders);
 
 		var content = this.template({
 			current_user: this.model,
       courses: this.courses,
       friends: this.friends,
-			// friendRequests: this.friendRequests,
+			friendRequests: this.friendRequests,
       leaders: leaders
 		});
 
@@ -41,7 +41,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     leaders.add(this.model);
     leaders = leaders.sortBy(function(leader) { return -leader.get("points"); });
     leaders = leaders.slice(0, 10);
-    console.log("leaders", leaders);
     return leaders;
   },
 
