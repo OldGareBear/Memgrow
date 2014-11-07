@@ -22,17 +22,44 @@ class User < ActiveRecord::Base
     foreign_key: :requester_id,
     primary_key: :id,
   )
-
+  
   has_many(
-    :accepted_friendships,
+    :friend_requests,
     class_name: "Friendship",
     foreign_key: :requestee_id,
     primary_key: :id,
   )
 
-  has_many :requested_friends, through: :sought_friendships, source: :requestee
-  has_many :friends_requesting, through: :accepted_friendships, source: :requester
-
+  has_many :pending_requested_friendships, 
+    -> { where status: 'pending' }, 
+    through: :sought_friendships, 
+    class_name: "Friendship", 
+    source: :requester
+  has_many :requested_friendships, 
+    -> { where status: 'accepted' }, 
+    through: :sought_friendships, 
+    class_name: "Friendship", 
+    source: :requester
+  
+  has_many :friendships_awaiting_acceptance, 
+    -> { where status: 'pending' }, 
+    through: :friend_requests, 
+    class_name: "Friendship", 
+    source: :requestee
+  has_many :accepted_friendships, 
+    -> { where status: 'accepted' }, 
+    through: :friend_requests, 
+    class_name: "Friendship", 
+    source: :requestee
+    
+  has_many :pending_requested_friends, through: :pending_requested_friendships, source: :requester
+  
+  has_many :requested_friends, through: :requested_friendships, source: :requester
+  
+  has_many :friends_awaiting_acceptance, through: :friendships_awaiting_acceptance, source: :requestee
+  
+  has_many :accepted_friends, through: :accepted_friendships, source: :requestee
+  
   attr_reader :password
 
   def self.find_by_credentials(email, password)
@@ -71,8 +98,7 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    # for now, friendship is automatic; need to make requestees confirm”
-    requested_friends + friends_requesting
+    requested_friends + accepted_friends
   end
 
   private

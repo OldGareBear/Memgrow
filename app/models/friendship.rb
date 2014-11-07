@@ -15,5 +15,6 @@ class Friendship < ActiveRecord::Base
     primary_key: :id,
   )
   
+  scope :accepted, -> { where(status: "accepted") }
   
 end
