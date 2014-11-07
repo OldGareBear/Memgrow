@@ -14,6 +14,11 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 
   bindNotificationEvents: function() {
     var notificationsLi = $("li#notifications")
+    notificationsLi.on("click", function() {
+      console.log("You have clicked meh!");
+      // remove the hidden class from the dropdown
+      $("div.dropdown").removeClass("hidden");
+    });
   },
 
 	dashboardShow: function() {

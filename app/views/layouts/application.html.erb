@@ -26,6 +26,19 @@
 				<p class="notifications">
 					<%= current_user.friends_awaiting_acceptance.count %>
 				</p>
+        <div class="hidden dropdown">
+          <ul>
+            <% current_user.friends_awaiting_acceptance.each do |requester| %>
+              <li>
+                <%= requester.username %> wants to be your friend!
+                <div class="buttons">
+                  <button class="accept-friend-request">Accept</button>
+                  <button class="decline-friend-request">Decline</button>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
 			</li>
       <li class="nav-button"><a href="<%= courses_url %>">Browse</a></li>
       <li class="nav-button"><a href="#/courses/new">Create Course</a></li>

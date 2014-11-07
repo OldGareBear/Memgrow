@@ -19,7 +19,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 			current_user: this.model,
       courses: this.courses,
       friends: this.friends,
-			friendRequests: this.friendRequests,
+			// friendRequests: this.friendRequests,
       leaders: leaders
 		});
 
