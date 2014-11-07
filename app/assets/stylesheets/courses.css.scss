@@ -10,10 +10,10 @@ div.show-course-header {
 }
 
 div.course-cards {
-  width: 100%;
+  float: left;
   height: 770px;
   padding: 15px;
-  text-align: left;
+  text-align: center;
 }
 div.new-course-header {
   margin: 0 auto;
@@ -178,7 +178,7 @@ div.show-course-header form.new-enrollment {
 }
 
 div.comments {
-  border-right: 1px solid black;
+  border-right: 10px solid beige;
   width: 400px;
   float: left;
   height: 800px;
@@ -192,15 +192,17 @@ div.comments > h2 {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-collapse: collapse;
 }
 
-table {
-  position: relative;
-  left: 15px;
-  top: 15px;
+div.cards-index {
+  margin: 0 auto;
 }
+
+// table {
+//   border-radius: 5px;
+// }
 
 th,td {
     padding: 15px;
