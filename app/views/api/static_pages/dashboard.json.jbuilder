@@ -20,9 +20,7 @@ end
 
 json.cards_count @cards_count
 
-# json.leaders @leaders, :id, :username, :points, :email
-
-json.friend_requests current_user.friends_awaiting_acceptance, :id, :username, :points, :email, :filepicker_url
+json.friend_requests current_user.friendships_awaiting_acceptance, :id, :requester_id, :requestee_id, :status
 
 json.friends current_user.friends, :id, :username, :points, :email, :filepicker_url
 

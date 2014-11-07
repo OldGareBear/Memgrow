@@ -13,11 +13,48 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	},
 
   bindNotificationEvents: function() {
+    var router = this;
     var notificationsLi = $("li#notifications")
+
+    // remove the hidden class from the dropdown
     notificationsLi.on("click", function() {
-      console.log("You have clicked meh!");
-      // remove the hidden class from the dropdown
       $("div.dropdown").removeClass("hidden");
+    });
+
+    // and reinstall it on mouseleave
+    $("div.dropdown").on("mouseleave", function() {
+      $("div.dropdown").addClass("hidden");
+    });
+
+    $("button.accept-friend-request").on("click", function(event) {
+      var requester_id = $(event.currentTarget).data("id");
+      var status = "accepted";
+      router.handleFriendRequest(requester_id, status);
+    });
+
+    $("button.decline-friend-request").on("click", function(event) {
+      var requester_id = $(event.currentTarget).data("id");
+      var status = "declined";
+      router.handleFriendRequest(requester_id, status);
+    });
+  },
+
+  handleFriendRequest: function(requester_id, status) {
+    console.log("friend request being handled...")
+    var user = Memgrow.Models.user;
+    var friendRequests = user.friendRequests();
+    console.log(friendRequests);
+    console.log("requester_id", requester_id);
+    var friendRequest = friendRequests.findWhere({ requester_id: requester_id });
+    console.log(friendRequest);
+
+    $.ajax({
+      type: "PUT",
+      url: "/api/friendships/" + friendRequest.get("id"),
+      data: { status: status },
+      success: function(results) {
+        console.log("friend request has been responded to");
+      }
     });
   },
 

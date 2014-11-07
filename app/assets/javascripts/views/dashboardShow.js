@@ -3,7 +3,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     this.listenTo(this.model, "sync", this.render);
     this.courses = this.model.courses();
     this.friends = this.model.friends();
-		// this.friendRequests = this.model.friendRequests();
   },
 
 	template: JST['dashboard/show'],
@@ -13,13 +12,10 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	render: function() {
     var leaders = this.generateLeaders();
 
-    console.log(leaders);
-
 		var content = this.template({
 			current_user: this.model,
       courses: this.courses,
       friends: this.friends,
-			// friendRequests: this.friendRequests,
       leaders: leaders
 		});
 
@@ -56,7 +52,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
       url: "api/search",
       data: { query: query },
       success: function(results) {
-        console.log("ajax request response:", results)
         that.renderSearchResults(results);
       }
     });

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :user_card_histories, only: [:create, :update, :destroy]
 
-  resources :friendships, only: [:create, :destroy]
+  resources :friendships, only: [:create, :destroy, :update]
 
   resources :comments, except: [:index, :new]
 
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :cards, except: [:new, :edit, :index]
     resources :enrollments, only: [:create, :destroy]
     resources :user_card_histories, only: [:create, :update, :destroy]
-    resources :friendships, only: [:create, :destroy, :index]
+    resources :friendships, only: [:create, :destroy, :index, :update]
     resources :comments, except: [:new, :edit]
   end
 end

@@ -1,5 +1,5 @@
-// Memgrow.Collections.FriendRequests = Backbone.Colleciton.extend({
-// 	url: '/api/users',
-//
-// 	model: Memgrow.Models.OtherUser
-// });
+Memgrow.Collections.FriendRequests = Backbone.Collection.extend({
+	url: '/api/friendships',
+
+	model: Memgrow.Models.Friendship
+});
