@@ -54,6 +54,10 @@
                   </button>
               </li>
             <% end %>
+						
+						<% if current_user.friends_awaiting_acceptance.count == 0 %>
+							<li>Sorry, you have no friend requests right now =(</li>
+						<% end %>
           </ul>
         </div>
       </li>
