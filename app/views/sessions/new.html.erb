@@ -1,20 +1,23 @@
-<form class="new-session" action="<%= session_url %>" method="Post">
-	<%= auth_token %>
+<div class="new-session">
+	<form class="new-session" action="<%= session_url %>" method="Post">
+		<%= auth_token %>
 
 
-  <a class="facebook-login" href="/auth/facebook">Facebook Login</a>
+	  <a class="facebook-login" href="/auth/facebook">Facebook Login</a>
 
-  <p>----------------or----------------</p>
+	  <p>----------------or----------------</p>
 
-	<label for="user_email">Email</label>
-	<input type="text"
-				 name="user[email]"
-				 id="user_email">
+		<label for="user_email">Email</label>
+		<input type="text"
+					 name="user[email]"
+					 id="user_email">
 
-	<label for="user_password">Password</label>
-	<input type="password"
-				 name="user[password]"
-				 id="user_password">
+		<label for="user_password">Password</label>
+		<input type="password"
+					 name="user[password]"
+					 id="user_password">
 
-	<input type="submit" value="Let's go!">
-</form>
+		<input type="submit" value="Let's go!">
+	</form>
+	<div class="front-image"></div>
+</div>

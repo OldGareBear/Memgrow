@@ -2,17 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.new-session {
+	background-color: #15a1ec;
+	background-image: image-url('noise-blue.png');
+	padding-top: 50px;
+	border-top: 1px solid #82B4FF;
+	z-index: 0;
+	height: 630px;
+}
+
+div.front-image {
+	background-image: image-url('front.v1.png');
+	position: relative;
+	top: -180px;
+	height: 390px;
+}
+
 form.new-session {
   margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 250px;
+//  margin-bottom: 250px;
   width: 300px;
   height: 300px;
   padding: 50px 25px;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  background: #BCE359;
+  background: white;
+	z-index: 9999999999;
 }
 
 form.new-session > label {
