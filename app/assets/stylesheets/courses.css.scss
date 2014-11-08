@@ -29,7 +29,7 @@ form.new-course {
   padding: 50px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: beige;
+  background: rgb(139,198,61);
   text-align:center;
 }
 
@@ -44,14 +44,14 @@ form.new-course > input {
 }
 
 form.new-course > button[type=button] {
-  color: green;
+  color: rgb(4, 83, 36);
   font-weight: bold;
-  background: beige;
+  background: rgb(139,198,61);
   cursor: pointer;
   background: white;
   height: 20px;
   width: 125px;
-  border: 1px solid beige;
+  border: 1px solid rgb(139,198,61);
   margin: 15px auto;
 }
 
@@ -60,7 +60,7 @@ form.new-course > input[type=submit] {
   display: block;
   position: relative;
   left: 45px;
-  background: green;
+  background: rgb(4, 83, 36);
   color: white;
   border: 0;
   box-shadow: 0;
@@ -106,7 +106,7 @@ div.course-list {
   width: 500px;
   padding-left: 15px;
   padding-top: 15px;
-  border-left: 10px solid beige;
+  border-left: 10px solid rgb(139,198,61);
 }
 
 ul.course-list {
@@ -178,7 +178,7 @@ div.show-course-header form.new-enrollment {
 }
 
 div.comments {
-  border-right: 10px solid beige;
+  border-right: 10px solid rgb(139,198,61);
   width: 400px;
   float: left;
   height: 800px;
@@ -214,7 +214,7 @@ tr:nth-child(1) {
 }
 
 tr:nth-child(even) {
-  background-color: beige;
+  background-color: rgb(139,198,61);
 }
 
 ul.comments-index > li {

@@ -12,9 +12,9 @@ form.new-user {
   width: 200px;
   height: 300px;
   padding: 50px;
-  border: 1px solid beige;
+  border: 1px solid rgb(139,198,61);
   border-radius: 5px;
-  background: beige;
+  background: rgb(139,198,61);
   font-weight: bold;
 }
 
@@ -30,7 +30,7 @@ form.new-user > input {
 form.new-user > input[type=submit] {
   margin: 25px auto;
   display: block;
-  background: green;
+  background: rgb(4, 83, 36);
   color: white;
   border: 0;
   box-shadow: 0;
@@ -54,7 +54,7 @@ div.user-nav > h1 {
 
 div.stats {
   padding:0;
-  border-right: 10px solid beige;
+  border-right: 10px solid rgb(139,198,61);
   min-width: 200px;
   float: left;
   height: 800px;
@@ -72,7 +72,7 @@ div.user-courses {
 
 div.leaderboard {
   padding:0;
-  border-left: 10px solid beige;
+  border-left: 10px solid rgb(139,198,61);
   width: 24%;
   float: right;
   height: 800px;
@@ -126,7 +126,7 @@ ul.user-info > li > h3 {
 
 ul.user-info > li > h3 > a {
   display: inline;
-  color: green;
+  color: rgb(4, 83, 36);
 }
 
 ul.user-courses > li > h3 > a {
@@ -196,8 +196,8 @@ form.add-pic {
 form.add-pic > button {
   height: 25px;
   width: 25px;
-  background: beige;
-  color: green;
+  background: rgb(139,198,61);
+  color: rgb(4, 83, 36);
   cursor: pointer;
 }
 
@@ -237,7 +237,7 @@ form.find-friends > input[type=text] {
 form.find-friends > input[type=submit] {
   height: 25px;
   width: 25px;
-  background: green;
+  background: rgb(4, 83, 36);
   color: white;
   border: 0;
   box-shadow: 0;

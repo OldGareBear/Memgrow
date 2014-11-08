@@ -7,13 +7,13 @@ div.container {
 
 form.new-card {
 	padding: 15px;
-	border-bottom: 1px solid beige;
-	background: beige;
+	border-bottom: 1px solid rgb(139,198,61);
+	background: rgb(139,198,61);
 	font-weight: bold;
 }
 
 form.new-card > input[type=submit] {
-	background: green;
+	background: rgb(4, 83, 36);
 	color: white;
 	border: 0;
 	box-shadow: 0;
@@ -60,9 +60,9 @@ div.card-container {
 
 form.card-quiz {
   text-align: center;
-  border: 1px solid beige;
+  border: 1px solid #ccc;
   border-radius: 5px;
-	background: beige;
+	background: rgb(139,198,61);
   width: 200px;
   padding: 10px;
   margin: 50px auto;
@@ -81,7 +81,7 @@ form.card-quiz > input {
 }
 
 form.card-quiz > input[type=submit] {
-	background: green;
+	background: rgb(4, 83, 36);
 	color: white;
 	border: 0;
 	box-shadow: 0;

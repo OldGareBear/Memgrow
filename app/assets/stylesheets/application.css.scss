@@ -36,12 +36,14 @@ div.header {
 	width: 100%;
 	height: 125px;
   min-width: 800px;
+	background-color: #15a1ec;
   background-image: image-url('noise-blue.png');
 }
 
 div.footer {
 	width: 100%;
 	height: 125px;
+	background-color: #15a1ec;
   background-image: image-url('noise-blue.png');
   clear:both;
 }
@@ -66,7 +68,7 @@ ul.navbar > li {
   margin: 5px;
   background-color: white;
   color: black;
-  border: 1px solid beige;
+  border: 1px solid rgb(161, 207, 92);
   border-radius: 5px;
   font-weight: bold;
 }
@@ -100,7 +102,7 @@ a {
 }
 
 .sub-header {
-  background: beige;
+  background: rgb(161, 207, 92);
 }
 
 input.log-out {
@@ -156,7 +158,7 @@ div.dropdown {
 }
 
 div.dropdown > ul > li {
-  background: beige;
+  background: rgb(161, 207, 92);
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
