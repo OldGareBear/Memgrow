@@ -64,50 +64,7 @@
 			<li><a href="<%= new_user_url %>">Sign Up</a></li>
       <li class="nav-button"><a href="<%= courses_url %>">Browse</a></li>
 		</ul>
-    <% end %> -->
-
-    <!-- <% if current_user %>
-    <ul class="navbar">
-      <li class="nav-button" id="notifications">
-        Notifications
-        <p class="notifications">
-          <%= current_user.friends_awaiting_acceptance.count %>
-        </p>
-        <div class="hidden dropdown">
-          <ul>
-            <% current_user.friends_awaiting_acceptance.each do |requester| %>
-              <li>
-                <%= requester.username %> wants to be your friend!
-                  <button class="accept-friend-request"
-                          data-id="<%= requester.id %>">
-                    Accept
-                  </button>
-                  <button class="decline-friend-request"
-                          data-id="<%= requester.id %>">
-                    Decline
-                  </button>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-button"><a href="<%= courses_url %>">Browse</a></li>
-      <li class="nav-button"><a href="#/courses/new">Create Course</a></li>
-      <li class="nav-button"><%= button_to "Log out",
-          session_url,
-          method: :delete,
-          class: "log-out" %></li>
-      <li class="nav-button">
-        <a href="<%= dashboard_url %>"><%=current_user.username %></a>
-      </li>
-    </ul>
-    <% else %>
-    <ul class="navbar">
-      <li><a href="<%= new_session_url %>">Log In</a></li>
-      <li><a href="<%= new_user_url %>">Sign Up</a></li>
-    </ul>
-    <% end %>
-    <!---->
+    <% end %> 
 
 	</div>
 

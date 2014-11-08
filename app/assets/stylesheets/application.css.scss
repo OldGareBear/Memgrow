@@ -36,13 +36,13 @@ div.header {
 	width: 100%;
 	height: 125px;
   min-width: 800px;
-  background-image: url('/assets/noise-blue.png');
+  background-image: image-url('noise-blue.png');
 }
 
 div.footer {
 	width: 100%;
 	height: 125px;
-  background-image: url('/assets/noise-blue.png');
+  background-image: image-url('noise-blue.png');
   clear:both;
 }
 
@@ -100,7 +100,7 @@ a {
 }
 
 .sub-header {
-background-color: beige;
+  background: beige;
 }
 
 input.log-out {
