@@ -1,0 +1,38 @@
+<div class="content">
+<div class="courses-header sub-header">
+  <h1>Courses</h1>
+</div>
+
+<div class="categories">
+  <h3>Categories</h3>
+  <ul class="category-list">
+    <% categories.forEach(function(category) { %>
+    <li>category</li>
+    <% }) %>
+  </ul>
+</div>
+
+<div class="course-list">
+  <h2>All Courses</h2>
+
+  <ul class="course-list">
+    <% courses.each(function(course) { %>
+      <li>
+        <a href="#courses/<%= course.get("id") %>">
+          <img src="<%= course.get("filepicker_url") %>">
+        </a>
+        <h4><%= course.get("title") %></h4>
+        <% if (!current_user.courses().include(course)) {%>
+        <form class="new-enrollment">
+
+          <input type="hidden"
+                 name="enrollment[course_id]"
+                 value="<%= course.get("id") %>">
+          <input type="submit">
+        </form>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+</div>

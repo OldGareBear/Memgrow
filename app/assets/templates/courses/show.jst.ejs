@@ -1,0 +1,63 @@
+<div class="show-course-header sub-header">
+  <h1><%= course.escape("title") %></h1>
+  <h3><%= course.escape("category") %></h3>
+  <% if (current_user.get("id") === course.get("author_id")) {%>
+    <button class="delete-btn">Delete</button>
+  <% } %>
+
+  <% if (!current_user.courses().include(course)) { %>
+    <form class="new-enrollment">
+
+      <input type="hidden"
+             name="enrollment[course_id]"
+             value="<%= course.get("id") %>">
+      <input type="submit" value="Add to Courses">
+    </form>
+  <% } %>
+</div>
+
+<div class="comments">
+  <h2>Student Thoughts:</h2>
+	<ul class="comments-index">
+	<% comments.each(function(comment) { %>
+	  <li class="comment">
+	    <p><%= comment.escape("content") %></p>
+	    <p class="author-date-info">Posted by
+	      <a href="#users/<%= comment.get("author_id") %>">
+        <!-- query the database for the user who matches the author id? or more likely, maybe there should be a collection for commenters on a given course -->
+	      </a> <%= comment.get("created_at") %>
+	    </p>
+	  </li>
+	<% }) %>
+	</ul>
+	
+	<form class="new-comment">
+	  <input type="hidden" name="comment[course_id]" value="<%= course.get("id") %>">
+
+	  <label for="comment-content">Your Comment:</label>
+	  <textarea id="comment-content"
+	            name="comment[content]"></textarea>
+
+	  <input type="submit">
+	</form>
+	
+</div>
+<div class="course-cards">
+		<div class="cards-index">
+		  <h2>Cards:</h2>
+		  <table>
+		    <tr>
+		      <th>Character</th>
+		      <th>Pinyin</th>
+		      <th>English</th>
+		    </tr>
+		  <% cards.each(function(card) { %>
+		    <tr class="card-attrs">
+		      <td><%= card.escape("character") %></td>
+		      <td><%= card.escape("pinyin") %></td>
+		      <td><%= card.escape("english") %></td>
+		    </tr>
+		  <% }) %>
+		</table>
+		</div>
+</div>

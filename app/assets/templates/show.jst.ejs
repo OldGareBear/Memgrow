@@ -1,0 +1,88 @@
+<div class="user-nav sub-header">
+
+	<ul class="pic-name">
+		<li>
+			<img class="profile-pic"
+					 src="<%= user.escape("filepicker_url") %>">
+		</li>
+
+  	<li><h1><%= user.escape("username") %></h1></li>
+	</ul>
+
+  <ul class="user-info">
+    <li class="icon">
+			<img src="<%= user.get("friends_pic") %>"
+				height="60" width="60">
+		</li>
+    
+		<li><h3><%= friends.length %><a href="#/friends"> Friends</a></h3></li>
+    
+		<li class="icon">
+			<img src="<%= user.get("words_pic") %>"
+				height="60" width="60">
+		</li>
+		
+    <li><h3><%= user.escape("cards_count") %> Words</h3></li>
+		
+    <li class="icon">
+			<img src="<%= user.get("points_pic") %>"
+				height="60" width="60">
+		</li>
+		
+    <li><h3><%= user.escape("points") %> Points</h3></li>
+  </ul>
+</div>
+
+<div class="stats">
+
+  <h1><img src="<%= user.get("stats_pic") %>" height="60" width="60">
+		Stats</h1>
+
+  <h3>Cards Studied:</h3>
+  <p><%= user.get("cards_studied") %></p>
+
+  <h3>Errors:</h3>
+  <p><%= user.get("study_errors") %></p>
+
+  <h3>Accuracy:</h3>
+
+	<% var percentage = Math.round(((user.get("cards_studied") -
+		user.get("study_errors")) /
+		user.get("cards_studied") * 100)) %>
+
+	<% if (isNaN(percentage)) { %>
+  <p><%= 0 %>%</p>
+	<% } else { %>
+	<p><%= percentage %>%</p>
+	<% } %>
+
+</div>
+
+<div class="user-courses">
+
+  <h1><img src="<%= user.get("courses_pic") %>" height="60" width="60">
+		<%= user.escape("username") %>'s Courses</h1>
+  <ul class="user-courses">
+    <% courses.each(function(course) { %>
+      <li>
+        <h3>
+          <a href=""><%= course.get("title") %></a>
+          | <%= course.get("category") %>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+
+<div class="leaderboard">
+  <h1><img src="<%= user.get("leaders_pic") %>" height="60" width="60">
+		Leaders</h1>
+  <ol class="leaders">
+    <% leaders.forEach(function(leader) { %>
+    <li>
+			<a href="users/<%= leader.get("id") %>"><%= leader.escape("username") %></a>
+			(<%= leader.escape("points") %>)
+		</li>
+    <% }) %>
+  </ol>
+
+</div>
