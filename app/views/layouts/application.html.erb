@@ -33,6 +33,8 @@
 
 
       <li class="nav-button"><a href="#/courses/new">Create Course</a></li>
+			
+			<li class="nav-button"><a href="#/courses">Browse</a></li>
 
       <li class="nav-button" id="notifications">
         Notifications
@@ -64,9 +66,8 @@
     </ul>
     <% else %>
 		<ul class="navbar">
-			<li><a href="<%= new_session_url %>">Log In</a></li>
-			<li><a href="<%= new_user_url %>">Sign Up</a></li>
-      <li class="nav-button"><a href="<%= courses_url %>">Browse</a></li>
+			<li class="nav-button"><a href="<%= new_session_url %>">Log In</a></li>
+			<li class="nav-button"><a href="<%= new_user_url %>">Sign Up</a></li>
 		</ul>
     <% end %> 
 

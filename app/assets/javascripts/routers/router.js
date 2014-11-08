@@ -8,7 +8,9 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		"": "dashboardShow",
     "friends": "friendsIndex",
     "study/:id": "studySesh",
+		"courses": "courseIndex",
 		"courses/new": "coursesNew",
+		"courses/:id": "courseShow",
 		"cards/new": "cardsNew"
 	},
 
