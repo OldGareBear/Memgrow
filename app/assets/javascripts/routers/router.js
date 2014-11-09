@@ -146,8 +146,8 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		
 		var view = new Memgrow.Views.CourseShow({
 			model: course,
-			currentUser: currentUser
-		}) // get the cards for the course in this view
+			currentUser: currentUser,
+		}) 
 		
 		this.swapView(view);
 	},

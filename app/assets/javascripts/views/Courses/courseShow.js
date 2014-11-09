@@ -10,11 +10,13 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	
 	render: function() {
 		var cards = this.model.cards();
+		var comments = this.model.comments();
 		
 		var content = this.template({
 			course: this.model,
 			cards: cards,
-			currentUser: this.currentUser
+			currentUser: this.currentUser,
+			comments: comments
 		});
 		
 		this.$el.html(content);

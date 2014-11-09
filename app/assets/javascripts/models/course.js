@@ -27,7 +27,7 @@ Memgrow.Models.Course = Backbone.Model.extend({
 	
 	comments: function() {
 		if (!this._comments) {
-			this._comments = new Memgrow.Collections.Comments([] {
+			this._comments = new Memgrow.Collections.Comments([], {
 				course_id: this.id
 			});
 		}
