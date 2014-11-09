@@ -3,4 +3,5 @@ json.array! @courses do |course|
   json.title course.title
   json.category course.category
   json.author_id course.author_id
+  json.filepicker_url course.filepicker_url
 end

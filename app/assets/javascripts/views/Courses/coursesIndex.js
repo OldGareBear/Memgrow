@@ -36,5 +36,15 @@ Memgrow.Views.CoursesIndex = Backbone.View.extend({
 		});
 		
 		return new_array;
+	},
+	
+	events: {
+		"submit": "submit"
+	},
+	
+	submit: function(event) {
+		event.preventDefault();
+		
+		$ajax
 	}
 });
