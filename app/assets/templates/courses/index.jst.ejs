@@ -22,7 +22,7 @@
           <img src="<%= course.get("filepicker_url") %>">
         </a>
         <h4><%= course.get("title") %></h4>
-        <% if (!current_user.courses().include(course)) {%>
+        <% if (!current_user.courses().contains(course)) { %>
         <form class="new-enrollment">
 
           <input type="hidden"

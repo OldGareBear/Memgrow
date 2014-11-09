@@ -149,9 +149,11 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	
 	coursesIndex: function() {
 		var current_user = Memgrow.Models.user;
+		current_user.fetch();
 		var courses = Memgrow.Collections.courses;
 		courses.fetch();
-		console.log(courses);
+		
+		console.log(current_user.courses());
 		
 		var view = new Memgrow.Views.CoursesIndex({
 			collection: courses,
