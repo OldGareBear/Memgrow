@@ -21,7 +21,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 
     // remove the hidden class from the dropdown
     notificationsLi.on("click", function() {
-      $("div.dropdown").removeClass("hidden");
+      $("div.dropdown").toggleClass("hidden");
     });
 
     // and reinstall it on mouseleave
@@ -144,7 +144,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 		
 		var view = new Memgrow.Views.CourseShow({
 			model: course
-		}) // make this view; in it, get the cards for the course; made a jbuilder for course show
+		}) // make this view; in it, get the cards for the course
 	},
 	
 	coursesIndex: function() {
