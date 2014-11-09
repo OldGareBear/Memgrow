@@ -36,6 +36,6 @@ Rails.application.routes.draw do
     resources :enrollments, only: [:create, :destroy]
     resources :user_card_histories, only: [:create, :update, :destroy]
     resources :friendships, only: [:create, :destroy, :index, :update]
-    resources :comments, except: [:new, :edit]
+    resources :comments, except: [:new, :edit, :show]
   end
 end

@@ -1,11 +1,11 @@
 <div class="show-course-header sub-header">
   <h1><%= course.escape("title") %></h1>
   <h3><%= course.escape("category") %></h3>
-  <% if (current_user.get("id") === course.get("author_id")) {%>
+  <% if (currentUser.get("id") === course.get("author_id")) {%>
     <button class="delete-btn">Delete</button>
   <% } %>
 
-  <% if (!current_user.courses().include(course)) { %>
+  <% if (!currentUser.courses().include(course)) { %>
     <form class="new-enrollment">
 
       <input type="hidden"
@@ -42,6 +42,7 @@
 	</form>
 	
 </div>
+
 <div class="course-cards">
 		<div class="cards-index">
 		  <h2>Cards:</h2>

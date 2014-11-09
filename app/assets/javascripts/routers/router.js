@@ -139,25 +139,28 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	
 	courseShow: function(id) {
 		var courses = Memgrow.Collections.courses;
-		var course = course.getOrFetch(id);
+		var course = courses.getOrFetch(id);
 		console.log(course);
+		var currentUser = Memgrow.Models.user;
+		currentUser.fetch();
 		
 		var view = new Memgrow.Views.CourseShow({
-			model: course
-		}) // make this view; in it, get the cards for the course
+			model: course,
+			currentUser: currentUser
+		}) // get the cards for the course in this view
+		
+		this.swapView(view);
 	},
 	
 	coursesIndex: function() {
-		var current_user = Memgrow.Models.user;
-		current_user.fetch();
+		var currentUser = Memgrow.Models.user;
+		currentUser.fetch();
 		var courses = Memgrow.Collections.courses;
 		courses.fetch();
 		
-		console.log(current_user.courses());
-		
 		var view = new Memgrow.Views.CoursesIndex({
 			collection: courses,
-			model: current_user
+			model: currentUser
 		});
 		
 		this.swapView(view);
