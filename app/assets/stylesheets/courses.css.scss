@@ -154,8 +154,8 @@ ul.course-list form.new-enrollment {
   clear: both;
 }
 
-ul.course-list form.new-enrollment > input[type=submit] {
-  margin: 15px auto;
+form.new-enrollment > input[type=submit] {
+  margin: 5px auto;
   display: block;
   background: #15a1ec;
   color: white;
@@ -214,7 +214,7 @@ tr:nth-child(1) {
 }
 
 tr:nth-child(even) {
-  background-color: #ccc;
+  background: rgb(235, 235, 235)
 }
 
 ul.comments-index > li {
