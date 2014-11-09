@@ -22,5 +22,31 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 		this.$el.html(content);
 		
 		return this;
+	},
+	
+	events: {
+		"submit .new-comment": "newComment",
+		"submit .new-enrollment": "newEnrollment"
+	},
+	
+	newComment: function(event) {
+		
+	},
+	
+	newEnrollment: function(event) {
+		event.preventDefault();
+		
+		var course_id = $(event.target).serializeJSON()["enrollment"];
+		
+		console.log(course_id);
+		
+    $.ajax({
+      type: "POST",
+      url: "api/enrollments",
+      data: course_id,
+      success: function(results) {
+        console.log("your course has been added!")
+      }
+    });
 	}
 });
