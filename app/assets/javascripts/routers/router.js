@@ -167,12 +167,12 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	},
 	
 	userShow: function(id) {
-		var other_user = Memgrow.Models.OtherUser(); // do I need to get or fetch from a collection? or can backbone tells from the url how to create the otherUser? it seems strange to not have to do anything with this id
-		console.log(other_user);
+		var otherUser = new Memgrow.Models.OtherUser({ id: id });
+		otherUser.fetch();
 		
-		var view = new Memgrow.Views.userShow({
-			model: other_user
-		}); // make this view and a jbuilder for users
+		var view = new Memgrow.Views.UserShow({
+			model: otherUser
+		}); 
 	},
 
   swapView: function(view) {
