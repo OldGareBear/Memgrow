@@ -6,11 +6,11 @@
   <% friends.each(function(friend) { %>
   <li>
 
-    <a href="/users/<%= friend.get("id") %>">
+    <a href="#/users/<%= friend.get("id") %>">
       <%= friend.escape("username") %>
     </a>
 
-		<a href="/users/<%= friend.get("id") %>">
+		<a href="#/users/<%= friend.get("id") %>">
       <img src="<%= friend.escape("filepicker_url") %>">
     </a>
 
