@@ -7,8 +7,8 @@ div.container {
 
 form.new-card {
 	padding: 15px;
-	border-bottom: 1px solid #BCE359;
-	background: #BCE359;
+	border-bottom: 1px solid #ccc;
+	background-image: image-url('pattern-grey.v1.png');
 	font-weight: bold;
 }
 
@@ -62,7 +62,7 @@ form.card-quiz {
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-	background: #BCE359;
+	background-image: image-url('pattern-grey.v1.png');
   width: 200px;
   padding: 10px;
   margin: 50px auto;

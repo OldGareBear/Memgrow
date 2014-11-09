@@ -1,5 +1,5 @@
 // Memgrow.Collections.UserSearchResults = Backbone.Collection.extend({
-//   model: Memgrow.Models.OtherUser,
+//   model: Memgrow.Models.#ccc,
 //
 //   url: 'api/search'
 // });

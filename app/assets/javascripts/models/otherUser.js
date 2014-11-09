@@ -1,5 +1,5 @@
 Memgrow.Models.OtherUser = Backbone.Model.extend({
-  urlRoot: "/api/users"
+  urlRoot: "/api/users",
 	
 	parse: function(jsonResp) {
 		if (jsonResp.courses) {

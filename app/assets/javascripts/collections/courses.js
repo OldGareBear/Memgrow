@@ -1,8 +1,8 @@
-Memgrow.Collections.UserCourses = Backbone.Collection.extend({
-	url: "/api/courses",
-
+Memgrow.Collections.Courses = Backbone.Collection.extend({
+	url: 'api/courses',
+	
 	model: Memgrow.Models.Course,
-
+	
   getOrFetch: function(id) {
     var courses = this;
     var course = courses.get(id);
@@ -24,4 +24,4 @@ Memgrow.Collections.UserCourses = Backbone.Collection.extend({
   }
 });
 
-// Memgrow.Collections.userCourses = new Memgrow.Collections.UserCourses;
+Memgrow.Collections.courses = new Memgrow.Collections.Courses;
