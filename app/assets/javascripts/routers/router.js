@@ -169,10 +169,12 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	userShow: function(id) {
 		var otherUser = new Memgrow.Models.OtherUser({ id: id });
 		otherUser.fetch();
-		
+
 		var view = new Memgrow.Views.UserShow({
 			model: otherUser
-		}); 
+		});
+
+		this.swapView(view);
 	},
 
   swapView: function(view) {
