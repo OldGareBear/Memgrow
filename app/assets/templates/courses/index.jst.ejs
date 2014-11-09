@@ -26,9 +26,10 @@
         <form class="new-enrollment">
 
           <input type="hidden"
+								 id="course-id"
                  name="enrollment[course_id]"
                  value="<%= course.get("id") %>">
-          <input type="submit", value="Add to Courses">
+        <input type="submit" value="Add to Courses">
         </form>
         <% } %>
       </li>

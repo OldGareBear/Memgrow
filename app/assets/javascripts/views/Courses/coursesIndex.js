@@ -45,6 +45,17 @@ Memgrow.Views.CoursesIndex = Backbone.View.extend({
 	submit: function(event) {
 		event.preventDefault();
 		
-		$ajax
+		var course_id = $(event.target).serializeJSON()["enrollment"];
+		
+		console.log(course_id);
+		
+    $.ajax({
+      type: "POST",
+      url: "api/enrollments",
+      data: course_id,
+      success: function(results) {
+        console.log("your course has been added!")
+      }
+    });
 	}
 });
