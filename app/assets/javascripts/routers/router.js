@@ -148,19 +148,21 @@ Memgrow.Routers.Router = Backbone.Router.extend({
 	},
 	
 	coursesIndex: function() {
+		var current_user = Memgrow.Models.user;
 		var courses = Memgrow.Collections.courses;
 		courses.fetch();
 		console.log(courses);
 		
 		var view = new Memgrow.Views.CoursesIndex({
-			collection: courses
+			collection: courses,
+			model: current_user
 		});
 		
 		this.swapView(view);
 	},
 	
 	userShow: function(id) {
-		var other_user = Memgrow.Models.OtherUser(); // do I need to get or fetch from a u#cccection? or can backbone tells from the url how to create the otherUser? it seems strange to not have to do anything with this id
+		var other_user = Memgrow.Models.OtherUser(); // do I need to get or fetch from a collection? or can backbone tells from the url how to create the otherUser? it seems strange to not have to do anything with this id
 		console.log(other_user);
 		
 		var view = new Memgrow.Views.userShow({
