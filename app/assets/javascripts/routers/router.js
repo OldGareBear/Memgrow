@@ -98,8 +98,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
     var course = courses.getOrFetch(id);
     var cards = course.cards();
 
-    var view = new
-     Memgrow.Views.StudySesh({
+    var view = new Memgrow.Views.StudySesh({
        current_user: user,
        model: course,
        collection: courses,
