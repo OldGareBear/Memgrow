@@ -1,7 +1,9 @@
 Memgrow.Views.CourseShow = Backbone.View.extend({
 	initialize: function(options) {
 		this.currentUser = options.currentUser;
+		this.comments = this.model.comments();
 		
+		this.listenTo(this.comments, "sync add remove", this.render)
 		this.listenTo(this.model, "sync", this.render)
 		this.listenTo(this.currentUser, "sync", this.render)
 	},
@@ -10,13 +12,14 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	
 	render: function() {
 		var cards = this.model.cards();
-		var comments = this.model.comments();
+		
+		console.log("comments", this.comments)
 		
 		var content = this.template({
 			course: this.model,
 			cards: cards,
 			currentUser: this.currentUser,
-			comments: comments
+			comments: this.comments
 		});
 		
 		this.$el.html(content);
@@ -42,8 +45,9 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 			url: "api/comments",
 			data: params,
 			success: function(results) {
-				console.log("our comment has been posted");
+				console.log("your comment has been posted");
 				view.model.comments().add(results);
+				console.log('new comment', results);
 				view.render();
 			}
 		});

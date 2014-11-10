@@ -8,7 +8,7 @@ Memgrow.Models.Course = Backbone.Model.extend({
 		}
 		
 		if (jsonResp.comments) {
-			this.comments().set(jsonResp.comments, { parse: true });
+			this.comments().set(jsonResp.comments, { parse: true });			
 			delete jsonResp.comments
 		}
 

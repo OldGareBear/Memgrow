@@ -24,7 +24,7 @@
 	    <p><%= comment.escape("content") %></p>
 	    <p class="author-date-info">Posted by
 	      <a href="#users/<%= comment.get("author_id") %>">
-        <!-- query the database for the user who matches the author id? or more likely, maybe there should be a collection for commenters on a given course -->
+          <%= comment.get("author") %>
 	      </a> <%= comment.get("created_at") %>
 	    </p>
 	  </li>
