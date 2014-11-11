@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106153503) do
+ActiveRecord::Schema.define(version: 20141111124514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,13 +63,14 @@ ActiveRecord::Schema.define(version: 20141106153503) do
   add_index "friendships", ["requester_id"], name: "index_friendships_on_requester_id", using: :btree
 
   create_table "user_card_histories", force: true do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "card_id",                  null: false
-    t.integer  "times_right",  default: 0
-    t.integer  "times_wrong",  default: 0
+    t.integer  "user_id",                                    null: false
+    t.integer  "card_id",                                    null: false
+    t.integer  "times_right",                    default: 0
+    t.integer  "times_wrong",                    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "last_studied"
+    t.integer  "times_right_since_last_mistake", default: 0
   end
 
   add_index "user_card_histories", ["card_id"], name: "index_user_card_histories_on_card_id", using: :btree
