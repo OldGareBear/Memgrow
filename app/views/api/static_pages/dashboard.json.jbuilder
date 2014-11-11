@@ -28,13 +28,5 @@ json.cards_studied @cards_studied
 
 json.study_errors @study_errors
 
-json.user_card_histories current_user.user_card_histories do |history|
-  json.id history.id
-  json.user_id history.user_id
-  json.card_id history.card_id
-  json.last_studied history.last_studied
-  json.times_right history.times_right
-  json.times_wrong history.times_wrong
-  json.times_right_since_last_mistake history.times_right_since_last_mistake
-  json.card_status 
-end
+json.user_card_histories current_user.user_card_histories :id, :user_id, :card_id,
+  :last_studied, :times_right, :times_wrong, :times_right_since_last_mistake, :due_at, :due?

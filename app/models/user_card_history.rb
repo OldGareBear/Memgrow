@@ -4,17 +4,17 @@ class UserCardHistory < ActiveRecord::Base
   
   def refractory_period(times_right_since_last_mistake)
     if times_right_since_last_mistake == 1
-      return 1
+      return 1.day
     else
       return 2 * refractory_period(times_right_since_last_mistake - 1)
     end
   end
   
-  def due_at(times_right_since_last_mistake, last_studied)
-    last_studied + refractory_period(times_right_since_last_mistake)
+  def due_at
+    self.last_studied + refractory_period(self.times_right_since_last_mistake)
   end
   
-  def due?(times_right_since_last_mistake, last_studied)
-    Time.now > due_at(times_right_since_last_mistake, last_studied)
+  def due?
+    Time.now > due_at
   end
 end
