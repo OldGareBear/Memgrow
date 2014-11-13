@@ -2,11 +2,14 @@ class UserCardHistory < ActiveRecord::Base
   belongs_to :user
   belongs_to :card
   
-  def refractory_period(times_right_since_last_mistake)
-    if times_right_since_last_mistake == 1
+  def refractory_period(straight_successes)
+    if straight_successes == 0
+      return 10.minutes
+    elsif straight_successes == 1
       return 1.day
     else
-      return 2 * refractory_period(times_right_since_last_mistake - 1)
+      puts times_right_since_last_mistake
+      return 2 * refractory_period(straight_successes - 1)
     end
   end
   

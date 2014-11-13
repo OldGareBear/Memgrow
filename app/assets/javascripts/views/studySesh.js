@@ -76,12 +76,16 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
       // update the user card history for the current user and current card
       history.set({
         times_right: history.get("times_right") + 1,
+				times_right_since_last_mistake: history.get("times_right_since_last_mistake") + 1,
         last_studied: new Date()
       });
 
     } else {
       // update the user card history for the current user and current card
-       history.set({ times_wrong: history.get("times_wrong") + 1 });
+       history.set({ 
+				 times_wrong: history.get("times_wrong") + 1,
+				 times_right_since_last_mistake: 0
+			 });
     }
 
     history.save({});

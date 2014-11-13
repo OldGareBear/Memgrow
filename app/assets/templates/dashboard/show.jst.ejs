@@ -78,7 +78,10 @@
         <h3>
           <a href=""><%= course.get("title") %></a>
           | <%= course.get("category") %>
-        </h3> <a class="study" href="<%= "#/study/" + course.escape("id") %>">Study</a>
+        </h3> 
+				<a class="study" href="<%= "#/study/" + course.escape("id") %>">
+					Study (<%= course.dueCards(current_user).length() %>)
+				</a>
       </li>
     <% }) %>
   </ul>

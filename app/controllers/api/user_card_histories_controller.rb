@@ -12,6 +12,6 @@ class Api::UserCardHistoriesController < ApplicationController
   protected
 
   def history_params
-    params.permit(:user_id, :card_id, :times_wrong, :times_right, :last_studied)
+    params.permit(:user_id, :card_id, :times_wrong, :times_right, :last_studied, :times_right_since_last_mistake)
   end
 end

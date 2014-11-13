@@ -33,5 +33,19 @@ Memgrow.Models.Course = Backbone.Model.extend({
 		}
 		
 		return this._comments;
+	},
+	
+	dueCards: function(currentUser) {
+		var _dueCards = [];
+		
+		this.cards().each(function(card) {
+			console.log("currentUser", currentUser)
+			console.log("histories", currentUser.userCardHistories());
+			var cardHistory = currentUser.userCardHistories().findWhere({ card_id: card.get("id") });
+			if (cardHistory.get("due?"))
+			_dueCards.push(card)
+		});
+		
+		return _dueCards;
 	}
 })
