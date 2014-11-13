@@ -241,7 +241,7 @@ UserCardHistory.create!(user_id: 1,
                           times_wrong: 0, times_right_since_last_mistake: 0, 
                           last_studied: Time.now)
   UserCardHistory.create!(user_id: 2,
-                          card_id: 4,
+                          card_id: 5,
                           times_right: 0,
                           times_wrong: 0, times_right_since_last_mistake: 0, 
                           last_studied: Time.now)

@@ -10,8 +10,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	className: 'user-show',
 
 	render: function() {
-		// console.log("courses", this.courses.first().dueCards(this.model));
-		
     var leaders = this.generateLeaders();
 
 		var content = this.template({

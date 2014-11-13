@@ -80,7 +80,7 @@
           | <%= course.get("category") %>
         </h3> 
 				<a class="study" href="<%= "#/study/" + course.escape("id") %>">
-					Study (<%= course.dueCards(current_user).length() %>)
+					Study (<%= course.dueCards(current_user).length %>)
 				</a>
       </li>
     <% }) %>

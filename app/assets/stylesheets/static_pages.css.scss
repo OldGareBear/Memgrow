@@ -23,7 +23,7 @@ div.sub-header.landing-page > h1 {
 	margin: 0 auto;
 	font-size: 36px;
 	color: white;
-	border-top: 1px solid #82B4FF;
+	border-top: 1px solid rgba(0,0,0,0.15);
 	letter-spacing: 1px;
 }
 
@@ -31,7 +31,7 @@ div.sub-header.landing-page > h3 {
   padding-top: 10px;
 	width: 500px;
 	margin: 20px auto;
-	border-top: 1px solid #82B4FF;
+	border-top: 1px solid rgba(0,0,0,0.15);
 	color: white;
 	letter-spacing: 1px;
 }
@@ -42,8 +42,7 @@ div.sub-header.landing-page > a {
   height: 15px;
   width: 170px;
   text-align: center;
-//  border: 1px solid black;
-  background-color: rgb(4, 83, 36);
+	text-shadow: 0 1px 0 #699f30;
   border-radius: 30px;
   padding: 20px;
   font-size: 16px;
@@ -51,10 +50,15 @@ div.sub-header.landing-page > a {
 	letter-spacing: 1px;
   color: white;
 	box-shadow: 1px 1px 1px #94BFFF;
+	border: 1px solid #699f30;
+	background-color: #5bb75b;
+	background-image: -moz-linear-gradient(top, #62c462, #51a351);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
 }
 
 div.sub-header.landing-page > a:hover {
-	background: #009933;
+	background-image: -moz-linear-gradient(top, #51a351, #2A5F2A);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#51a351), to(#2A5F2A));
 }
 
 div.search-results {
@@ -77,6 +81,21 @@ div.landing-image {
 	background-image: image-url('footer.v1.png');
 }
 
+div.container {
+	text-align: center;
+}
+
+div.container > p {
+	color: #3E3E3E;
+	width: 500px;
+	text-align: left;
+	padding: 25px;
+	margin-left: 25%;
+}
+
+h1.how {
+	color: #3E3E3E;
+}
 
 
 

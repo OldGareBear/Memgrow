@@ -39,13 +39,12 @@ Memgrow.Models.Course = Backbone.Model.extend({
 		var _dueCards = [];
 		
 		this.cards().each(function(card) {
-			console.log("currentUser", currentUser)
-			console.log("histories", currentUser.userCardHistories());
 			var cardHistory = currentUser.userCardHistories().findWhere({ card_id: card.get("id") });
 			if (cardHistory.get("due?"))
-			_dueCards.push(card)
+			_dueCards.push(card);
 		});
 		
+		console.log("the return value; and array of due cards", _dueCards);
 		return _dueCards;
 	}
 })
