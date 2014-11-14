@@ -200,10 +200,6 @@ div.cards-index {
   margin: 0 auto;
 }
 
-// table {
-//   border-radius: 5px;
-// }
-
 th,td {
     padding: 15px;
 }
@@ -232,4 +228,17 @@ p.author-date-info {
 p.author-date-info > a {
   display: inline;
   font-weight: bold;
+}
+
+button.delete-btn {
+  margin: 5px auto;
+  display: block;
+  background: #15a1ec;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
 }

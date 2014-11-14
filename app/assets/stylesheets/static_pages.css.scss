@@ -85,15 +85,40 @@ div.container {
 	text-align: center;
 }
 
-div.container > p {
+div.first {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 0;
+  height: 125px;
+}
+
+div.second {
+  width: 600px;
+  margin: 20px auto;
+  margin-top: 0;
+  padding: 20px;
+  padding-top: 0;
+  height: 125px;
+}
+
+div.container  p {
 	color: #3E3E3E;
-	width: 600px;
 	text-align: left;
-	padding: 25px;
+	// padding: 25px;
+  display: inline;
+  float: left;
+  width: 500px;
 }
 
 h1.how {
 	color: #3E3E3E;
+  padding: 15px;
+}
+
+.speech_icon {
+  display: inline;
+  float: left;
 }
 
 
