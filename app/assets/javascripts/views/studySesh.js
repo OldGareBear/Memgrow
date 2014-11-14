@@ -1,6 +1,6 @@
 Memgrow.Views.StudySesh = Backbone.View.extend({
   initialize: function(options) {
-		this.current_card = 0;
+		this.current_card = 0; 
     this.cards = options.cards;
 		this.course_length = this.cards.length;
     this.current_user = options.current_user;
@@ -14,8 +14,9 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   template: JST['cards/show'],
 
   render: function() {
-
-		var card = this.cards.models[this.current_card];
+		console.log("the due cards for this particular deck in the study sesh ", this.cards);
+		// var card = this.cards.models[this.current_card];
+		var card = this.cards[this.current_card];
 
     var content = this.template({
 			current_user: this.current_user,
@@ -50,7 +51,8 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     var pinyin_answer = params["answer"]["pinyin"];
     var english_answer = params["answer"]["english"];
 
-    var current_card = this.cards.models[card_index];
+    // var current_card = this.cards.models[card_index];
+		var current_card = this.cards[card_index];
 
     var history = this.histories.findWhere({
       card_id: parseInt(current_card.escape("id"))
