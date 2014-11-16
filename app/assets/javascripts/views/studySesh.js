@@ -54,49 +54,61 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 
 		var currentCard = this.cards[card_index];
 
-    var history = this.histories.findWhere({
+    var cardHistory = this.histories.findWhere({
       card_id: parseInt(currentCard.escape("id"))
     });
 
     // find out whether the user was correct or not
     if (pinyin_answer === currentCard.get("pinyin") &&
         english_answer === currentCard.get("english")) {
-
-      // increment the user's points for a correct answer
-      var new_points = this.currentUser.get("points") + 1
-      console.log(new_points);
-
-      this.currentUser.set({ points: new_points });
-
-      var that = this
-      this.currentUser.save({}, {
-        success: function() {
-          console.log(that.currentUser)
-        }
-      });
-
-      // update the user card history for the current user and current card
-      history.set({
-        times_right: history.get("times_right") + 1,
-				times_right_since_last_mistake: history.get("times_right_since_last_mistake") + 1,
-        last_studied: new Date()
-      });
-
-    } else { // user guess was incorrect
-			// push the current card to the end of the session and increment the
-			// courseLength so the study session doesn't end prematurely
-			this.cards.push(currentCard);
-			this.courseLength += 1;
-			
-      // update the user card history for the current user and current card
-       history.set({ 
-				 times_wrong: history.get("times_wrong") + 1,
-				 times_right_since_last_mistake: 0
-			 });
-    }
-
-    history.save({});
+				handleCorrectGuess(cardHistory);
+    } else { 
+			setTimeout(handleWrongGuess.bind(this, cardHistory), 500);
+			wrongGuessdisplay();
   },
+	
+	wrongGuessDisplay: function() {
+		console.log("Now you f***d up!")
+	},
+	
+	handleCorrectGuess: function() {
+    // increment the user's points for a correct answer
+    var newPoints = this.currentUser.get("points") + 1
+    console.log(newPoints);
+
+    this.currentUser.set({ points: newPoints });
+
+    var that = this
+    this.currentUser.save({}, {
+      success: function() {
+        console.log(that.currentUser)
+      }
+    });
+
+    // update the user card history for the current user and current card
+    cardHistory.set({
+      times_right: cardHistory.get("times_right") + 1,
+			times_right_since_last_mistake: cardHistory.get("times_right_since_last_mistake") + 1,
+      last_studied: new Date()
+    });
+		
+	},
+	
+	handleWrongGuess: function() {
+		// push the current card to the end of the session and increment the
+		// courseLength so the study session doesn't end prematurely
+		this.cards.push(currentCard);
+		this.courseLength += 1;
+		
+    // update the user card history for the current user and current card
+     cardHistory.set({ 
+			 times_wrong: cardHistory.get("times_wrong") + 1,
+			 times_right_since_last_mistake: 0
+		 });
+  }
+
+  cardHistory.save({});
+	}
 });
 
 
