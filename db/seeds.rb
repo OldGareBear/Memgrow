@@ -136,17 +136,17 @@ Card.create!( course_id: kate_id,
   pinyin: "li",
   english: "pear" )
 
-Card.create!( course_id: kate_id,
+Card.create!( course_id: gary_id,
   character: "牛肉",
   pinyin: "niurou",
   english: "beef" )
 
-Card.create!( course_id: kate_id,
+Card.create!( course_id: gary_id,
   character: "鱼",
   pinyin: "yu",
   english: "fish" )
 
-Card.create!( course_id: kate_id,
+Card.create!( course_id: gary_id,
   character: "猪肉",
   pinyin: "zhurou",
   english: "pork" )
@@ -159,8 +159,8 @@ Card.create!( course_id: colin_id,
 
 Card.create!( course_id: colin_id,
   character: "北京大学西南门儿",
-  pinyin: "pingguo",
-  english: "apple" )
+  pinyin: "beijingdaxuexinanmener",
+  english: "Beijing University Southwest Gate")
   pingguo_id = 8
 
 Card.create!( course_id: dave_id,
@@ -176,23 +176,23 @@ Card.create!( course_id: dave_id,
   yizi_id = 10
 
 Enrollment.create!(user_id: kate_id, course_id: kate_id)
-Enrollment.create!(user_id: kate_id, course_id: kate_id)
+Enrollment.create!(user_id: kate_id, course_id: gary_id)
 Enrollment.create!(user_id: kate_id, course_id: colin_id)
 Enrollment.create!(user_id: gary_id, course_id: dave_id)
 Enrollment.create!(user_id: gary_id, course_id: kate_id)
-Enrollment.create!(user_id: gary_id, course_id: kate_id)
+Enrollment.create!(user_id: gary_id, course_id: gary_id)
 Enrollment.create!(user_id: colin_id, course_id: colin_id)
 Enrollment.create!(user_id: colin_id, course_id: dave_id)
 Enrollment.create!(user_id: colin_id, course_id: kate_id)
-Enrollment.create!(user_id: dave_id, course_id: kate_id)
+Enrollment.create!(user_id: dave_id, course_id: gary_id)
 Enrollment.create!(user_id: dave_id, course_id: colin_id)
 Enrollment.create!(user_id: dave_id, course_id: dave_id)
 Enrollment.create!(user_id: steve_id, course_id: kate_id)
-Enrollment.create!(user_id: steve_id, course_id: kate_id)
+Enrollment.create!(user_id: steve_id, course_id: gary_id)
 Enrollment.create!(user_id: steve_id, course_id: colin_id)
 Enrollment.create!(user_id: dom_id, course_id: dave_id)
 Enrollment.create!(user_id: dom_id, course_id: kate_id)
-Enrollment.create!(user_id: dom_id, course_id: kate_id)
+Enrollment.create!(user_id: dom_id, course_id: gary_id)
 
 UserCardHistory.create!(user_id: kate_id,
                         card_id: kate_id,
@@ -215,7 +215,7 @@ UserCardHistory.create!(user_id: kate_id,
                         times_wrong: 0, times_right_since_last_mistake: 0, 
                         last_studied: Time.now)
 UserCardHistory.create!(user_id: kate_id,
-                        card_id: dave_id,
+                        card_id: steve_id,
                         times_right: 0,
                         times_wrong: 0, times_right_since_last_mistake: 0, 
                         last_studied: Time.now)
@@ -270,7 +270,7 @@ UserCardHistory.create!(user_id: kate_id,
                           times_wrong: 0, times_right_since_last_mistake: 0, 
                           last_studied: Time.now)
   UserCardHistory.create!(user_id: gary_id,
-                          card_id: kate_id0,
+                          card_id: yizi_id,
                           times_right: 0,
                           times_wrong: 0, times_right_since_last_mistake: 0, 
                           last_studied: Time.now)
@@ -305,7 +305,7 @@ UserCardHistory.create!(user_id: kate_id,
                             times_wrong: 0, times_right_since_last_mistake: 0, 
                             last_studied: Time.now)
     UserCardHistory.create!(user_id: colin_id,
-                            card_id: kate_id0,
+                            card_id: yizi_id,
                             times_right: 0,
                             times_wrong: 0, times_right_since_last_mistake: 0, 
                             last_studied: Time.now)
@@ -340,7 +340,7 @@ UserCardHistory.create!(user_id: kate_id,
                               times_wrong: 0, times_right_since_last_mistake: 0, 
                               last_studied: Time.now)
       UserCardHistory.create!(user_id: dave_id,
-                              card_id: kate_id0,
+                              card_id: yizi_id,
                               times_right: 0,
                               times_wrong: 0, times_right_since_last_mistake: 0, 
                               last_studied: Time.now)
@@ -415,7 +415,7 @@ UserCardHistory.create!(user_id: kate_id,
                                   times_wrong: 0, times_right_since_last_mistake: 0, 
                                   last_studied: Time.now)
           UserCardHistory.create!(user_id: dom_id,
-                                  card_id: kate_id0,
+                                  card_id: yizi_id,
                                   times_right: 0,
                                   times_wrong: 0, times_right_since_last_mistake: 0, 
                                   last_studied: Time.now)

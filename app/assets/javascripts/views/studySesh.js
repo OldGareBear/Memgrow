@@ -1,13 +1,14 @@
 Memgrow.Views.StudySesh = Backbone.View.extend({
   initialize: function(options) {
-		this.current_card = 0; 
+		this.currentCard = 0; 
     this.cards = options.cards;
-		this.course_length = this.cards.length;
-    this.current_user = options.current_user;
-    this.histories = this.current_user.userCardHistories()
+		// not adjustable so that currentCard index can be modded in render
+		this.courseLength = this.cards.length;
+    this.currentUser = options.currentUser;
+    this.histories = this.currentUser.userCardHistories()
 
 		this.listenTo(this.model, "sync", this.render);
-		this.listenTo(this.current_user, "sync", this.render);
+		this.listenTo(this.currentUser, "sync", this.render);
     this.listenTo(this.histories, "sync", this.render);
   },
 
@@ -15,11 +16,11 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 
   render: function() {
 		console.log("the due cards for this particular deck in the study sesh ", this.cards);
-		// var card = this.cards.models[this.current_card];
-		var card = this.cards[this.current_card];
+
+		var card = this.cards[this.currentCard];
 
     var content = this.template({
-			current_user: this.current_user,
+			currentUser: this.currentUser,
       card: card
     });
 
@@ -36,12 +37,12 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     console.log("next card")
 		event.preventDefault();
 
-    this.evaluateAnswer(event, this.current_card);
+    this.evaluateAnswer(event, this.currentCard);
 
-    if ((this.current_card + 1) === this.course_length) { //not sure why +1
+    if ((this.currentCard + 1) === this.courseLength) { //not sure why +1
       Backbone.history.navigate("#", { trigger: true });
     } else {
-      this.current_card += 1;
+      this.currentCard += 1;
       this.render();
     }
 	},
@@ -51,27 +52,26 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     var pinyin_answer = params["answer"]["pinyin"];
     var english_answer = params["answer"]["english"];
 
-    // var current_card = this.cards.models[card_index];
-		var current_card = this.cards[card_index];
+		var currentCard = this.cards[card_index];
 
     var history = this.histories.findWhere({
-      card_id: parseInt(current_card.escape("id"))
+      card_id: parseInt(currentCard.escape("id"))
     });
 
     // find out whether the user was correct or not
-    if (pinyin_answer === current_card.get("pinyin") &&
-        english_answer === current_card.get("english")) {
+    if (pinyin_answer === currentCard.get("pinyin") &&
+        english_answer === currentCard.get("english")) {
 
       // increment the user's points for a correct answer
-      var new_points = this.current_user.get("points") + 1
+      var new_points = this.currentUser.get("points") + 1
       console.log(new_points);
 
-      this.current_user.set({ points: new_points });
+      this.currentUser.set({ points: new_points });
 
       var that = this
-      this.current_user.save({}, {
+      this.currentUser.save({}, {
         success: function() {
-          console.log(that.current_user)
+          console.log(that.currentUser)
         }
       });
 
@@ -82,7 +82,12 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
         last_studied: new Date()
       });
 
-    } else {
+    } else { // user guess was incorrect
+			// push the current card to the end of the session and increment the
+			// courseLength so the study session doesn't end prematurely
+			this.cards.push(currentCard);
+			this.courseLength += 1;
+			
       // update the user card history for the current user and current card
        history.set({ 
 				 times_wrong: history.get("times_wrong") + 1,
