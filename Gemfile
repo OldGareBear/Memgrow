@@ -57,3 +57,5 @@ gem 'pg_search'
 gem 'kaminari'
 
 gem 'filepicker-rails'
+
+gem 'faker'
