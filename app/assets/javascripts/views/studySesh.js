@@ -83,6 +83,7 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 		});
 
 		cardHistory.save({});
+		$("form.card-quiz").addClass("wrong");
 	},
 	
 	handleCorrectGuess: function(cardHistory) {
