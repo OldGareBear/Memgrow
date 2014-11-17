@@ -119,6 +119,10 @@ Course.create!( title: "Furniture",
   category: "Around the House",
   author_id: colin_id,
   filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
+Course.create!( title: "Dishes",
+  category: "Food",
+  author_id: gary_id,
+  filepicker_url: "https://www.filepicker.io/api/file/geiPbl4ATeKTvHlrbDXP" )
 
 
 Card.create!( course_id: kate_id,
@@ -129,7 +133,7 @@ Card.create!( course_id: kate_id,
 Card.create!( course_id: kate_id,
   character: "南瓜",
   pinyin: "nangua",
-  english: "pumkin" )
+  english: "pumpkin" )
 
 Card.create!( course_id: kate_id,
   character: "李",
@@ -169,11 +173,36 @@ Card.create!( course_id: dave_id,
   english: "sofa" )
   shafa_id = 9
 
-Card.create!( course_id: dave_id,
+Card.create!( course_id: steve_id,
   character: "椅子",
   pinyin: "yizi",
   english: "chair" )
   yizi_id = 10
+
+Card.create!( course_id: steve_id,
+  character: "馄饨汤",
+  pinyin: "huntun tang",
+  english: "wonton soup" )
+Card.create!( course_id: steve_id,
+  character: "红烧茄子",
+  pinyin: "hongshao qiezi",
+  english: "braised eggplant" )
+Card.create!( course_id: steve_id,
+  character: "鱼头汤",
+  pinyin: "yu tou tang",
+  english: "fish head soup" )
+Card.create!( course_id: steve_id,
+  character: "北京烤鸭",
+  pinyin: "beijing kaoya",
+  english: "peking duck" )
+Card.create!( course_id: steve_id,
+  character: "麻婆豆腐",
+  pinyin: "mapo doufu",
+  english: "mapo tofu" )
+Card.create!( course_id: steve_id,
+  character: "辣子鸡丁",
+  pinyin: "lazi jiding",
+  english: "spicy chicken" )
 
 Enrollment.create!(user_id: kate_id, course_id: kate_id)
 Enrollment.create!(user_id: kate_id, course_id: gary_id)

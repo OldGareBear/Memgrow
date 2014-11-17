@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 	<%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
  <!--  <script type="text/javascript"
      src="//api.filepicker.io/v1/filepicker.js"></script> -->
 
@@ -22,7 +23,7 @@
     <% if current_user %>
     <ul class="navbar">
 
-      <li class="nav-button"><%= button_to "Log out",
+      <li class="nav-button" id="logout"><%= button_to "Log out",
           session_url,
           method: :delete,
           class: "log-out" %></li>
