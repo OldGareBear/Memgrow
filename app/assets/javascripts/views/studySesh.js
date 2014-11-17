@@ -2,7 +2,6 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   initialize: function(options) {
 		this.currentCard = 0; 
     this.cards = options.cards;
-		// not adjustable so that currentCard index can be modded in render
 		this.courseLength = this.cards.length;
     this.currentUser = options.currentUser;
     this.histories = this.currentUser.userCardHistories()
@@ -15,7 +14,8 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   template: JST['cards/show'],
 
   render: function() {
-		console.log("the due cards for this particular deck in the study sesh ", this.cards);
+		// console.log("due cards", this.cards);
+		// console.log("current card", this.currentCard);
 
 		var card = this.cards[this.currentCard];
 
@@ -34,12 +34,12 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 	},
 
 	nextCard: function(event) {
-    console.log("next card")
+    // console.log("next card")
 		event.preventDefault();
 
     this.evaluateAnswer(event, this.currentCard);
-
-    if ((this.currentCard + 1) === this.courseLength) { //not sure why +1
+		// check whether we have reviewed all due cards
+    if ((this.currentCard + 1) === this.courseLength) { 
       Backbone.history.navigate("#", { trigger: true });
     } else {
       this.currentCard += 1;
