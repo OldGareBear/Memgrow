@@ -25,9 +25,9 @@ User.create!( email: "colin@colin.colin",
               points: 995,
               filepicker_url: "https://www.filepicker.io/api/file/ywbypgQxSMa0wrK3XR97")
               colin_id = 3
-User.create!( email: "dave@dave.com",
+User.create!( email: "guest@gbethea.com",
               password: "password",
-              username: "Dave",
+              username: "Guest",
               points: 437,
               filepicker_url: "https://www.filepicker.io/api/file/8K351T2ETGGQALCIxOUh")
               dave_id = 4
