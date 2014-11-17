@@ -38,19 +38,19 @@ Memgrow.Models.Course = Backbone.Model.extend({
 	dueCards: function(currentUser) {
 		var _dueCards = [];
 		
-		// console.log(currentUser);
-// 		console.log("currentUser.userCardHistories()", currentUser.userCardHistories());
-// 		console.log("this.cards()", this.cards());
+		console.log(currentUser);
+		console.log("currentUser.userCardHistories()", currentUser.userCardHistories());
+		console.log("this.cards()", this.cards());
 		
 		this.cards().each(function(card) {
-			// console.log("current card", card);
-// 			console.log("current card's id", card.get("id"));
-// 			console.log("card histories for currentUser", currentUser.userCardHistories());
+			console.log("current card", card);
+			console.log("current card's id", card.get("id"));
+			console.log("card histories for currentUser", currentUser.userCardHistories());
 			
 			
 			var cardHistory = currentUser.userCardHistories().findWhere({ card_id: card.get("id") });
 			
-			// console.log("card history successfully retrieved:", cardHistory);
+			console.log("card history successfully retrieved:", cardHistory);
 			
 			if (cardHistory.get("due?"))
 			_dueCards.push(card);
