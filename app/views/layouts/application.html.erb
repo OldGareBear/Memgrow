@@ -14,7 +14,7 @@
 
 	<div class="header">
 		<span class="logo">
-			<a href="/"><%= image_tag "Memgrow-logo.png", size: "270x135" %></a>
+			<a href="/"><%= image_tag "Memgrow-logo.png", size: "250x75" %></a>
 		</span>
 
 
@@ -33,7 +33,7 @@
 
 
       <li class="nav-button"><a href="#/courses/new">Create Course</a></li>
-			
+
 			<li class="nav-button"><a href="#/courses">Browse</a></li>
 
       <li class="nav-button" id="notifications">
@@ -56,7 +56,7 @@
                   </button>
               </li>
             <% end %>
-						
+
 						<% if current_user.friends_awaiting_acceptance.count == 0 %>
 							<li>Sorry, you have no friend requests right now =(</li>
 						<% end %>
@@ -66,10 +66,15 @@
     </ul>
     <% else %>
 		<ul class="navbar">
-			<li class="nav-button"><a href="<%= new_session_url %>">Log In</a></li>
+			<li class="nav-button">
+        <a href="<%= new_session_url %>">Log In</a
+      </li>
 			<li class="nav-button"><a href="<%= new_user_url %>">Sign Up</a></li>
 		</ul>
-    <% end %> 
+
+    <div class="arrow-up"></div>
+    <div class="tool-tip">Follow me to guest sign in!</div>
+    <% end %>
 
 	</div>
 
@@ -85,7 +90,7 @@
 
 	<div class="footer">
 		<div class="logo">
-			<a href="/"><%= image_tag "Memgrow-logo.png", size: "270x135" %></a>
+			<a href="/"><%= image_tag "Memgrow-logo.png", size: "300x90" %></a>
 		</div>
 
 	</div>

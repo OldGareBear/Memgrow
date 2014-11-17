@@ -51,7 +51,7 @@ div.footer {
 
 span.logo {
 	position: relative;
-	top: -10px;
+	top: 10px;
 	float: left;
 	width: 30px;
 }
@@ -206,7 +206,30 @@ input:-webkit-autofill {
   background-color: white;
 }
 
+div.arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;  /* left arrow slant */
+	border-right: 6px solid transparent; /* right arrow slant */
+	border-bottom: 6px solid black; /* bottom, add background color here */
+	font-size: 0;
+	line-height: 0;
+  position:absolute;
+  right: 18px;
+  top:36px;
+}
 
+div.tool-tip {
+  position:absolute;
+  right: 6px;
+  top:42px;
+  background: black;
+  height: 38px;
+  width:95px;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
 
 
 
