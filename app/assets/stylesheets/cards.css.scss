@@ -72,6 +72,10 @@ form.card-quiz.wrong {
 	border: 5px solid red;
 }
 
+form.card-quiz.correct {
+	border: 5px solid green;
+}
+
 form.card-quiz > h1 {
   padding: 15px;
   margin: 25px auto;

@@ -107,6 +107,9 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
       last_studied: new Date()
     });
 		
+		cardHistory.save({});
+		
+		$("form.card-quiz").addClass("correct");
 	}
 });
 
