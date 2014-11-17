@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
   gem 'rails_12factor'
+  gem 'faker'
 end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -33,6 +34,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'faker'
 end
 
 group :development, :test do
@@ -57,5 +59,3 @@ gem 'pg_search'
 gem 'kaminari'
 
 gem 'filepicker-rails'
-
-gem 'faker'
