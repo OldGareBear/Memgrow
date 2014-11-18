@@ -15,7 +15,11 @@
 
 	<div class="header">
 		<span class="logo">
+			<% if current_user %>
+			<a href="/dashboard#"><%= image_tag "Memgrow-logo.png", size: "250x75" %></a>
+			<% else %>
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "250x75" %></a>
+			<% end %>
 		</span>
 
 
@@ -93,7 +97,8 @@
 		<div class="logo">
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "300x90" %></a>
 		</div>
-
+		
+		&copy; <a href="http://gbethea.com">Gary Bethea</a>
 	</div>
 </body>
 </html>

@@ -30,7 +30,8 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   },
 
 	events: {
-		"submit": "nextCard"
+		"submit": "nextCard",
+		"click div.more-info": "toggleTooltip"
 	},
 
 	nextCard: function(event) {
@@ -116,6 +117,10 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 		cardHistory.save({});
 		
 		$("form.card-quiz").addClass("correct");
+	},
+	
+	toggleTooltip: function(event) {
+		$("div.right-tool-tip").toggleClass("hidden");
 	}
 });
 
