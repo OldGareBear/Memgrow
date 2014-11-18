@@ -69,10 +69,6 @@ form.card-quiz {
   margin: 50px auto;
 }
 
-//form.card-quiz.wrong {
-//	border: 5px solid red;
-//}
-
 form.card-quiz.correct {
 	border: 1px solid green;
 }
@@ -96,7 +92,6 @@ form.card-quiz > input[type=submit] {
 	box-shadow: 0;
 	cursor: pointer;
 	border-radius: 5px;
-	// margin-left: 10px;
 	font-size: 14px;
 }
 
@@ -111,8 +106,6 @@ a.finish-cards:hover {
 form.card-quiz.wrong {
 	-webkit-animation-name: shake;
 	-webkit-animation-duration:     0.8s;
-//	-webkit-animation-iteration-    count: infinite;
-//	-webkit-animation-timing-    function: linear;
 	-webkit-transform-origin:    50% 100%;
 	border: 1px solid red;
 }
@@ -163,4 +156,26 @@ div.right-tool-tip a {
 
 div.hidden {
 	display: none;
+}
+
+div.no-cards-container {
+	height: 800px;
+}
+
+div.empty-card {
+	width: 275px;
+	text-align: center;
+	margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+	background-image: image-url('pattern-grey.v1.png');
+	padding: 10px;
+}
+
+div.empty-card h1 {
+	padding-bottom: 20px;
+}
+
+div.empty-card a {
+	color: #15a1ec;
 }

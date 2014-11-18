@@ -14,6 +14,9 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   template: JST['cards/show'],
 
   render: function() {
+		if (this.cards.length === 0) {
+			this.template = JST['cards/empty'];
+		}
 
 		var card = this.cards[this.currentCard];
 
