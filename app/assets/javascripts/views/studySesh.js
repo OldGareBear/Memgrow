@@ -43,6 +43,7 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
       Backbone.history.navigate("#", { trigger: true });
     } else {
       this.currentCard += 1;
+			// set timeout so that user can see answer feedback
 			that = this;
 			setTimeout(function(){
 				that.render();
@@ -62,9 +63,14 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
     });
 
     // find out whether the user was correct or not
-    if (pinyin_answer === currentCard.get("pinyin") &&
-      english_answer === currentCard.get("english")) {
-			this.handleCorrectGuess(cardHistory);
+		// disregard case and pinyin spacing
+		
+    if (pinyin_answer.toLowerCase().replace(/\s/g,'') ===
+			currentCard.get("pinyin").toLowerCase().replace(/\s/g,'') &&
+			
+      english_answer.toLowerCase() === currentCard.get("english").toLowerCase()) {
+			
+				this.handleCorrectGuess(cardHistory);
     } else { 
 			this.handleWrongGuess(cardHistory, currentCard);
 		}
