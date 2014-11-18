@@ -1,6 +1,6 @@
-== README
-
 #Memgrow
+
+#####currently live at memgrow.herokuapp.com
 
 Memgrow is a social Mandarin Chinese-learning web application hosted live at memgrow.herokuapp.com. 
 
