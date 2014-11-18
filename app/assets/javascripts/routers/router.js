@@ -105,6 +105,7 @@ Memgrow.Routers.Router = Backbone.Router.extend({
        currentUser: user,
        model: course,
        collection: courses,
+			 course: course,
        cards: dueCards // cards: cards
     });
 

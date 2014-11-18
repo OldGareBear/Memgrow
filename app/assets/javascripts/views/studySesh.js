@@ -2,26 +2,25 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
   initialize: function(options) {
 		this.currentCard = 0; 
     this.cards = options.cards;
+		this.course = options.course;
 		this.courseLength = this.cards.length;
     this.currentUser = options.currentUser;
-    this.histories = this.currentUser.userCardHistories()
+    this.histories = this.currentUser.userCardHistories();
 
 		this.listenTo(this.model, "sync", this.render);
 		this.listenTo(this.currentUser, "sync", this.render);
-    // this.listenTo(this.histories, "sync", this.render);
   },
 
   template: JST['cards/show'],
 
   render: function() {
-		// console.log("due cards", this.cards);
-		// console.log("current card", this.currentCard);
 
 		var card = this.cards[this.currentCard];
 
     var content = this.template({
 			currentUser: this.currentUser,
-      card: card
+      card: card,
+			course: this.course
     });
 
 		this.$el.html(content);
@@ -35,7 +34,6 @@ Memgrow.Views.StudySesh = Backbone.View.extend({
 	},
 
 	nextCard: function(event) {
-    // console.log("next card")
 		event.preventDefault();
 
     this.evaluateAnswer(event, this.currentCard);
