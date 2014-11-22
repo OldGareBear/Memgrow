@@ -29,7 +29,9 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	},
 
   events: {
-    "submit": "findFriends"
+    "submit .findfriends": "findFriends",
+		"click h1.username-display": "editUsername",
+		"submit .changeName": "saveNewName"
   },
 
   generateLeaders: function() {
@@ -64,8 +66,26 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     console.log("rendering search results:", results);
 
     $('.content').html(view.render().$el);
-  }
-
+  },
+	
+	editUsername: function(event) {
+		console.log(this.model);
+		$(event.currentTarget).html(
+			"<form class='changeName'><input type='text' id='username' name=username value=" + this.model.get("username") + ">"
+		);
+		$("#username")[0].focus();
+	},
+	
+	saveNewName: function(event) {
+		event.preventDefault();
+		var username = $("#username")[0].value;
+		if (username === "") {
+			username = this.model.get("username");
+		}
+		this.model.set({ username: username });
+		this.model.save({});
+		this.render();
+	}
 });
 
 
