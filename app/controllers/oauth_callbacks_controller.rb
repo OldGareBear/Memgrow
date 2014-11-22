@@ -6,7 +6,7 @@ class OauthCallbacksController < ApplicationController
     sign_in(user)
 
     flash[:success] = "Logged in with facebook!"
-    redirect_to user_url(user)
+    redirect_to dashboard_url
   end
 
 end
