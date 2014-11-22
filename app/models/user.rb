@@ -71,12 +71,15 @@ class User < ActiveRecord::Base
     user = User.find_by_omniauth_id(omniauth_id)
     return user if user
 
-    fake_name = auth["info"].name
-    fake_email = fake_name + "@"
+    fb_name = auth["info"].name
+    fb_email = auth["info"].email
+    pic = auth['info'].image
+    # fake_email = fake_name + "@"
     user = User.create!(omniauth_id: omniauth_id,
-                        email: fake_email,
+                        email: fb_email,
                         password: omniauth_id,
-                        username: fake_name)
+                        username: fb_name,
+                        filepicker_url: pic)
     return user
   end
 
