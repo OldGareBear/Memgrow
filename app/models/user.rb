@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
   end
 
   def self.find_or_create_by_fb_auth_hash(auth)
+    p "~~~~~~~~~~~~~~~~~~oauth_hash~~~~~~~~~~~~~~~~~~"
+    p auth
     omniauth_id = auth['uid'] + auth['provider']
     user = User.find_by_omniauth_id(omniauth_id)
     return user if user
