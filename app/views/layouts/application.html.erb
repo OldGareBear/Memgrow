@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
 <head>
   <title>Memgrow</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 	<%= javascript_include_tag "application" %>
+	<meta property="og:title" content="Memgrow" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://memgrow.herokuapp.com" />
+	<meta property="og:image" content="https://memgrow.herokuapp.com/assets/Memgrow-logo.png" />
+	<meta property="og:description" content="I've moved up to the leaderboard at Memgrow. Come study with me!" />	
   <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
  <!--  <script type="text/javascript"
      src="//api.filepicker.io/v1/filepicker.js"></script> -->
@@ -18,6 +23,15 @@
 	</script>
 </head>
 <body>
+	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1611328032428017&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 	<div class="header">
 		<span class="logo">

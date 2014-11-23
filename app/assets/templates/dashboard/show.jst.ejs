@@ -91,10 +91,15 @@
   <h1><img src="<%= current_user.get("leaders_pic") %>" height="60" width="60">
 		Leaders</h1>
   <ol class="leaders">
-    <% leaders.forEach(function(leader) { %>
+    <% leaders.forEach(function(leader, index) { %>
     <li>
 			<a href="users/<%= leader.get("id") %>"><%= leader.escape("username") %></a>
 			(<%= leader.escape("points") %>)
+			<% if (leader===current_user) { %>
+				<div class="fb-share-button" 
+						 data-href="https://memgrow.herokuapp.com" 
+						 data-layout="button"></div>
+			<% } %>
 		</li>
     <% }) %>
   </ol>
