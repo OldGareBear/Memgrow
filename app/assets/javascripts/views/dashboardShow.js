@@ -29,7 +29,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	},
 
   events: {
-    "submit .findfriends": "findFriends",
+    "submit .find-friends": "findFriends",
 		"click h1.username-display": "editUsername",
 		"submit .changeName": "saveNewName"
   },
@@ -43,7 +43,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
   },
 
   findFriends: function(event) {
-    console.log("finding friends...")
+		console.log("finding friends");
     event.preventDefault();
     var form = $(event.target).serializeJSON();
     var query = form["search"]["query"];
@@ -63,13 +63,11 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     var view = new Memgrow.Views.UserSearchResults({
       results: results
     });
-    console.log("rendering search results:", results);
 
     $('.content').html(view.render().$el);
   },
 	
 	editUsername: function(event) {
-		console.log(this.model);
 		$(event.currentTarget).html(
 			"<form class='changeName'><input type='text' id='username' name=username value=" + this.model.get("username") + ">"
 		);
