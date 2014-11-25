@@ -1,6 +1,6 @@
 <div class="user-nav sub-header">
 
-	<ul class="pic-name">
+	<ul class="user-info">
 		<li>
 			<img class="profile-pic"
 					 src="<%= current_user.escape("filepicker_url") %>">
@@ -16,30 +16,33 @@
 		</li>
 
   	<li><h1 class="username-display"><%= current_user.escape("username") %></h1></li>
-	</ul>
+	<!-- </ul>
 
-  <ul class="user-info">
-    <li class="icon">
-			<img src="<%= current_user.get("friends_pic") %>"
-				height="60" width="60">
-		</li>
-    <li><h3><%= friends.length %><a href="#/friends"> Friends</a></h3>
+  <ul class="user-info"> -->
+    
+    <li class="right"><h3><%= friends.length %><a href="#/friends"> Friends</a></h3>
 			<form> </form>
 			<form class="find-friends">
 				<input type="text" name=search[query] placeholder="find friends...">
 				<input type="submit" value="找">
 			</form>
 		</li>
-    <li class="icon">
+    <li class="icon right">
+			<img src="<%= current_user.get("friends_pic") %>"
+				height="60" width="60">
+		</li>
+		
+    <li class="right"><h3><%= current_user.escape("cards_count") %> Words</h3></li>
+    <li class="icon right">
 			<img src="<%= current_user.get("words_pic") %>"
 				height="60" width="60">
 		</li>
-    <li><h3><%= current_user.escape("cards_count") %> Words</h3></li>
-    <li class="icon">
+		
+    <li class="right"><h3><%= current_user.escape("points") %> Points</h3></li>
+    <li class="icon right">
 			<img src="<%= current_user.get("points_pic") %>"
 				height="60" width="60">
 		</li>
-    <li><h3><%= current_user.escape("points") %> Points</h3></li>
   </ul>
 </div>
 

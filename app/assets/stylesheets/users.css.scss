@@ -89,11 +89,10 @@ div.user-courses > ul > li {
 
 
 ul.user-info {
-  float: right;
-  width: 700px;
+  float: left;
+  width: 100%;
   min-width: 500px;
   position: relative;
-  margin: auto 0;
 }
 
 ul.user-info > li {
@@ -201,16 +200,11 @@ form.add-pic > button {
   cursor: pointer;
 }
 
-ul.pic-name {
-  float: left;
-  margin: auto 25px;
-}
-
-ul.pic-name > li {
+ul.user-info > li {
   float:left;
 }
 
-ul.pic-name:after {
+ul.user-info:after {
   display: block;
   content: "";
   clear:both;
@@ -249,4 +243,8 @@ form.find-friends > input[type=submit] {
 input#username {
 	height: 30px;
 	font-size: 28px;
+}
+
+ul.user-info > li.right {
+	float: right;
 }
