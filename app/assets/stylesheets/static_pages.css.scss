@@ -59,6 +59,7 @@ div.sub-header.landing-page > a {
 div.sub-header.landing-page > a:hover {
 	background-image: -moz-linear-gradient(top, #51a351, #2A5F2A);
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#51a351), to(#2A5F2A));
+	box-shadow: 1px 1px 1px #51a351;
 }
 
 div.search-results {
