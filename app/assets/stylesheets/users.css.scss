@@ -225,7 +225,7 @@ form.find-friends {
 
 form.find-friends > input[type=text] {
   height: 25px;
-  width: 100px;
+  width: 150px;
 }
 
 form.find-friends > input[type=submit] {
@@ -251,4 +251,29 @@ ul.user-info > li.right {
 
 a.back-to-dash{
 	color: #15a1ec;
+}
+
+div.search-preview.hidden {
+	display: none;
+}
+
+div.search-preview {
+	display: block;
+	position: relative;
+	width: 154px;
+	border-left: 1px solid #15a1ec;
+	border-right: 1px solid #15a1ec;
+	background: white;
+}
+
+a.match {
+	display: block;
+	border-bottom: 1px solid #15a1ec;
+	padding: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+a.match:hover {
+	background: #15a1ec;
 }

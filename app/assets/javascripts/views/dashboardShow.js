@@ -13,7 +13,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     var leaders = this.generateLeaders();
 
 		var content = this.template({
-			current_user: this.model,
+			currentUser: this.model,
       courses: this.courses,
       friends: this.friends,
       leaders: leaders
@@ -30,6 +30,7 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 
   events: {
     "submit .find-friends": "findFriends",
+		"input .find-friends": "previewSearch",
 		"click h1.username-display": "editUsername",
 		"submit .changeName": "saveNewName"
   },
@@ -41,19 +42,49 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
     leaders = leaders.slice(0, 10);
     return leaders;
   },
+	
+	previewSearch: function(event) {
+		var view = this;
+		var val = this.$(event.target).val();
+    if (val.length >= 2) {
+      $.ajax({
+	      type: "GET",
+	      url: "api/search",
+	      data: { query: val },
+	      success: function(results) {
+					view.$("div.search-preview").removeClass("hidden");
+					view.renderPreview(results);
+				}
+      });
+    } else {
+			// clear results if the user starts typing something new or deletes input
+			$("div.search-preview").children().remove();
+			$("div.search-preview").addClass("hidden");
+    }
+	},
+	
+	renderPreview: function(results) {
+		results.forEach(function(result) {
+			var match = $("<a>").addClass("match");
+			match.text(result.username);
+			match.attr("href", "#users/" + result.id);
+  		$("div.search-preview").append(match);
+			
+		});
+	},
 
   findFriends: function(event) {
     event.preventDefault();
     var form = $(event.target).serializeJSON();
     var query = form["search"]["query"];
-    var that = this;
+    var view = this;
 
     $.ajax({
       type: "GET",
       url: "api/search",
       data: { query: query },
       success: function(results) {
-        that.renderSearchResults(results);
+        view.renderSearchResults(results);
       }
     });
   },
