@@ -43,7 +43,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
   },
 
   findFriends: function(event) {
-		console.log("finding friends");
     event.preventDefault();
     var form = $(event.target).serializeJSON();
     var query = form["search"]["query"];
