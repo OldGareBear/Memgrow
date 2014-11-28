@@ -87,7 +87,6 @@ div.user-courses > ul > li {
   padding: 10px;
 }
 
-
 ul.user-info {
   float: left;
   width: 100%;
@@ -113,6 +112,8 @@ div.stats > h1 {
 div.leaderboard > h1 {
   padding-top: 40px;
   padding-bottom: 20px;
+	width: 190px;
+	margin: 0 auto;
 }
 
 div.stats > p {
@@ -131,6 +132,11 @@ ul.user-info > li > h3 > a {
 
 ul.user-courses > li > h3 > a {
   display: inline;
+}
+
+ol.leaders {
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 ol.leaders > li {

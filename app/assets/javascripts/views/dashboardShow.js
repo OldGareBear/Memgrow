@@ -73,7 +73,6 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 			match.append(" " + result.username);
 			match.attr("href", "#users/" + result.id);
   		$("div.search-preview").append(match);
-			
 		});
 	},
 
