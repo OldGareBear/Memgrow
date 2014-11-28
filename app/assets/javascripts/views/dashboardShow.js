@@ -47,6 +47,8 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 		var view = this;
 		var val = this.$(event.target).val();
     if (val.length >= 2) {
+			$("div.search-preview").children().remove();
+			
       $.ajax({
 	      type: "GET",
 	      url: "api/search",
