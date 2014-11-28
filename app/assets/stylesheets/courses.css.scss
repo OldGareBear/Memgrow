@@ -167,6 +167,19 @@ form.new-enrollment > input[type=submit] {
   font-size: 14px;
 }
 
+form.delete-course > input[type=submit] {
+  margin: 5px auto;
+  display: block;
+  background: #15a1ec;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 ul.category-list > li {
   padding: 15px;
 	cursor: pointer;
@@ -175,12 +188,6 @@ ul.category-list > li {
 ul.category-list > li:hover {
 	background: #15a1ec;
 	color: white;
-}
-
-div.show-course-header form.new-enrollment {
-  float: right;
-  position: relative;
-  top: -15px;
 }
 
 div.comments {
@@ -236,15 +243,15 @@ p.author-date-info > a {
   font-weight: bold;
 }
 
-button.delete-btn {
-  margin: 5px auto;
-  display: block;
-  background: #15a1ec;
-  color: white;
-  font-weight: bold;
-  border: 0;
-  box-shadow: 0;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
+div.show-course-header form.new-enrollment {
+  float: right;
+  position: relative;
+  top: -15px;
+	margin-right: 15px;
+}
+
+div.show-course-header form.delete-course {
+  float: right;
+  position: relative;
+  top: -15px;
 }
