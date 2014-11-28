@@ -23,6 +23,12 @@ class Api::CoursesController < ApplicationController
       render :json => @course.errors, :status => :unprocessable_entity
     end
   end
+  
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    render :json => @course
+  end
 
   protected
 

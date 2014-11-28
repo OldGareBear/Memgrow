@@ -29,7 +29,8 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	
 	events: {
 		"submit .new-comment": "newComment",
-		"submit .new-enrollment": "newEnrollment"
+		"submit .new-enrollment": "newEnrollment",
+		"submit .delete-course": "deleteCourse"
 	},
 	
 	newComment: function(event) {
@@ -58,8 +59,6 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 		
 		var course_id = $(event.target).serializeJSON()["enrollment"];
 		
-		console.log(course_id);
-		
     $.ajax({
       type: "POST",
       url: "api/enrollments",
@@ -68,6 +67,22 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
         console.log("your course has been added!");
       }
     });
+	},
+	
+	deleteCourse: function(event) {
+		event.preventDefault();
+		
+		var course_id = $(event.target).serializeJSON();
+		console.log("api/courses/" + course_id["id"]);
+		
+		$.ajax({
+			type: "DELETE",
+			url: "api/courses/" + course_id["id"],
+			data: course_id,
+			success: function(results) {
+				Backbone.history.navigate("", { trigger: true });
+			}
+		});
 	}
 	
 });

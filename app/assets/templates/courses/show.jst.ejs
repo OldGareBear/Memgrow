@@ -1,19 +1,30 @@
 <div class="show-course-header sub-header">
   <h1><%= course.escape("title") %></h1>
   <h3><%= course.escape("category") %></h3>
-  <% if (currentUser.get("id") === course.get("author_id")) {%>
-    <button class="delete-btn">Delete</button>
+  
+	<ul class="course-buttons">
+	<% if (currentUser.get("id") === course.get("author_id")) {%>
+		<li>
+			<form class="delete-course">
+				<input type="hidden"
+					     name="id"
+							 value="<%= course.get("id") %>">
+				<input type="submit" value="Delete">
+			</form>
+		</li>
   <% } %>
+	<% if (!currentUser.courses().include(course)) { %>
+    <li>
+			<form class="new-enrollment">
 
-  <% if (!currentUser.courses().include(course)) { %>
-    <form class="new-enrollment">
-
-      <input type="hidden"
-             name="enrollment[course_id]"
-             value="<%= course.get("id") %>">
-      <input type="submit" value="Add to Courses">
-    </form>
+	      <input type="hidden"
+	             name="enrollment[course_id]"
+	             value="<%= course.get("id") %>">
+	      <input type="submit" value="Add to Courses">
+	    </form>
+		</li>
   <% } %>
+</ul>
 </div>
 
 <div class="comments">
