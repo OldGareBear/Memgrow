@@ -1,7 +1,4 @@
 Memgrow.Views.CardsNew = Backbone.View.extend({
-	initialize: function() {
-		this.listenTo(this.model, "sync", this.render)
-	},
 	
 	template: JST['cards/new'],
 
@@ -33,9 +30,15 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 			course_id: this.model.get("id")
 		});
 		
+		var submitButton = this.$("input[type='submit']")[0];
+		var placeholder = $("<div>")
+		placeholder.addClass("submit-card-placeholder");
+		
+		// stop the old card info from moving off-center
+		submitButton.remove();
+		$(event.target).append(placeholder);
 
 		var that = this;
-
 		newCard.save({}, {
 			success: function() {
 				console.log("card saved")
