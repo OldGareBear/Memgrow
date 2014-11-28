@@ -169,6 +169,12 @@ form.new-enrollment > input[type=submit] {
 
 ul.category-list > li {
   padding: 15px;
+	cursor: pointer;
+}
+
+ul.category-list > li:hover {
+	background: #15a1ec;
+	color: white;
 }
 
 div.show-course-header form.new-enrollment {
