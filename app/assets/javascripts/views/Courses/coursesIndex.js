@@ -2,22 +2,22 @@ Memgrow.Views.CoursesIndex = Backbone.View.extend({
 	initialize: function() {
 		this.listenTo(this.collection, "sync", this.render);
 		this.listenTo(this.model, "sync", this.render);
+		
+		this.currentCategory = this.collection;
 	},
 	
 	template: JST['courses/index'],
 	
 	render: function() {
 		var categories = [];
-		
-		this.collection.each(function(course) {
+
+		this.collection.forEach(function(course) {
 			categories.push(course.escape("category"));
 		});
-		
-		
-		categories = this.myUniq(categories);
+		var categories = this.myUniq(categories);
 		
 		var content = this.template({
-			courses: this.collection,
+			courses: this.currentCategory,
 			categories: categories,
 			current_user: this.model
 		});
@@ -39,7 +39,8 @@ Memgrow.Views.CoursesIndex = Backbone.View.extend({
 	},
 	
 	events: {
-		"submit": "submit"
+		"submit": "submit",
+		"click li.category": "filterByCategory"
 	},
 	
 	submit: function(event) {
@@ -47,15 +48,19 @@ Memgrow.Views.CoursesIndex = Backbone.View.extend({
 		
 		var course_id = $(event.target).serializeJSON()["enrollment"];
 		
-		console.log(course_id);
-		
     $.ajax({
       type: "POST",
       url: "api/enrollments",
       data: course_id,
       success: function(results) {
-        console.log("your course has been added!")
+        console.log("your course has been added!");
       }
     });
+	},
+	
+	filterByCategory: function(event) {
+		var category = $(event.currentTarget).text();
+		this.currentCategory = this.collection.where({category: category});
+		this.render();
 	}
 });

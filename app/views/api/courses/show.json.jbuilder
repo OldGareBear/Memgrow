@@ -11,5 +11,3 @@ json.comments @course.comments do |comment|
   json.updated_at comment.updated_at
   json.author     comment.author.username
 end
-
-# json.comments @course.comments, :id, :author_id, :course_id, :content, :created_at, :updated_at, :author
