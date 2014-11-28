@@ -13,7 +13,8 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 	},
 
 	events: {
-		"submit": "addCard"
+		"submit": "addCard",
+		"click div.finish-cards": "enrollAuthor"
 	},
 
 	addCard: function(event) {
@@ -50,6 +51,18 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 
 	appendSubform: function() {
 		$("div.new-card").append(JST['cards/subForm'])
+	},
+	
+	enrollAuthor: function() {
+		console.log("hello");
+		$.ajax({
+			type: "POST",
+			url: "api/enrollments",
+			data: { "course_id": this.model.id },
+			success: function() {
+				Backbone.history.navigate("#", { trigger: true });
+			}
+		});
 	}
 });
 

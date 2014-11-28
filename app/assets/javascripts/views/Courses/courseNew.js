@@ -23,7 +23,6 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 	},
 
 	submitCourse: function(event) {
-		console.log("submitting...")
 		event.preventDefault();
 		var params = $(event.target).serializeJSON();
 		var title = params["course"]["title"];
@@ -35,9 +34,10 @@ Memgrow.Views.CourseNew = Backbone.View.extend({
 		});
 
 		var courses = this.collection
-
+		
+		that = this;
     newCourse.save({}, {
-      success: function () {
+      success: function (response) {
         courses.add(newCourse);
         Backbone.history.navigate("#/cards/new", { trigger: true });
       }

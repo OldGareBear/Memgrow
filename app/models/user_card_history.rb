@@ -4,7 +4,7 @@ class UserCardHistory < ActiveRecord::Base
   
   def refractory_period(straight_successes)
     if straight_successes == 0
-      return 2.seconds
+      return 0.seconds
     elsif straight_successes == 1
       return 1.day
     else

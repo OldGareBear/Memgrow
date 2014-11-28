@@ -94,7 +94,7 @@ div.show-course-header > form.button_to {
 
 div.categories {
   height: 700px;
-  width: 190px;
+  width: 20%;
   text-align: center;
   padding: 15px;
   float:left;
@@ -103,7 +103,7 @@ div.categories {
 div.course-list {
   float: left;
   min-height: 799px;
-  width: 500px;
+  width: 70%;
   padding-left: 15px;
   padding-top: 15px;
   border-left: 10px solid rgb(240, 240, 240);
@@ -111,7 +111,7 @@ div.course-list {
 
 ul.course-list {
   float: left;
-  width: 735px;
+	padding-bottom: 2	5px;
 }
 
 ul.course-list:after{
