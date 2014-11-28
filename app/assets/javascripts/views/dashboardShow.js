@@ -66,7 +66,11 @@ Memgrow.Views.DashboardShow = Backbone.View.extend({
 	renderPreview: function(results) {
 		results.forEach(function(result) {
 			var match = $("<a>").addClass("match");
-			match.text(result.username);
+			var image = $("<img>").addClass("mini-profile-pic");
+			image.attr("src", result.filepicker_url);
+			console.log(image[0]);
+			match.append(image);
+			match.append(" " + result.username);
 			match.attr("href", "#users/" + result.id);
   		$("div.search-preview").append(match);
 			

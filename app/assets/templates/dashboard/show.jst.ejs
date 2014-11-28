@@ -94,7 +94,11 @@
   <ol class="leaders">
     <% leaders.forEach(function(leader, index) { %>
     <li>
-			<a href="#/users/<%= leader.get("id") %>"><%= leader.escape("username") %></a>
+			<a href="#/users/<%= leader.get("id") %>">
+				<img class="mini-profile-pic"
+						 src="<%= leader.escape("filepicker_url") %>">
+				<%= leader.escape("username") %>
+			</a>
 			(<%= leader.escape("points") %>)
 			<% if (leader===currentUser) { %>
 				<div class="fb-share-button" 
