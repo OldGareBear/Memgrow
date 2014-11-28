@@ -1,4 +1,8 @@
 Memgrow.Views.CardsNew = Backbone.View.extend({
+	initialize: function() {
+		this.listenTo(this.model, "sync", this.render)
+	},
+	
 	template: JST['cards/new'],
 
 	render: function() {
@@ -28,6 +32,7 @@ Memgrow.Views.CardsNew = Backbone.View.extend({
 			english: english,
 			course_id: this.model.get("id")
 		});
+		
 
 		var that = this;
 

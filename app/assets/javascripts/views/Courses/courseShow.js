@@ -80,7 +80,7 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 			url: "api/courses/" + course_id["id"],
 			data: course_id,
 			success: function(results) {
-				Backbone.history.navigate("", { trigger: true });
+				Backbone.history.navigate("#/courses", { trigger: true });
 			}
 		});
 	}
