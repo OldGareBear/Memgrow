@@ -93,6 +93,7 @@ ul.user-info {
   width: 100%;
   min-width: 500px;
   position: relative;
+	background-image: image-url('pattern-grey.v1.png');
 }
 
 ul.user-info > li {
@@ -276,4 +277,5 @@ a.match {
 
 a.match:hover {
 	background: #15a1ec;
+	color: white;
 }
