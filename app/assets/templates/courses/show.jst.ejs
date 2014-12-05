@@ -1,7 +1,7 @@
 <div class="show-course-header sub-header">
   <h1><%= course.escape("title") %></h1>
   <h3><%= course.escape("category") %></h3>
-  
+
 	<ul class="course-buttons">
 	<% if (currentUser.get("id") === course.get("author_id")) {%>
 		<li>
@@ -14,6 +14,7 @@
 		</li>
   <% } %>
 	<% if (!currentUser.courses().include(course)) { %>
+    <% console.log(currentUser.courses()) %>
     <li>
 			<form class="new-enrollment">
 
@@ -41,7 +42,7 @@
 	  </li>
 	<% }) %>
 	</ul>
-	
+
 	<form class="new-comment">
 	  <input type="hidden" name="comment[course_id]" value="<%= course.get("id") %>">
 
@@ -51,7 +52,7 @@
 
 	  <input type="submit">
 	</form>
-	
+
 </div>
 
 <div class="course-cards">
