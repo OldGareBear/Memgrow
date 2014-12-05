@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
 <head>
-	
+
 	<meta property="og:title" content="Memgrow" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://memgrow.herokuapp.com" />
 	<meta property="og:image" content="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQBPlnu6ngduBepS&url=https%3A%2F%2Fmemgrow.herokuapp.com%2Fassets%2Fspeech2-cb0e57b8286e605dbbba175b840ae90d.png" />
 	<meta property="og:description" content="I've moved up to the leaderboard at Memgrow. Come study with me!" />
-	
+
   <title>Memgrow</title>
-	
+
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 	<%= javascript_include_tag "application" %>
-	
+
   <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
   <script>filepicker.setKey("ACAfiCjL6TjGMn7p7COUcz");</script>
-	 
+
 	<script type="text/javascript">
 	    if (window.location.hash && window.location.hash == '#_=_') {
 	        window.location.hash = '';
@@ -25,7 +25,7 @@
 	</script>
 </head>
 <body>
-	
+
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -61,7 +61,7 @@
 
       <li class="nav-button"><a href="#/courses/new">Create Course</a></li>
 
-			<li class="nav-button"><a href="#/courses">Browse</a></li>
+			<li class="nav-button"><a href="#/courses">Discover Courses</a></li>
 
       <li class="nav-button" id="notifications">
         Notifications
@@ -119,7 +119,7 @@
 		<div class="logo">
 			<a href="/"><%= image_tag "Memgrow-logo.png", size: "300x90" %></a>
 		</div>
-		
+
 		<a class="cr" href="http://gbethea.com">&copy; Gary Bethea</a>
 	</div>
 </body>
