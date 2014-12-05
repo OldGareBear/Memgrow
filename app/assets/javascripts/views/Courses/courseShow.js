@@ -2,45 +2,44 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	initialize: function(options) {
 		this.currentUser = options.currentUser;
 		this.comments = this.model.comments();
-		
+
 		this.listenTo(this.comments, "sync add remove", this.render)
 		this.listenTo(this.model, "sync", this.render)
 		this.listenTo(this.currentUser, "sync", this.render)
 	},
-	
+
 	template: JST["courses/show"],
-	
+
 	render: function() {
+		console.log(currentUser.courses());
+
 		var cards = this.model.cards();
-		
-		console.log("comments", this.comments)
-		
+
 		var content = this.template({
 			course: this.model,
 			cards: cards,
 			currentUser: this.currentUser,
 			comments: this.comments
 		});
-		
+
 		this.$el.html(content);
-		
+
 		return this;
 	},
-	
+
 	events: {
 		"submit .new-comment": "newComment",
 		"submit .new-enrollment": "newEnrollment",
 		"submit .delete-course": "deleteCourse"
 	},
-	
+
 	newComment: function(event) {
 		event.preventDefault();
-		
+
 		var params = $(event.target).serializeJSON();
-		console.log("params", params);
-		
+
 		var view = this;
-		
+
 		$.ajax({
 			type: "POST",
 			url: "api/comments",
@@ -53,12 +52,12 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 			}
 		});
 	},
-	
+
 	newEnrollment: function(event) {
 		event.preventDefault();
-		
+
 		var course_id = $(event.target).serializeJSON()["enrollment"];
-		
+
     $.ajax({
       type: "POST",
       url: "api/enrollments",
@@ -68,13 +67,12 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
       }
     });
 	},
-	
+
 	deleteCourse: function(event) {
 		event.preventDefault();
-		
+
 		var course_id = $(event.target).serializeJSON();
-		console.log("api/courses/" + course_id["id"]);
-		
+
 		$.ajax({
 			type: "DELETE",
 			url: "api/courses/" + course_id["id"],
@@ -84,5 +82,5 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 			}
 		});
 	}
-	
+
 });
