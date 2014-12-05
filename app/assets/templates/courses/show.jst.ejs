@@ -13,7 +13,7 @@
 			</form>
 		</li>
   <% } %>
-	<% if (!currentUser.courses().include(course)) { %>
+	<% if (!currentUser.courses().has(course)) { %>
     <li>
 			<form class="new-enrollment">
 
