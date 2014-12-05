@@ -11,7 +11,7 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	template: JST["courses/show"],
 
 	render: function() {
-		console.log(currentUser.courses());
+		console.log(this.currentUser.courses());
 
 		var cards = this.model.cards();
 
