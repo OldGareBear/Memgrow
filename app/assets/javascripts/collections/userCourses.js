@@ -25,7 +25,7 @@ Memgrow.Collections.UserCourses = Backbone.Collection.extend({
 
 	has: function(model) {
 		var allIds = this.pluck("id");
-		allIds.contains(model.get("id"))
+		return allIds.contains(model.get("id"))
 	}
 });
 

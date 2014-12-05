@@ -11,10 +11,11 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 	template: JST["courses/show"],
 
 	render: function() {
-		console.log(this.currentUser.courses());
-		console.log(this.model);
-		console.log(this.currentUser.courses().get(this.model.id) === this.model);
-		// console.log(this.currentUser.courses().models().include(this.model));
+		console.log("userCourses", this.currentUser.courses());
+		console.log("course", this.model);
+		console.log("has", this.currentUser.courses().has(this.model));
+		console.log("plucked", this.currentUser.courses().pluck("ids"));
+		console.log("bool", this.currentUser.courses().pluck("ids").contains(this.model.get("id")));
 
 		var cards = this.model.cards();
 
