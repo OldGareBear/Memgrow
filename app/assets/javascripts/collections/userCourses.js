@@ -21,7 +21,12 @@ Memgrow.Collections.UserCourses = Backbone.Collection.extend({
     }
 
     return course;
-  }
+  },
+
+	has: function(model) {
+		var allIds = this.pluck("id");
+		allIds.contains(model.get("id"))
+	}
 });
 
 // Memgrow.Collections.userCourses = new Memgrow.Collections.UserCourses;
