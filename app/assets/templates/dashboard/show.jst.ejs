@@ -77,7 +77,7 @@
     <% courses.each(function(course) { %>
       <li>
         <h3>
-          <a href="#/courses/" + <%= course.escape('id') %>><%= course.get("title") %></a>
+          <a href="<%="#courses/" + course.escape('id') %>"><%= course.get("title") %></a>
           | <%= course.get("category") %>
         </h3>
 				<a class="study" href="<%= "#/study/" + course.escape("id") %>">
