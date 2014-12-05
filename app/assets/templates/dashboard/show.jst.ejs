@@ -16,7 +16,7 @@
 		</li>
 
   	<li><h1 class="username-display"><%= currentUser.escape("username") %></h1></li>
-    
+
     <li class="right"><h3><%= friends.length %><a href="#/friends"> Friends</a></h3>
 			<form> </form>
 			<form class="find-friends" autocomplete="off">
@@ -29,13 +29,13 @@
 			<img src="<%= currentUser.get("friends_pic") %>"
 				height="60" width="60">
 		</li>
-		
+
     <li class="right"><h3><%= currentUser.escape("cards_count") %> Words</h3></li>
     <li class="icon right">
 			<img src="<%= currentUser.get("words_pic") %>"
 				height="60" width="60">
 		</li>
-		
+
     <li class="right"><h3><%= currentUser.escape("points") %> Points</h3></li>
     <li class="icon right">
 			<img src="<%= currentUser.get("points_pic") %>"
@@ -77,9 +77,9 @@
     <% courses.each(function(course) { %>
       <li>
         <h3>
-          <a href=""><%= course.get("title") %></a>
+          <a href="#/courses/" + course.escape("id")><%= course.get("title") %></a>
           | <%= course.get("category") %>
-        </h3> 
+        </h3>
 				<a class="study" href="<%= "#/study/" + course.escape("id") %>">
 					Study (<%= course.dueCards(currentUser).length %>)
 				</a>
@@ -101,8 +101,8 @@
 			</a>
 			(<%= leader.escape("points") %>)
 			<% if (leader===currentUser) { %>
-				<div class="fb-share-button" 
-						 data-href="https://memgrow.herokuapp.com" 
+				<div class="fb-share-button"
+						 data-href="https://memgrow.herokuapp.com"
 						 data-layout="button"></div>
 			<% } %>
 		</li>
