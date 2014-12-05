@@ -14,8 +14,8 @@ Memgrow.Views.CourseShow = Backbone.View.extend({
 		console.log("userCourses", this.currentUser.courses());
 		console.log("course", this.model);
 		console.log("has", this.currentUser.courses().has(this.model));
-		console.log("plucked", this.currentUser.courses().pluck("ids"));
-		console.log("bool", this.currentUser.courses().pluck("ids").contains(this.model.get("id")));
+		console.log("plucked", this.currentUser.courses().pluck("id"));
+		console.log("bool", this.currentUser.courses().pluck("id").contains(this.model.get("id")));
 
 		var cards = this.model.cards();
 
