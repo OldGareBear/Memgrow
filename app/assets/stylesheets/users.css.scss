@@ -54,10 +54,10 @@ div.user-nav > h1 {
 
 div.stats {
   padding:0;
-  border-right: 10px solid rgb(240, 240, 240);
+//  border-right: 10px solid rgb(240, 240, 240);
   min-width: 200px;
   float: left;
-  height: 800px;
+  min-height: 800px;
   text-align: center;
   width: 24%;
 }
@@ -65,17 +65,19 @@ div.stats {
 div.user-courses {
   padding:0;
   width: 48%;
-  height: 800px;
+//  min-height: 800px;
   text-align: center;
   float: left;
+	border-right: 10px solid rgb(240, 240, 240);
+	border-left: 10px solid rgb(240, 240, 240);
 }
 
 div.leaderboard {
   padding:0;
-  border-left: 10px solid rgb(240, 240, 240);
+  //border-left: 10px solid rgb(240, 240, 240);
   width: 24%;
-  float: right;
-  height: 800px;
+  float: left;
+  min-height: 800px;
   text-align: left;
 }
 
